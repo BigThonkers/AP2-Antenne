@@ -1,0 +1,17 @@
+﻿Aufbauvorschlag Protokoll
+Ursprüngliches Ziel
+
+Labortagebuch (Damian hatte schon einen großen Teil)
+
+Qualitativ:
+	Antennengüte, unterschiede beider Antennen (Erik)
+	Trimmen der 2. Antenne (Jan(?))
+	Unterschiede Gekaufer koppler, "DIY" aus der Werkstatt (Erik)
+
+	Weitere Vorschläge?
+
+Quantitativ:
+	1/r^2, Polarisation:
+	Jan hat Datenreihen ausgewählt und Plots erstellt, Erik hat Fehlerrechnung und Errorbars eingefügt
+	Markus (?): 1/r^2
+	Damian (?): Polarisation
