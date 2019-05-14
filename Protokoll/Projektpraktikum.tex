@@ -1,6 +1,6 @@
 % packages
 \PassOptionsToPackage{dvipsnames}{xcolor}  % needed to get colors working in certain environments
-\documentclass[titlepage,11pt,a4paper,ngerman]{article}
+\documentclass[titlepage,11pt,a4paper,ngerman]{report}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[german]{babel}
@@ -157,10 +157,10 @@ t=\frac{\vert x-y_0\vert}{u_x}
 
 
 % ANDREZ
-\newcommand{\summ}[2]{\sum_{#1}^{#2}}
-\newcommand{\intt}[2]{\int_{#1}^{#2}}
+%\newcommand{\summ}[2]{\sum_{#1}^{#2}}
+%\newcommand{\intt}[2]{\int_{#1}^{#2}}
 \newcommand{\lcom}[1]{\color{MidnightBlue}#1\color{black}}  % used to indicate to the reader that this content was transcribed from the lecture
-\newcommand{\bei}{\emph{Beispiel: }}
+\newcommand{\bei}{\emph{Beispiel:}}
 \newcommand{\bem}{\emph{Bemerkung:}}
 
 
@@ -259,6 +259,12 @@ t=\frac{\vert x-y_0\vert}{u_x}
 % other settings
 \hbadness=99999  % removes unnecessary hbadness warnings
 
+% the following are used to circumvent Roman numerals in the toc from running out of space
+%\addtolength{\cftchapnumwidth}{10pt}
+%\addtolength{\cftsecnumwidth}{10pt}
+%\addtolength{\cftsubsecnumwidth}{10pt}
+%\renewcommand{\thechapter}{\Roman{chapter}}  % just don't do this :)
+
 % coloring
 % for working at night
 %\pagecolor{darkgray}
@@ -270,22 +276,23 @@ t=\frac{\vert x-y_0\vert}{u_x}
 	\large Physiklabor für Anfänger*innen 2 \\
 	Ferienpraktikum im Wintersemester 2019 \\[4mm]
 	\textbf{\LARGE 
-		Spezial Versuch: Vermessung der Dipolcharakteristik einer Dipolantenne
-	} \\[3mm]
-	(durchgeführt am 6. März 2019 bei Assistent: Ramirez Diego) \\}
-\author{Markus Österle, Jan-Philipp Maurer , Erik Bode, Damian Lanzenstiel\\ (Gruppe: 22/1111)}
-\date{10. März 2019}
+		Versuch Projektpraktikum:\\[3mm]
+		Vermessung der Strahlungscharakteristik einer Dipolantenne
+			} \\[3mm]
+	(durchgeführt am 8. April bis 12. April 2019 bei Assistent: Dennis Sperlich) \\}
+\author{Erik Bode, Damian Lanzenstiel, Markus Österle, Jan-Philipp Maurer \\ (Gruppen 111 und 22)}
+\date{\today}
 \maketitle
 \tableofcontents
-\section{Versuchsziel}
-\section{Versuchsaufbau}
-	Tag 1
-	\begin{itemize}
-		\item Antennen löten /drucken
-		\item Installieren des HackRF
-		\item Erste Funktionstests
-	\end{itemize}
-\section{Versuchsdurchführung}
-\section{Auswertung}
-\section{Diskussion}
+%\listoffigures
+%\listoftables
+
+% Document
+
+
+
+\bibliographystyle{plain}
+\bibliography{literature}
+\addcontentsline{toc}{section}{Literatur}
+
 \end{document}
