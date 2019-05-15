@@ -1,6 +1,6 @@
 % packages
 \PassOptionsToPackage{dvipsnames}{xcolor}  % needed to get colors working in certain environments
-\documentclass[titlepage,11pt,a4paper,ngerman]{report}
+\documentclass[titlepage,11pt,a4paper,ngerman]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[german]{babel}
@@ -289,6 +289,61 @@ t=\frac{\vert x-y_0\vert}{u_x}
 
 % Document
 
+\section{Veruschsziel}
+Das Ziel des Versuches war eigene Dipol-Antennen zu bauen und diese zu nutzen und ihre Strahlungscharakteristik zu bestimmen. Danach sollte das HackRF und eine Drone genutzt werden um Antennen in der Gegend zu vermessen.
+
+\section{Labortagebuch}
+\subsection{Tag 1}
+Zu Beginn des ersten Tages wurde ein Plan erstellt was alles an diesem Tag gemacht werden muss. Hierbei war ganz oben auf der Liste das bauen der Antennen. Hierbei wurde als erstes ein Gehäuse erstellt. Diese dient dazu die Antennen in der Richtigen Form zu halten, der Montage auf den Stativen sowie der Befestigung eines Fadens zur Positionsbestimmung. Die Antennen selber wurden während des Druckens zusammen gelötet. Für die Antennen selber wurde zuerst die Kabel vermessen um zu sehen welche besonders wenig Verlust aufweisen. Hierfür wurden sie ans Frequenzspektrometer angeschlossen. 
+Ein weiter Aufgabenteil am ersten Tag war das installieren von Gnuradio auf dem Rasberry Pies zur Nutzung des HackRFs. Neben bei wurde mit der Funktionsweise des Funktionsgenerator experimentiert und versucht gute Einstellungsmöglichkeiten für die geplanten Messungen zu finden
+\begin{figure}[h]
+	\includegraphics[scale=0.25]{Bilder/Ant_innen_1}
+	\centering
+	\caption{Aufbau der ersten gebauten Antenne mit Antennengehäuse und Innenleben.}
+\end{figure}
+Mit den ersten zwei fertigen Antennen wurden erste Probemessungen gemacht um zu sehen ob in dem erwarteten Frequenzbereich ein Intensität Extremum zu sehen war. Jedoch konnte man im Frequenzband nichts auffallendes erkennen. Was jedoch beobachtet werden konnte war ein unregelmäßig auftauchender Peak bei einer Frequenz von $2.4$\,GHz. 
+
+\subsection{Tag 2}
+Am nächsten Tag wurden weiter versucht das HackRF zum laufen zu bringen und die Antennen ausprobiert. Mögliche Lösungen für das Problem der Antennen war eine Entfernung des Gehäuses welche aber zu keinen besseren Ergebnissen geführt hat. Auch andere Positionen im Raum führten zum selben Ergebnis, dass sich keine besondere Frequenz ergab. Es machte sich jedoch schnell bemerkbar, dass der Raum einem Resonator entspricht und kleine Änderungen im Aufbau des Raum größere Unterschiede bezüglich der Übertragenen Leistung machte. Da kein Messgerät zur Messung der Antennengüte vorhanden war wurde versucht die Frequenz durch \textcolor{red}{Erik wie habt ihr das gemacht?}.
+\subsection{Tag 3}
+Am Mittwoch war das HackRF einsetzbar da wir dieses nun über einen anderen Computer als das Rasberry Pie betrieben. Dies nutzten wir um eine erste Polarisationsmessungen durchzuführen. Auch hier zeigte sich, dass Bewegung von Personen im Raum oder das öffnen eines Fensters die Messwerte stark beeinflusste. Im laufe des Tages erhielten wir ein \textcolor{red}{Name des Geräts?} mit dem die Güte der Antenne gemessen werden konnte. Hier stellte sich heraus die Antennen insgesamt sehr unzuverlässig waren und keine wirklich guten Frequenzen besaßen. Da zusätzlich ein Kurzschluss bei einer der Antennen auftrat wurden zwei neue mit einem Optimierten Design erstellt. Dieses neue Design hatte kein Kupferrohr senkrecht zum Dipol sondern wurde direkt mit einem \textcolor{red}{Steckername} versehen. Beim Test der neuen Antennen zeigt sich eine deutliche Verbesserung zur ersten Generation. Mit Hilfe des \textcolor{red}{Name des Geräts?} konnte ein recht genau gezeugt werden, dass unsere Antennen im erwarteten Bereich besonders gut senden können. Da beide trotzdem leichte Unterschiede in der Frequenz auftraten wurde eine mithilfe eines eingebauten Kondensators auf die andere genormt. 
+\subsection{Tag 4}
+Mit den nun aufeinander genormten Antennen wurde beschlossen sich auf eine  Polarisationsmessung und eine Abstandmessung zu beschränken und die Messung der Strahlungscharakteristik wegzulassen. Da jedoch auffällig war wie Problematisch die Umgebung des Labors war wurden diese Messungen drinnen so wie draußen im Garten der Physik und am Parkplatz vor dem Westbau durchgeführt.
+\subsection{Tag 5}
+Am letzten Tag wurden noch zusätzliche Messungen zum Abstand und zur Polarisation im Großen Hörsaal durchgeführt. Da die Messungen im Labor bis dahin wegen Bewegung von Personen sehr ungenau war wurde hier nochmal eine Messung durchgeführt um zu zeigen wie groß die Schwankungen sind und eine bei der sich wirklich nichts verändert.
+\begin{figure}[h]
+	\includegraphics[scale=0.3]{Bilder/Ant_Fktgen}
+	\centering
+	\caption{Gebaute Antenne auf dem Stativ und an den Frequenzgenerator angeschlossen.}
+\end{figure}
+\begin{figure}[h]
+	\includegraphics[scale=0.3]{Bilder/Ant_12}
+	\centering
+	\caption{Beide Antennen Generationen nebeneinander. Hinten die erste Generation vorne die 2.Generation}
+\end{figure}
+\begin{figure}[h]
+	\includegraphics[scale=0.3]{Bilder/Ant_innen_2}
+	\centering
+	\caption{Innerer Aufbau der 2.Antennengeneration. Im Bild die genormte Antenne mit kleinem Kondensator an der Seite.}
+\end{figure}
+
+\section{Versuchsaufbau für die Messungen}
+
+\subsection{Die Antennen}
+
+Für die Ausgewerteten Messungen haben wir nun ausschließlich die neuen Antennen verwendet. Diese haben im Gegensatz zu dem alten Modell keinen Balun (bestehend aus einer Kupferröhre um das Signalkabel) mehr.\par
+Die Antennen bestehen also nur aus zwei Kupferrohren, die jeweils an die Leitung beziehungsweise den Schirm eines Gehäuseanschlusses für BNC Stecker gelötet wurden. Diese Konstruktion wird in einem 3D-gedruckten Gehäuse montiert, sodass die Röhrchen parallel zueinander und orthogonal zum Signalkabel sind. Der nun im Gehäuse eingebaute BNC-Kabel-Anschluss kann nun wie bei anderen kompatiblen Geräten (Oszilloskop, Spectrum Analyzer, etc.) angeschlossen werden. Dieses Design ist also nicht mehr an ein Kabel gebunden, was den Vorteil hat, dass die Länge variabel ist und ein schlechtes Kabel schnell und leicht ausgetauscht werden kann.\par
+Die Plastikgehäuse wurden absichtlich so designet, dass sie ohne Metallteile zusammengebaut werden könnte, da diese die Strahlungscharakteristik beeinträchtigen könnten. Der Kunststoff selbst ist sehr dünn und schien keinen Einfluss auf die Messungen nehmen, dies haben wir rein qualitativ überprüft, indem wir das empfange Signal ohne Gehäuse mit dem mit Gehäuse verglichen haben und keinen unterschied feststellen konnten.\par
+Außerdem haben die Gehäuse eine Befestigung mit Stativ-Gewinde, sodass sie an Standartmäßigen Fotokamera-Stativen befestigt werden können.
+
+\subsection{Der Aufbau zur Vermessung}
+
+Für die jeweiligen Messung haben wir die beiden Antennen an Stativen befestigt und gegenüber voneinander platziert. Die Gehäuse der Antennen wurden an einer dafür vorgesehenen Öse mit einer Schnur verbunden, um die Parallelität der Antennen bei der Anstandsmessung beziehungsweise einen akkuraten Winkel bei der Polarisationsmessung zu gewährleisten.\par
+Beide Antennen wurden an den Spectrum Analyzer angeschlossen. Der Spectrum Analyzers schickt nun ein Signal mit nacheinander verschiedenen Frequenzen durch das gesamte Frequenzband des Spectrum Analyzers an die Sender-Antenne und zeichnet die Intensität des von der Empfänger-Antenne kommenden Signals auf.\par
+Ein Vorteil an dieser Messung gegenüber dem Senden einer Frequenz über das Hack-RF ist, das wir auch sofort Störsignale, die von der Antenne empfangen werden feststellen können und damit ausschließen können, dass wie so ein Störsignal mit in die Messung einbeziehen. Hierbei sind Störsignale wie z.B. WLAN oder andere zeitlich nicht konstante Funksignale gemeint. Außerdem 
+
+\subsection{Polarisation}
+Zur Messung der Polarisation wurden die Beiden Antennen in einem festen Abstand voneinander auf dem jeweiligen Stativ befestigt. Zum Test ob die Antennen Rechtwinkelig voneinander sind wurde ein Faden genutzt der zwischen beiden Antennen gespannt wurde und dann mit Hilfe eines Geodreiecks ein Rechter Winkel zwischen Antenne und Faden gemessen wurde. Der Sender und Empfänger wurden dann an das Frequenzspektrometer angeschlossen. Zur eigentlichen Messung wurde die Leistungsdifferenz zwischen Sender und Empfänger bei unterschiedlichen Winkeln des Empfängers gemessen.
 
 
 \bibliographystyle{plain}

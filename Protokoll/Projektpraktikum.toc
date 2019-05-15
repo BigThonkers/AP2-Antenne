@@ -1,2 +1,5 @@
 \select@language {german}
-\contentsline {section}{Literatur}{1}{Doc-Start}
+\contentsline {section}{\numberline {1}Versuchsaufbau f\IeC {\"u}r die Messungen}{1}{section.1}
+\contentsline {subsection}{\numberline {1.1}Die Antennen}{1}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}Der Aufbau zur Vermessung}{1}{subsection.1.2}
+\contentsline {section}{Literatur}{1}{section*.1}
