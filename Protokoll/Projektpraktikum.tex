@@ -344,7 +344,7 @@ Anschließend wurden noch weitere Richtkoppler der Werkstatt getestet, ob diese 
 \end{figure}
 
 
-\section{Antennen}
+\section{Details zu den verwendeten Antennen}
 
 \subsection{Antennenbau}
 \subsubsection{Erste Generation}
@@ -358,7 +358,7 @@ Die erste Antennengeneration wurde nach der Anleitung vom Akademisk Radioklubb g
 Die Antennen bestehen also nur aus zwei $55\,$mm langen Kupferrohren, die jeweils an Leitung und Schirm eines BNC Gehäuseanschlusses gelötet wurden. Diese Konstruktion wird in einem 3D-gedruckten Gehäuse montiert, sodass die Röhrchen parallel zueinander und orthogonal zum Signalkabel sind. Der nun im Gehäuse eingebaute BNC Anschluss kann nun wie sonst üblich mit kompatiblen Geräten (Oszilloskop, Spectrum Analyzer, etc.) verbunden werden. Dieses Design ist also nicht mehr an ein Kabel gebunden, was den Vorteil hat, dass die Länge variabel ist und ein schlechtes Kabel schnell und leicht ausgetauscht werden kann.\par
 Die Plastikgehäuse wurden absichtlich so designet, dass sie ohne Metallteile zusammengebaut werden könnte, da diese die Strahlungscharakteristik beeinträchtigen könnten. Der Kunststoff selbst ist sehr dünn und schien keinen Einfluss auf die Messungen nehmen, dies haben wir rein qualitativ überprüft, indem wir das empfange Signal ohne sowie mit Gehäuse verglichen haben und keinen unterschied feststellen konnten.\par
 Außerdem haben die Gehäuse eine Befestigung mit Stativ-Gewinde, sodass sie an Standartmäßigen Fotokamera-Stativen befestigt werden können.
-\textcolor{red}{Bild}
+\textcolor{red}{Bild Name}
 
 \subsection{Messung der Antennengüte}
 Um die Frequenzen, bei welchen unsere gebauten Antennen relativ gut senden und empfangen können zu bestimmen, wurde die reflektierte Leistung der Antennen für verschiedene Frequenzen bestimmt. Hierzu wurde mithilfe des Spectrum Analyzers ein Frequenzbereich von einigen MHz bis zu $3\,$GHz auf die Antennen gesendet. Dieses Signal wurde dann über einen Richtkoppler auf die zu testende Antenne geleitet, welche dann einen Teil des Signals abstrahlt oder in die Leitung reflektiert. Dieser reflektierte Teil wird über den Richtkoppler zur Messung ausgekoppelt. Beim vermessen der Antennen muss zusätzlich die Charakteristik von Kabeln und dem verwendeten Richtkoppler berücksichtigt werden, worauf wir aber leider nicht genauer eingehen können. Die in diesem Zusammenhang erhobenen Daten befinden sich in der angefügten Messwertesammlung. Zur Bestimmung charakteristischer Frequenzbänder haben wir nur einen Ausgleich mittels des Spectrum Analyzers vorgenommen, welcher die reflektierte Leistung des Richtkopplers und einer $50\,\Omega$  Dummyload normalisierte. Somit erhielten wir für unsere Zwecke brauchbare Charakteristiken. 
@@ -366,22 +366,23 @@ Um die Frequenzen, bei welchen unsere gebauten Antennen relativ gut senden und e
 \textcolor{red}{Bild Aufbau}
 
 \subsection{Vergleich der Antennen}
-Wie im vorherigen Abschnitt besprochen haben wir die Charakteristiken der vier Antennen aufgenommen und verglichen. \textcolor{red}{Bilder der 4 Messungen "ant 1... ant4" oder so}
+Wie im vorherigen Abschnitt besprochen haben wir die Charakteristiken der vier Antennen aufgenommen und verglichen.
+\textcolor{red}{Bilder der 4 Messungen "ant 1... ant4" oder so}
 Hierbei wurde deutlich, dass die Antennen erster Generation eine komplett andere Charakteristik aufweisen als erwartet, wogegen die Antennen der zweiten Generation sich erwartungsgemäß verhalten. Aufgrund des dipolartigen Aufbaus der Antennen wurde ein relativ breiter Bereich von Resonanz erwartet mit einigen Resonanzen bei Vielfachen der ursprünglichen Resonanzfrequenz. Wie aus den Bildern entnehmbar ist, kann dieses Verhalten nur bei Antennen zweiter Generation beobachtet werden, die vorherigen haben kein klares Minimum an reflektierter Leistung.
 
 
 \subsection{Trimmen der Empfangsantenne}
-Wieso trimmen, wie trimmen
-\textcolor{red}{Bild der getrimmten Antenne}
+Wie in den Bildern zur Reflektionscharakteristik der zweiten Generation Antennen ersichtlich, besitzen beide ein Leistungsminimum in einer Ähnlichen Region. Antenne 2 war das Reflektionsleistungsminimum jedoch deutlich von der Zielfrequenz bei ca. $1.3\,$GHz abgewichen, sodass wir uns entschieden die Impedanz der Antenne auf das richtige Band zu trimmen. Da wir eine relativ feine Anpassung vornehmen wollten, entschieden wir uns variable Kondensatoren parallel zu den Antennenarmen schalten. Wir erhielten drei verschiedene Drehkondensatoren, wobei der mit größter Kapazität am ende verwendet wurde. An diesen wurden zwei Kabel gelötet und an die Antennenarme gedrückt. Nach einigem Herumprobieren entschieden wir uns für eine Position ca. $\frac{2}{3}$ der Stablänge gesehen von den Lötstellen aus. Wir bemerkten, dass die eingestellte Kapazität des Drehkondensators kaum eine Auswirkung auf die Charakteristik hatte, aber die Positionsänderung der Drähte einen großen Einfluss hatte. Vermutlich ist dies durch die Induktivität der Kabel erklärbar. Die induktive Impedanz steigt linear mit der Frequenz, während die kapazitive mit steigender Frequenz fällt. 
+\textcolor{red}{Bild der getrimmten Antenne: Aufbau, Vorher nachher chara}
 
 \subsection{Vergleich der Richtkoppler}
-Es wurden zusätzlich zum Richtkoppler, mit welchem wir die Messungen zur Antennengüte und das Trimmen durchführten, weitere Richtkoppler bereitgestellt. Als diese nach oben beschriebenen Verfahren zur Messung der nicht getrimmten Antenne der zweiten Generation verwendet wurden, wurde eine völlig unterschiedliche Charakteristik angezeigt. Etwa als würde die Antenne nahezu das gesamte Signal reflektieren. Dies kann aber nach den geglückten Fernfeldmessungen nicht der Fall sein
+Es wurden zusätzlich zum Richtkoppler, mit welchem wir die Messungen zur Antennengüte und das Trimmen durchführten, weitere Richtkoppler bereitgestellt. Als diese nach oben beschriebenen Verfahren zur Messung der nicht getrimmten Antenne der zweiten Generation verwendet wurden, wurde eine völlig unterschiedliche Charakteristik angezeigt. Etwa als würde die Antenne nahezu das gesamte Signal reflektieren. Dies kann aber nach den geglückten Fernfeldmessungen nicht der Fall sein.
 \textcolor{red}{Bild Vergleich Richtkoppler}
 
 \section{Versuchsaufbau für die Messungen} 
 \subsection{Die Antennen}
 
-Für die Ausgewerteten Messungen haben wir nun ausschließlich die neuen Antennen verwendet. Es existieren quantitative Messungen mit den Antennen erster Generation, jedoch fehlte die Zeit auch diese auszuwerten.
+Für die ausgewerteten Messungen haben wir nun ausschließlich die neuen Antennen verwendet. Es existieren quantitative Messungen mit den Antennen erster Generation, jedoch fehlte die Zeit auch diese auszuwerten.
 
 \subsection{Der Aufbau zur Vermessung}
 
@@ -390,7 +391,62 @@ Beide Antennen wurden an den Spectrum Analyzer angeschlossen. Der Spectrum Analy
 Ein Vorteil an dieser Messung gegenüber dem Senden einer Frequenz über das Hack-RF ist, das wir so auch leicht Störsignale, die von der Antenne empfangen werden feststellen können und damit ausschließen können, dass wie so ein Störsignal mit in die Messung einbeziehen. Hierbei sind Störsignale wie z.B. WLAN oder andere zeitlich nicht konstante Funksignale gemeint. Außerdem können wir dann nicht nur die Peak-Werte auslesen sondern auch 
 
 \subsection{Polarisation}
-Zur Messung der Polarisation wurden die Beiden Antennen in einem festen Abstand voneinander auf dem jeweiligen Stativ befestigt. Zum Test ob die Antennen Rechtwinkelig voneinander sind wurde ein Faden genutzt der zwischen beiden Antennen gespannt wurde und dann mit Hilfe eines Geodreiecks ein Rechter Winkel zwischen Antenne und Faden gemessen wurde. Der Sender und Empfänger wurden dann an das Spectrum Analyzer angeschlossen. Zur eigentlichen Messung wurde die Leistungsdifferenz zwischen Sender und Empfänger bei unterschiedlichen Winkeln des Empfängers gemessen.
+Zur Messung der Polarisation wurden die Beiden Antennen in einem festen Abstand voneinander auf dem jeweiligen Stativ befestigt. Zum Test ob die Antennen Rechtwinkelig voneinander sind wurde ein Faden genutzt der zwischen beiden Antennen gespannt wurde und dann mit Hilfe eines Geodreiecks ein Rechter Winkel zwischen Antenne und Faden gemessen wurde. Der Sender und Empfänger wurden dann an das Frequenzspektrometur angeschlossen. Zur eigentlichen Messung wurde die Leistungsdifferenz zwischen Sender und Empfänger bei unterschiedlichen Winkeln des Empfängers gemessen.
+
+\section{Auswertung}
+Bei der Auswertung unserer Messwerte haben wir uns auf die Abstandsmessungen und die Polarisationsmessungen mit den Antennen zweiter Generation beschränkt. Hierzu werden wir beispielhaft sowohl eine Abstandsmessung als auch eine Polarisationsmessung auswerten. Die restlichen Ergebnisse sind im Anhang zu finden und werden dann im Abschnitt  ,,Diskussion der Ergebnisse`` diese genauer betrachten und interpretieren. \par 
+Zuerst betrachten wir die Abstandsmessungen im Großen Hörsaal.Dazu prüfen wir nun ob unsere Messungen sich im Fernfeld oder im Nahfeld der Sendeantenne bewegt. Hier nutzen wir die Näherung:
+\begin{equation}
+r_{\tx{ff}} \geqslant 2\cdot\lambda
+\end{equation}
+Damit ist gemeint ab $r_{\tx{ff}}$ beginnt das Fernfeld. Jedoch ist das nur eine Näherung. Tatsächlich ist der genaue Übergang zwischen Fern- und Nahfeld keine eindeutige Grenze sondern dazwischen liegt der Übergangsbereich, welcher die Abgrenzung zwischen Nahfeld und Fernfeld erschwert. Jedoch soll für unsere Abstandmessung diese Näherung ausreichend sein, da, wie man gleich sehen wird, wir uns bei dem meisten Messwerten mit Sicherheit im Fernfeld bewegen. \par 
+Um nun $r_{\tx{ff}}$ für unsere Sendeantenne zu berechnen, berechnen wir zunächst die Wellenlänge $\lambda$ für unsere Sendefrequenz $f=1{,}616\,$GHz mit einem Ablesefehler von $\Delta f=0{,}0005\,$GHz ($c\approx 3\cdot10^{8}\,\frac{\tx{m}}{\tx{s}}$). Damit erhalten wir für die Wellenlänge und den Fehler (mittels Gauß'scher Fehlerfortpflanzung) folgende Werte:
+\begin{equation*}
+\lambda = \frac{c}{f} \approx 0{,}1856\,\tx{m} \qquad \qquad
+\Delta \lambda = \frac{\Delta f c}{f^{2}} \approx 1{,}1 \cdot 10^{-4}\,\tx{m}
+\end{equation*}
+Somit erhalten wir für das Fernfeld einen Mindestabstand von: 
+\begin{equation*}
+r_{ff} \geqslant 2\cdot\lambda = 0{,}3713\,\tx{m}\, \pm 2\cdot10^{-4}\,\tx{m}
+\end{equation*}
+Somit können wir sagen wir bewegen uns bei unseren Abstandsmessungen im Fernfeld, da bei allen Messungen höchstens ein bis zwei Werte unter $r_{\tx{ff}}$ liegen (siehe Messwerte im Anhang). \par 
+Als nächstes berechnen wir die Leistung der Messwerte in W, da sie noch in dBm angegeben sind. Dazu nutzen wir die Formel:
+\begin{equation}
+\tx{I in Watt}: 10^{\frac{(I[dBm]-30)}{10}}
+\label{w}
+\end{equation}
+Die Fehler haben wir auf Grund der Schwankungen des Messpunktes auf $\Delta I=$$\pm 1\,$dBm geschätzt. Damit ist dieser Fehler deutlich größer als die aus den Impedanzen des Spectrum Analyzers (aus den Herstellerinfos), so das wir diese vernachlässigen können. Da diese Fehler auf Grund der logarithmischen Messwerte asymmetrisch sind, und wir aber gleich große Fehler in beider Richtungen haben wollen, rechnen wir:
+\begin{equation*}
+I_{+1} := I+1\,\tx{dBm} \quad\tx{,}\,I_{-1} := I-1\,\tx{dBm} \quad \Rightarrow\tx{in Watt umrechnen mit \eqref{w}} \quad \Rightarrow 
+\end{equation*}
+\begin{equation}
+\Delta I = \frac{(I-I_{-1})+(I_{+1}-I)}{2}
+\end{equation}
+Wir bilden also den Mittelwert aus den zwei ungleich großen Fehlern. Dies zeigen wir nun für den Wert $I=-38{,}85\,\tx{dBm} \approx$ $1{,}3031\cdot10^{-7}\,$W (GrH Messung 1: $d=120\,$cm):
+\begin{equation*}
+I_{+1} = -37{,}85\,\tx{dBm} \approx 1{,}6405\cdot 10^{-7}\,\tx{W} \qquad I_{-1} = -39{,}85\,\tx{dBm} \approx 1{,}0351\,\tx{W}
+\end{equation*}
+\begin{equation*}
+\Delta I = \frac{(I-I_{-1})+(I_{+1}-I)}{2} \approx 0{,}9 \cdot10^{-7}\,\tx{W}
+\end{equation*}
+Somit ist $I=(1{,}3\pm0{,}3)\cdot10^{-7}\,$W. \par 
+Nach dem wir alle Werte berechnet haben, tragen wir die Leistung $I$ in Abhängigkeit des Abstandes $d$ auf. Wie bereits zu erkennen ist, entsprechen die Messwerte ca. einen $\frac{1}{d^{2}}$ Verlauf, welchen wir für die Leistung im Fernfeld erwarten würden.
+\begin{figure}[h]
+\begin{minipage}{0.35\linewidth}
+	Nach dem wir alle Werte berechnet haben, tragen wir die Leistung $I$ in Abhängigkeit des Abstandes $d$ auf. Man sieht die Werte Fallen am Anfang sehr Stark und nähern sich dann der Null an. Da wir im Fernfeld uns bewegen, erwarten wir einen $\frac{1}{d^{2}}$-Verlauf der Leistung $I$. Dies ist gut zu erkennen, jedoch nicht eindeutig zu sagen. Deswegen versuchen wir nun eine $\frac{1}{d^{2}}$-Funktion an unsere Messwerte zu plotten. 
+\end{minipage}
+\begin{minipage}{0.6 \linewidth}
+	\includegraphics[scale=0.5]{Bilder/bsp}
+\end{minipage}
+\end{figure}
+\FloatBarrier
+\par 
+Als nächstes nutzen wir die Python-Funktion curvfit \cite{curvescipy}	
+
+
+
+
+
 
 \begin{center}
 	\begin{tikzpicture}
@@ -409,5 +465,4 @@ Zur Messung der Polarisation wurden die Beiden Antennen in einem festen Abstand 
 \bibliography{literature}
 \addcontentsline{toc}{section}{Literatur}
 %\bibitem[Antennenbauanleitung]{https://www.la1k.no/2017/10/25/a-quick-sleeve-metal-dipole-for-23-cm/}
-
 \end{document}
