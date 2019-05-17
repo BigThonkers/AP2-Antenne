@@ -400,8 +400,40 @@ Somit können wir sagen wir bewegen uns bei unseren Abstandsmessungen im Fernfel
 Als nächstes berechnen wir die Leistung der Messwerte in W, da sie noch in dBm angegeben sind. Dazu nutzen wir die Formel:
 \begin{equation}
 \tx{I in Watt}: 10^{\frac{(I[dBm]-30)}{10}}
+\label{w}
 \end{equation}
 Die Fehler haben wir auf Grund der Schwankungen des Messpunktes auf $\Delta I=$$\pm 1\,$dBm geschätzt. Damit ist dieser Fehler deutlich größer als die aus den Impedanzen des Spectrum Analyzers (aus den Herstellerinfos), so das wir diese vernachlässigen können. Da diese Fehler auf Grund der logarithmischen Messwerte asymmetrisch sind, und wir aber gleich große Fehler in beider Richtungen haben wollen, rechnen wir:
+\begin{equation*}
+I_{+1} := I+1\,\tx{dBm} \quad\tx{,}\,I_{-1} := I-1\,\tx{dBm} \quad \Rightarrow\tx{in Watt umrechnen mit \eqref{w}} \quad \Rightarrow 
+\end{equation*}
+\begin{equation}
+\Delta I = \frac{(I-I_{-1})+(I_{+1}-I)}{2}
+\end{equation}
+Wir bilden also den Mittelwert aus den zwei ungleich großen Fehlern. Dies zeigen wir nun für den Wert $I=-38{,}85\,\tx{dBm} \approx$ $1{,}3031\cdot10^{-7}\,$W (GrH Messung 1: $d=120\,$cm):
+\begin{equation*}
+I_{+1} = -37{,}85\,\tx{dBm} \approx 1{,}6405\cdot 10^{-7}\,\tx{W} \qquad I_{-1} = -39{,}85\,\tx{dBm} \approx 1{,}0351\,\tx{W}
+\end{equation*}
+\begin{equation*}
+\Delta I = \frac{(I-I_{-1})+(I_{+1}-I)}{2} \approx 0{,}9 \cdot10^{-7}\,\tx{W}
+\end{equation*}
+Somit ist $I=(1{,}3\pm0{,}3)\cdot10^{-7}\,$W. \par 
+Nach dem wir alle Werte berechnet haben, tragen wir die Leistung $I$ in Abhängigkeit des Abstandes $d$ auf. Wie bereits zu erkennen ist, entsprechen die Messwerte ca. einen $\frac{1}{d^{2}}$ Verlauf, welchen wir für die Leistung im Fernfeld erwarten würden.
+\begin{figure}[h]
+\begin{minipage}{0.35\linewidth}
+	Nach dem wir alle Werte berechnet haben, tragen wir die Leistung $I$ in Abhängigkeit des Abstandes $d$ auf. Man sieht die Werte Fallen am Anfang sehr Stark und nähern sich dann der Null an. Da wir im Fernfeld uns bewegen, erwarten wir einen $\frac{1}{d^{2}}$-Verlauf der Leistung $I$. Dies ist gut zu erkennen, jedoch nicht eindeutig zu sagen. Deswegen versuchen wir nun eine $\frac{1}{d^{2}}$-Funktion an unsere Messwerte zu plotten. 
+\end{minipage}
+\begin{minipage}{0.6 \linewidth}
+	\includegraphics[scale=0.5]{Bilder/bsp}
+\end{minipage}
+\end{figure}
+\FloatBarrier
+\par 
+Als nächstes nutzen wir die Python-Funktion curvfit \cite{curvescipy}	
+
+
+
+
+
 
 \section{Fehlerquellen}
 Bei den Messungen gab es eine Reihe an Fehlerquellen. Hierbei hatten wir als erstes als statistische Fehler, Fehler der Abstands und Winkelmessung. Hierbei haben wir einen allgemeinen Fehler für den Abstand auf $2$\,cm geschätzt und den Fehler für die Winkel auf $2^{\degree}$. Auch für die Frequenz und der dort gemessenen Leistung haben wir einen statistischen Fehler. Hierbei wurde die Frequenz auf $0.001\,$GHz und die Leistung auf $1$\,dBm geschätzt. Zusätzlich konnte es passieren das unsere Antennen bei der Abstandsmessung leicht verschoben zueinander lagen. Dies ist bei der Abstandsmessung im Gegensatz zur Polarisationsmessung ein statistischer Fehler, da hier Verschiebung der beiden Antennen sich durch das neu Aufstellen zufällig ändern kann.
