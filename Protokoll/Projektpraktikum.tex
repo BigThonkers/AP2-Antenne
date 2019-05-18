@@ -460,9 +460,8 @@ Nach dem wir alle Werte berechnet haben, tragen wir die Leistung $I$ in Abhängi
 	\label{Abstand-bsp}
 \end{figure}
 
-
-
 \FloatBarrier
+
 \noindent
 Als nächstes nutzen wir die Python-Funktion \verb|curve_fit| \cite{curvescipy} Funktion um eine Funktion mit dem erwarteten $\frac{1}{d^{2}}$ Verlauf zu finden. Dazu nutzen wir:
 \begin{equation}
@@ -529,8 +528,17 @@ Man sieht also, dass die Streuung der Messpunkte vermutlich größer ist, als di
 Bei dieser Messreihe haben wir über einen Abstand von 50\,cm bis 300\,cm Intensitäten zwischen $ \approx 5 \cdot 10^{-7} \, \tx{W} $ und $ 10^{-8} \, \tx{W} $ gemessen.\\[10pt]
 \noindent
 Die Nächste Messung wurde auf dem Parkplatz und in einer zur ersten Messung um $ 90^\circ $ gedrehten Anordnung durchgeführt. Hierbei ging es uns nur darum die Umgebungsfaktoren möglichst bei jeder Messreihe zu verändern, sodass wir konstanten Störungen bemerken können.\par
-Die Messreihe ist auf Abbildung \ref{Parkplatz-A} dargestellt. Die einzelnen Messpunkte sind wieder in blau, die Fehler in rot dargestellt. Auch hier ist die $ y $-Achse logarithmisch aufgetragen. Die blaue Kurve ist wieder ein $ \frac{1}{d^2} $ Fit mit den Parametern $ a $ und $ b $ wie zuvor. Die Kurve sieht nur aufgrund der logarithmischen Skala so unerwartet aus. Dieser Abfall der Kurve, der hier ab $ 250 \, \tx{cm} $ zu erkennen ist, fällt bei den anderen Messungen nicht auf, da dort der $ y $-Achsen $ a $ positiv ist und die Kurve nicht die $ x $-Achse schneidet. Da der Parameter $ a $ bei dieser Messung als negativ berechnet wurde und in der logarithmischen .\par
-Die Messung wurde genauso durchgeführt wie auch im Garten der Physik. Wie man jedoch sieht haben wir bei dieser Messung bei den gleichen Abständen einen wesentlich größeren Bereich an Intensitäten gemessen. Die Werte gehen von $ \approx 10^{-5} \, \tx{W} $ bis $ \approx 10^{-8} \, \tx{W} $.
+Die Messreihe ist auf Abbildung \ref{Parkplatz-A} dargestellt. Die einzelnen Messpunkte sind wieder in blau, die Fehler in rot dargestellt. Auch hier ist die $ y $-Achse logarithmisch aufgetragen. Die blaue Kurve ist wieder ein $ \frac{1}{d^2} $ Fit mit den Parametern $ a $ und $ b $ wie zuvor. Die Kurve sieht nur aufgrund der logarithmischen Skala so unerwartet aus. Dieser Abfall der Kurve, der hier ab $ 250 \, \tx{cm} $ zu erkennen ist, fällt bei den anderen Messungen nicht auf, da dort der $ y $-Achsen $ a $ positiv ist und die Kurve nicht die $ x $-Achse schneidet. Da der Parameter $ a $ bei dieser Messung als negativ berechnet wurde und in der logarithmischen nur positive Zahlen dargestellt werden, sieht der $ \frac{1}{d^2} $-Verlauf so unerwartet aus.\par
+Die Messung wurde genauso durchgeführt wie auch im Garten der Physik. Wie man jedoch sieht haben wir bei dieser Messung bei den gleichen Abständen einen wesentlich größeren Bereich an Intensitäten gemessen. Die Werte gehen von $ \approx 10^{-5} \, \tx{W} $ bis $ \approx 10^{-8} \, \tx{W} $ statt wie zuvor nur von $ \approx 5 \cdot 10^{-7} \, \tx{W} $ und $ 10^{-8} \, \tx{W} $. Wir haben allerdings keine Vermutung, warum die Intensität bei der Messung im Garten der Physik so gering war.\par
+Ansonsten fällt noch auf, dass die letzten fünf Messwerte, von denen keiner mit der Kurve verträglich ist, größtenteils unter der Kurve liegen.\\[10pt]
+\noindent
+Bei der Messung im Labor, die auf Abbildung \ref{Labor-A} dargestellt ist, haben wir wieder einen Verlauf erhalten, der dem erwarteten näher kommt. Die Messdaten sind wieder blau, die Fehler (diesmal nur auf die Intensität, da die auf den Abstand sehr gering waren) in rot und der $ \frac{1}{d^2} $-Fit in blau eingezeichnet.\par
+Der Verlauf geht ziemlich gut durch die Messpunkte durch alle Punkte hindurch. Sie liegen gleichmäßig über und unter dem Fit. Auch hier sind vermutlich die Störfaktoren, die die Messpunkte statistisch verschieben wesentlich größer als die Messgenauigkeit unserer Instrumente.\par
+Diese Messung war erstaunlich gut dafür, dass wir dabei im Labor waren. Mit den alten Antennen war die Sende- und Empfangscharakteristik so schlecht, dass man im Labor kaum eine große Veränderung Messen konnte. Die Neuen Antenne sind somit also eine sehr große Verbesserung, da die Messwerte nicht nur einem Abfall entsprechen, sondern auch gut an den erwarteten $ \frac{1}{d^2} $-Verlauf passen.\\[10pt]
+\noindent
+Die letzte Abstandsmessung konnte dann am letzten Tag im Großen Hörsaal durchgeführt werden. Diese hatte insofern ein großes Potential, da wir einerseits in einem relativ gut Abschirmenden Gebäude sind, und die Störfaktoren von draußen hier keine so große Rolle spielen und andererseits die Wände des Raums weit genug entfernt sind, und nicht wie im Labor Stehende Wellen bilden, die die Messung Unvorhersagbar beeinflussen.\par
+Die Messdaten sind in Abbildung \ref{GrH-A} dargestellt. Im Großen Hörsaal haben wir zwei Abstandmessungen (wieder in $ 90^\circ $ Ausrichtung zueinander) gemacht, um systematische Störungen durch Reflexionen an den Wänden oder anderen systematischen Fehler
+
 
 \subsection{Polarisationsmessung}
 
@@ -542,6 +550,15 @@ Der Grund das unsere Messwerte nie eine Intensität von Null erreichen selbst be
 Bei der Betrachtung von Abbildung \ref{GrH-P} erkennt man, das hier die selben Effekte auftreten wie in Abbildung \ref{Labor-P}, jedoch hier mit einer Verschiebung der Antennen in die andere Richtung. Da hier die orange Kurve nach links verschoben ist.\par
 Wenn man beide Abbildungen miteinander vergleicht fällt auf, das die Gesamtintensität trotz selbem Abstand im Labor viel höher war als im Großen Hörsaal. Dies liegt sehr wahrscheinlich daran, dass unser Labor als Resonator fungiert hat und unsere übertragene Intensität erhöht hat, während wir diesen Effekt im großen Hörsaal nicht so stark hatten.
 
+\section{Fazit}
+
+erste ANtennen kacke weil kurzschluss
+
+zweite generation besser
+
+1/x**2 gemessen nur mit abweichungen wegen location
+
+polarisation auch gut aber mit winkel offset
 
 
 
@@ -624,14 +641,12 @@ Wenn man beide Abbildungen miteinander vergleicht fällt auf, das die Gesamtinte
 	\label{Ant2}
 \end{figure}
 
-
-
-\begin{figure}[ht]
-	\includegraphics[scale=0.075]{Bilder/anttrimm.jpg}
-	\centering
-	\caption{\textcolor{red}{caption Fehlt!!!} glaube das ist Antenne 2 getrimmt aber ohne Korrektur des Rückkopplers}
-	\label{Ant2-mitrückkoppler}
-\end{figure}
+%\begin{figure}[ht]
+%	\includegraphics[scale=0.075]{Bilder/anttrimm.jpg}
+%	\centering
+%	\caption{\textcolor{red}{caption Fehlt!!!} glaube das ist Antenne 2 getrimmt aber ohne Korrektur des Rückkopplers}
+%	\label{Ant2-mitrückkoppler}
+%\end{figure}
 
 \begin{figure}[ht]
 	\includegraphics[scale=0.075]{Bilder/anttrimm2.jpg}
