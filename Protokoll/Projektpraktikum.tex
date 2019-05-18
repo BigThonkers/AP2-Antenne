@@ -490,7 +490,23 @@ Deswegen werden wir auf den Parameter $b$ in dieser Auswertung nicht eingehen.
 \subsection{Polarisationsmessung}
 
 Als nächstes betrachten wir die zwei Polarisationsmessungen. Auch hier werden wir beispielhaft die Auswertung der Messung im großen Hörsaal betrachten. \par 
-Als erstes rechnen wir die Werte wieder in Watt mittels Formel \eqref{w} um. Auch wird der Fehler wieder in gleicher Weise wie zuvor mit der Formel \eqref{deltaI} bestimmt. Nach 
+Als erstes rechnen wir die Werte wieder in Watt mittels Formel \eqref{w} um. Auch wird der Fehler wieder in gleicher Weise wie zuvor mit der Formel \eqref{deltaI} bestimmt. Danach tragen wir die Intensität in Abhängigkeit vom Winkel auf. \par 
+Nach der Theorie erwarten wir folgenden Verlauf der Polarisation:
+\begin{equation}
+I(\phi) = I_{max}\cdot \cos^{2}(\phi)
+\label{I}
+\end{equation}
+Also versuchen wir nun zuerst eine $\cos^{2}$ Funktion mit mehreren Parametern einzubauen. Diese hat die Folgende Form: 
+\begin{equation}
+I_{1}(\phi) = a \cdot \cos((b \cdot\phi) - c)^{2} + d
+\label{I1}
+\end{equation}
+Wobei wir hier nach Formel \eqref{I} erwarten würden, dass $a=I_{0}$, $b=1$, $c=0$ und $d=0$ ist. Dies ist bei uns jedoch nicht der Fall. Eventuelle Gründe dafür werden im nächsten Abschnitt ,,Diskussion `` besprochen. \par 
+Nun wollen wir noch einen zu erwarteten Verlauf nach Formel \eqref{I} einzeichnen. Dazu wählen wir unser $I_{max}=I(0)$ und erhalten dann:
+\begin{equation}
+I_{2}(\phi) = I(0)\cdot \cos^{2}(\phi)
+\end{equation}
+
 
 \section{Diskussion}
 
@@ -606,7 +622,7 @@ Die Messung wurde genauso durchgeführt wie auch im Garten der Physik. Wie man j
 \end{figure}
 
 \begin{figure}[ht]
-	\includegraphics[scale=0.4]{Bilder/Antennentrimmen.jpg}
+	\includegraphics[scale=0.4]{Bilder/Antennentrimmen}
 	\centering
 	\caption{\textcolor{red}{caption Fehlt!!!} also quasi Abbildunen \ref{Ant1}, \ref{Ant2} und \ref{Ant2-getrimmt}}
 	\label{Vergleich}
