@@ -381,6 +381,13 @@ Hierbei wurde deutlich, dass die Antennen erster Generation eine komplett andere
 Wie in den Bildern zur Reflektionscharakteristik der zweiten Generation Antennen ersichtlich, besitzen beide ein Leistungsminimum in einer Ähnlichen Region. Antenne 2 war das Reflektionsleistungsminimum jedoch deutlich von der Zielfrequenz bei ca. $1.3\,$GHz abgewichen, sodass wir uns entschieden die Impedanz der Antenne auf das richtige Band zu trimmen. Da wir eine relativ feine Anpassung vornehmen wollten, entschieden wir uns variable Kondensatoren parallel zu den Antennenarmen schalten. Wir erhielten drei verschiedene Drehkondensatoren, wobei der mit größter Kapazität am ende verwendet wurde. An diesen wurden zwei Kabel gelötet und an die Antennenarme gedrückt. Nach einigem Herumprobieren entschieden wir uns für eine Position ca. $\frac{2}{3}$ der Stablänge gesehen von den Lötstellen aus. Wir bemerkten, dass die eingestellte Kapazität des Drehkondensators kaum eine Auswirkung auf die Charakteristik hatte, aber die Positionsänderung der Drähte einen großen Einfluss hatte. Vermutlich ist dies durch die Induktivität der Kabel erklärbar. Die induktive Impedanz steigt linear mit der Frequenz, während die kapazitive mit steigender Frequenz fällt. 
 \textcolor{red}{Bild der getrimmten Antenne: Aufbau, Vorher nachher chara}
 
+\begin{figure}[ht]
+	\centering
+	\includegraphics[scale=0.3, trim={4cm 8cm 2cm 8cm}, clip]{Bilder/Ant2trimm.jpg}
+	\caption{\textcolor{red}{Caption fehlt !!!}}
+	\label{Ant2trimm}
+\end{figure}
+
 \subsection{Vergleich der Richtkoppler}
 Es wurden zusätzlich zum Richtkoppler, mit welchem wir die Messungen zur Antennengüte und das Trimmen durchführten, weitere Richtkoppler bereitgestellt. Als diese nach oben beschriebenen Verfahren zur Messung der nicht getrimmten Antenne der zweiten Generation verwendet wurden, wurde eine völlig unterschiedliche Charakteristik angezeigt. Etwa als würde die Antenne nahezu das gesamte Signal reflektieren. Dies kann aber nach den geglückten Fernfeldmessungen nicht der Fall sein.
 \textcolor{red}{Bild Vergleich Richtkoppler}
@@ -410,7 +417,7 @@ Dieser Abstand beziehungsweise Winkel wurde dann Notiert und die am Spectrum-Ana
 
 \section{Auswertung}
 Bei der Auswertung unserer Messwerte haben wir uns auf die Abstandsmessungen und die Polarisationsmessungen mit den Antennen zweiter Generation beschränkt. Hierzu werden wir beispielhaft sowohl eine Abstandsmessung als auch eine Polarisationsmessung auswerten. Die restlichen Ergebnisse sind im Anhang zu finden und werden dann im Abschnitt  ,,Diskussion der Ergebnisse`` diese genauer betrachten und interpretieren. \par 
-Zuerst betrachten wir die Abstandsmessungen im Großen Hörsaal.Dazu prüfen wir nun ob unsere Messungen sich im Fernfeld oder im Nahfeld der Sendeantenne bewegt. Hier nutzen wir die Näherung:
+Zuerst betrachten wir die Abstandsmessungen im Großen Hörsaal.Dazu prüfen wir nun ob unsere Messungen sich im Fernfeld oder im Nahfeld \cite{NahfeldundFernfeld} der Sendeantenne bewegt. Hier nutzen wir die Näherung:
 \begin{equation}
 r_{\tx{ff}} \geqslant 2\cdot\lambda
 \label{rff}
@@ -423,7 +430,7 @@ Um nun $r_{\tx{ff}}$ für unsere Sendeantenne zu berechnen, berechnen wir zunäc
 \end{equation*}
 Somit erhalten wir für das Fernfeld einen Mindestabstand von: 
 \begin{equation*}
-r_{ff} \geqslant 2\cdot\lambda = 0{,}3713\,\tx{m}\, \pm 2\cdot10^{-4}\,\tx{m}
+r_{\tx{ff}} \geqslant 2\cdot\lambda = 0{,}3713\,\tx{m}\, \pm 2\cdot10^{-4}\,\tx{m}
 \end{equation*}
 Somit können wir sagen wir bewegen uns bei unseren Abstandsmessungen im Fernfeld, da bei allen Messungen höchstens ein bis zwei Werte unter $r_{\tx{ff}}$ liegen (siehe Messwerte im Anhang). \par 
 Als nächstes berechnen wir die Leistung der Messwerte in W, da sie noch in dBm angegeben sind. Dazu nutzen wir die Formel:
@@ -446,20 +453,18 @@ I_{+1} = -37{,}85\,\tx{dBm} \approx 1{,}6405\cdot 10^{-7}\,\tx{W} \qquad I_{-1} 
 \begin{equation*}
 \Delta I = \frac{(I-I_{-1})+(I_{+1}-I)}{2} \approx 0{,}9 \cdot10^{-7}\,\tx{W}
 \end{equation*}
-Somit ist $ I = (1{,}3 \pm 0{,}3) \cdot 10^{-7} \, \tx{W} $.
+Somit ist $ I = (1{,}3 \pm 0{,}9) \cdot 10^{-7} \, \tx{W} $.
 
 \subsection{Abstandsmessung}
 
 Nach dem wir alle Werte berechnet haben, tragen wir die Leistung $I$ in Abhängigkeit des Abstandes $d$ auf. Wie bereits zu erkennen ist, entsprechen die Messwerte ca. einem $\frac{1}{d^{2}}$ Verlauf, welchen wir für die Leistung im Fernfeld erwarten würden. Man sieht die Werte Fallen am Anfang sehr Stark und nähern sich dann der Null an. Um quantitative Aussagen über den Verlauf machen zu können, versuchen wir nun eine $\frac{1}{d^{2}}$-Funktion an unsere Messwerte zu fitten.
 
-\begin{figure}[ht]
-	\centering
-	\includegraphics[scale=0.45]{Bilder/bsp}
-	\caption{Gemessenen Intensität in Abhängigkeit vom Abstand $d$. Auf der $y$-Achse ist die empfangene Intensität in Watt und auf der $x$-Achse der Abstand zur Sendeantenne in cm.}
-	\label{Abstand-bsp}
-\end{figure}
-
-\FloatBarrier
+%\begin{figure}[ht]
+%	\centering
+%	\includegraphics[scale=0.45]{Bilder/bsp}
+%	\caption{Gemessenen Intensität in Abhängigkeit vom Abstand $d$. Auf der $y$-Achse ist die empfangene Intensität in Watt und auf der $x$-Achse der Abstand zur Sendeantenne in cm.}
+%	\label{Abstand-bsp}
+%\end{figure}
 
 \noindent
 Als nächstes nutzen wir die Python-Funktion \verb|curve_fit| \cite{curvescipy} Funktion um eine Funktion mit dem erwarteten $\frac{1}{d^{2}}$ Verlauf zu finden. Dazu nutzen wir:
@@ -475,7 +480,9 @@ Hierbei sind $a$ und $b$ freie Parameter, welche \verb|curve_fit| an die Messwer
 	\caption{Gemessenen Intensität in Abhängigkeit vom Abstand $d$ im großen Hörsall der Physik. Auf der logarithmischen $y$-Achse ist die empfangene Intensität in Watt aufgetragen und auf der $x$-Achse der Abstand zur Sendeantenne in cm. Zusätzlich sind Fehler in $y$-Richtung nach Formel \eqref{deltaI} eingetragen. Die Fehler in $x$-Richtung $\Delta d = 2\,$cm sind zu klein und deswegen nicht eingezeichnet. Auch wurde die Funktion $f(d)$ \eqref{f} mittels \texttt{curvefit}. (Python Modul \cite{curvescipy}) an die Messwerte geplottet.}
 	\label{GrH-A}
 \end{figure}
+
 \FloatBarrier
+
 Bei diesen Messwerten ergeben sich für die Parameter $a$ und $b$ die Werte:
 \begin{equation*}
 \tx{Messung 1:} \quad a = (1{,}9\pm1{,}2)\cdot10^{-7}\,\tx{W} \quad b = (9{,}9\pm0{,}4)\cdot10^{-4}\,\tx{Wcm}
@@ -519,29 +526,43 @@ Bei der Winkelmessung ist dies ein Systematischer Fehler da dieser bei jeder Mes
 
 \subsubsection{Abstandsmessungen}
 
-Auf Abbildung \ref{Garten-A} ist die Abstandsmessung im Garten der Physik zu sehen. Wie schon im Abschnitt \ref{Versuchsaufbau} beschrieben, haben wir die beiden Antennen auf zwei Stativen gegenüber voneinander Positioniert und bei verschiedenen Abständen $ d $ die bei der empfänger-Antenne ankommende Leistung $ I $ gemessen. Die hier angegebenen Werte für die Leistung wurden bereits aus dBm und Watt umgerechnet.\par
-Die Messpunkte sind in blau und die Fehler darauf in rot dargestellt. Es gibt hier sowohl Fehler auf die Leistung als auch auf den Abstand. Die Fehler auf den Abstand sind lediglich zum Teil so klein, dass sie fast nicht erkennbar sind.\par
-Die blaue Kurve durch die Messdaten entspricht dem in der Auswertung ermittelten Fit der Form $ f(d) = a + \frac{b}{d^2} $, wobei die Parameter $ a $ als $ y $-Achsen Abschnitt und $ b $ als $ y $-Streckfaktor angepasst wurden.\par
-Die $ y $-Achse ist logarithmisch aufgetragen, die $ x $-Achse linear. Aufgrund dieser logarithmischen Skala gibt es solche starken Abweichungen bei den letzten Messpunkten.\par
+Auf Abbildung \ref{Garten-A} ist die \textbf{Abstandsmessung im Garten der Physik} zu sehen. Wie schon im Abschnitt \ref{Versuchsaufbau} beschrieben, haben wir die beiden Antennen auf zwei Stativen gegenüber voneinander Positioniert und bei verschiedenen Abständen $ d $ die bei der empfänger-Antenne ankommende Leistung $ I $ gemessen. Die hier angegebenen Werte für die Leistung wurden bereits aus dBm und Watt umgerechnet.\par
+Die Messpunkte sind in blau und die Fehler darauf in rot dargestellt. Es gibt hier sowohl Fehler auf die Leistung als auch auf den Abstand. Die Fehler auf den Abstand sind lediglich zum Teil so klein, dass sie fast nicht erkennbar sind. Die blaue Kurve durch die Messdaten entspricht dem in der Auswertung ermittelten Fit der Form $ f(d) = a + \frac{b}{d^2} $, wobei die Parameter $ a $ als $ y $-Achsen Abschnitt und $ b $ als $ y $-Streckfaktor angepasst wurden.\par
+Die $ y $-Achse ist logarithmisch aufgetragen, die $ x $-Achse linear. Aufgrund dieser logarithmischen Skala sehen die Abweichungen bei den letzten Messpunkten so stark aus.\par
 Man sieht also, dass die Streuung der Messpunkte vermutlich größer ist, als die von uns berechneten Fehler. Dies könnte daran liegen, dass eine Messung gut 15 Minuten andauert und der Strahlungshintergrund nicht konstant ist. Da diese Messung draußen stattgefunden hat, gab es leider keine gute Abschirmung von Störsignalen. Wir wollten dennoch Messreihen draußen erstellen um den Störfaktor eines Raums als Resonator ausschließen zu können.\par
-Bei dieser Messreihe haben wir über einen Abstand von 50\,cm bis 300\,cm Intensitäten zwischen $ \approx 5 \cdot 10^{-7} \, \tx{W} $ und $ 10^{-8} \, \tx{W} $ gemessen.\\[10pt]
+Bei dieser Messreihe haben wir über einen Abstand von 50\,cm bis 300\,cm Intensitäten zwischen $ \approx 5 \cdot 10^{-7} \, \tx{W} $ und $ 10^{-8} \, \tx{W} $ gemessen. In den anderen Messreihen ist dieser Bereich deutlich größer, allerdings können wir keinen klaren Grund dafür ausmachen.\\[10pt]
 \noindent
-Die Nächste Messung wurde auf dem Parkplatz und in einer zur ersten Messung um $ 90^\circ $ gedrehten Anordnung durchgeführt. Hierbei ging es uns nur darum die Umgebungsfaktoren möglichst bei jeder Messreihe zu verändern, sodass wir konstanten Störungen bemerken können.\par
-Die Messreihe ist auf Abbildung \ref{Parkplatz-A} dargestellt. Die einzelnen Messpunkte sind wieder in blau, die Fehler in rot dargestellt. Auch hier ist die $ y $-Achse logarithmisch aufgetragen. Die blaue Kurve ist wieder ein $ \frac{1}{d^2} $ Fit mit den Parametern $ a $ und $ b $ wie zuvor. Die Kurve sieht nur aufgrund der logarithmischen Skala so unerwartet aus. Dieser Abfall der Kurve, der hier ab $ 250 \, \tx{cm} $ zu erkennen ist, fällt bei den anderen Messungen nicht auf, da dort der $ y $-Achsen $ a $ positiv ist und die Kurve nicht die $ x $-Achse schneidet. Da der Parameter $ a $ bei dieser Messung als negativ berechnet wurde und in der logarithmischen nur positive Zahlen dargestellt werden, sieht der $ \frac{1}{d^2} $-Verlauf so unerwartet aus.\par
-Die Messung wurde genauso durchgeführt wie auch im Garten der Physik. Wie man jedoch sieht haben wir bei dieser Messung bei den gleichen Abständen einen wesentlich größeren Bereich an Intensitäten gemessen. Die Werte gehen von $ \approx 10^{-5} \, \tx{W} $ bis $ \approx 10^{-8} \, \tx{W} $ statt wie zuvor nur von $ \approx 5 \cdot 10^{-7} \, \tx{W} $ und $ 10^{-8} \, \tx{W} $. Wir haben allerdings keine Vermutung, warum die Intensität bei der Messung im Garten der Physik so gering war.\par
-Ansonsten fällt noch auf, dass die letzten fünf Messwerte, von denen keiner mit der Kurve verträglich ist, größtenteils unter der Kurve liegen.\\[10pt]
+Die Nächste Messung wurde neben dem \textbf{Parkplatz} und in einer zur ersten Messung um $ 90^\circ $ gedrehten Anordnung durchgeführt. Hierbei ging es uns nur darum die Umgebungsfaktoren möglichst bei jeder Messreihe zu verändern, sodass wir konstanten Störungen bemerken können.\par
+Die Messreihe ist auf Abbildung \ref{Parkplatz-A} dargestellt. Die einzelnen Messpunkte sind wieder in blau, die Fehler in rot dargestellt. Auch hier ist die $ y $-Achse logarithmisch aufgetragen. Die blaue Kurve ist wieder ein $ \frac{1}{d^2} $ Fit mit den Parametern $ a $ und $ b $ wie zuvor. Die Kurve sieht nur aufgrund der logarithmischen Skala so unerwartet aus. Dieser Abfall der Kurve, der hier ab $ 250 \, \tx{cm} $ zu erkennen ist, fällt nur bei dieser Messung auf, da hier der $ y $-Achsen $ a $ positiv ist und die Kurve die $ x $-Achse schneidet. Da in der logarithmischen nur positive Zahlen dargestellt werden, sieht der $ \frac{1}{d^2} $-Verlauf so unerwartet aus.\par
+Die Messung wurde genauso durchgeführt wie auch im Garten der Physik. Wie man jedoch sieht haben wir bei dieser Messung bei den gleichen Abständen einen wesentlich größeren Bereich an Intensitäten gemessen. Die Werte gehen von $ \approx 10^{-5} \, \tx{W} $ bis $ \approx 10^{-8} \, \tx{W} $ statt wie zuvor nur von $ \approx 5 \cdot 10^{-7} \, \tx{W} $ und $ 10^{-8} \, \tx{W} $. Wir haben allerdings, wie schon erwähnt, keine Vermutung, warum die Intensität bei der Messung im Garten der Physik so gering war.\par
+Ansonsten fällt noch auf, dass die letzten fünf Messwerte, von denen keiner mit der Kurve verträglich ist, größtenteils unter der Kurve liegen. Auch hier vermuten wir eine wesentlich höhere Streuung der Messwerte als von uns erwartet, was vermutlich daran liegt, dass die Messung draußen stattfand.\\[10pt]
 \noindent
-Bei der Messung im Labor, die auf Abbildung \ref{Labor-A} dargestellt ist, haben wir wieder einen Verlauf erhalten, der dem erwarteten näher kommt. Die Messdaten sind wieder blau, die Fehler (diesmal nur auf die Intensität, da die auf den Abstand sehr gering waren) in rot und der $ \frac{1}{d^2} $-Fit in blau eingezeichnet.\par
-Der Verlauf geht ziemlich gut durch die Messpunkte durch alle Punkte hindurch. Sie liegen gleichmäßig über und unter dem Fit. Auch hier sind vermutlich die Störfaktoren, die die Messpunkte statistisch verschieben wesentlich größer als die Messgenauigkeit unserer Instrumente.\par
-Diese Messung war erstaunlich gut dafür, dass wir dabei im Labor waren. Mit den alten Antennen war die Sende- und Empfangscharakteristik so schlecht, dass man im Labor kaum eine große Veränderung Messen konnte. Die Neuen Antenne sind somit also eine sehr große Verbesserung, da die Messwerte nicht nur einem Abfall entsprechen, sondern auch gut an den erwarteten $ \frac{1}{d^2} $-Verlauf passen.\\[10pt]
+Bei der \textbf{Messung im Labor}, die auf Abbildung \ref{Labor-A} dargestellt ist, haben wir wieder einen Verlauf erhalten, der dem erwarteten näher kommt. Die Messdaten sind wieder blau, die Fehler (diesmal nur auf die Intensität, da die auf den Abstand sehr gering waren) in rot und der $ \frac{1}{d^2} $-Fit in blau eingezeichnet.\par
+Der Verlauf geht ziemlich gut durch alle Messpunkte hindurch. Sie liegen gleichmäßig über und unter dem Fit. Auch hier sind vermutlich die Störfaktoren, die die Messpunkte statistisch verschieben wesentlich größer als die Messungenauigkeit unserer Instrumente, die wir als Fehlerbalken eingezeichnet haben.\par
+Diese Messung war erstaunlich gut dafür, dass wir dabei im Labor waren. Mit den alten Antennen war die Sende- und Empfangscharakteristik so schlecht, dass man im Labor kaum eine große Veränderung Messen konnte. Die Neuen Antenne sind somit also eine sehr große Verbesserung, da die Messwerte nicht nur einem Abfall entsprechen, sondern auch gut an den erwarteten $ \frac{1}{d^2} $-Verlauf passen. Auch hier befinden sich die Intensitäten in einem Bereich zwischen $ \approx 10^{-5} \, \tx{W} $ und $ \approx 10^{-8} \, \tx{W} $.\\[10pt]
 \noindent
-Die letzte Abstandsmessung konnte dann am letzten Tag im Großen Hörsaal durchgeführt werden. Diese hatte insofern ein großes Potential, da wir einerseits in einem relativ gut Abschirmenden Gebäude sind, und die Störfaktoren von draußen hier keine so große Rolle spielen und andererseits die Wände des Raums weit genug entfernt sind, und nicht wie im Labor Stehende Wellen bilden, die die Messung Unvorhersagbar beeinflussen.\par
-Die Messdaten sind in Abbildung \ref{GrH-A} dargestellt. Im Großen Hörsaal haben wir zwei Abstandmessungen (wieder in $ 90^\circ $ Ausrichtung zueinander) gemacht, um systematische Störungen durch Reflexionen an den Wänden oder anderen systematischen Fehler
-
+Die letzte Abstandsmessung konnte dann am letzten Tag im \textbf{Großen Hörsaal} durchgeführt werden. Diese hatte insofern ein großes Potential, da wir einerseits in einem relativ gut Abschirmenden Gebäude sind, und die Störfaktoren von draußen hier keine so große Rolle spielen und andererseits die Wände des Raums weit genug entfernt sind, und nicht wie im Labor Stehende Wellen bilden, die die Messung unvorhersagbar beeinflussen.\par
+Die Messdaten sind in Abbildung \ref{GrH-A} dargestellt. Im Großen Hörsaal haben wir zwei Abstandmessungen (wieder in $ 90^\circ $ Ausrichtung zueinander) gemacht, um systematische Störungen durch Reflexionen an den Wänden oder andere systematischen Fehler auszuschließen.\par
+Die Messwerte der ersten Messreihe, sowie ihre Fehlerbalken in $ y $-Richtung sind in rot, die der zweiten Messreihe und deren Fehler in $ y $-Richtung in grün dargestellt. Die orangene und blaue Kurven sind die $ \frac{1}{d^2} $ Fits an die beiden Messreihen.\par
+Der Grund dafür, dass der orangene Fit so sehr an den unteren Messpunkten vorbei geht ist vermutlich der stark ausscherende Messwert bei $ 90 \, \tx{cm} $. Da die $ y $-Skala logarithmisch ist, sorgt eine Abweichung eines höheren Messwerts für eine viel schlechtere Verträglichkeit als die vielen Abweichungen der kleineren Messwerte, da die absoluten Abstände von Messwert und Kurve nur hier in der logarithmischen Auftragung so extrem erscheinen.\par
+Insgesamt muss man dennoch bewundern wie gut der Fit der zweiten Messreihe und generell der Verlauf der beiden Messreihen aussehen. Selbst bei den letzten Messwerten sind fast alle Messpunkte der beiden Reihen mit einander verträglich. Lediglich bei zwei Abständen sind die Werte nicht miteinander verträglich.\par
+Auch bei dieser letzten Messung haben wir wieder Intensitäten zwischen $ \approx 10^{-5} \, \tx{W} $ und $ \approx 10^{-8} \, \tx{W} $ erhalten. Es ist also ziemlich sicher, dass es einen Abschwächenden Störfaktor bei der ersten Messung im Garten der Physik gab. Wir vermuten stark einen Wackelkontakt am Kondensator der getrimmten Antenne.\\[10pt]
+\noindent
+Zu guter Letzt haben wir die letzte Messung auch noch einmal in Abbildung \ref{Abstand-lin} linear aufgetragen, um zu zeigen wie gering die Abweichung von Fit und Messpunkten tatsächlich ist.
 
 \subsection{Polarisationsmessung}
 
-Die Abbildung 11 zeigt die Polarisationsmessung im Großen Hörsaal. Wie zuvor beschrieben wurde für diese Messung die Sendeantenne für einen festen Abstand von der Empfängerantenne gedreht. In Blau ist die erwartete Intensitätsverlauf von $I(\phi)=I_{max}cos(\phi)$ Die mit den Werten gezeichnete Kurve ist in Orange sichtbar nach rechts verschoben. Dies ist liegt möglicherweise daran, dass der Empfänger leicht gegenüber dem Sender verschoben war wodurch sich auch alle Werte leicht verschoben haben. Auch ist auffallend, dass die orange Kurve nach unten schmaler wird als die Erwartete. Der Grund hierfür könnte sein, dass wir die Antenne nicht um ihren Mittelpunkt sondern um einen Punkt leicht dahinter gedreht haben. Dadurch haben wir zusätzlich noch einen Intensitätsverlust durch die zusätzliche steigende Entfernung der beiden Antennen. D.h wir messen einen schnelleren Abfall bezüglich der Intensität als erwartet. Wenn man sich die blauen Messpunkte anschaut fällt zusätzlich noch auf, dass diese auf beiden Seiten nach einem gewissen Winkel sich kaum merklich verändern. Dies kann daran liegen, dass wir durch denn schnelleren Intensitätsabfall unsere Werte am Ende nicht mehr merklich durch die Drehung ändern weil sie schon fast am Minimum angekommen sind und bis sich die Intensität nach 
+Die Abbildung 11 zeigt die Polarisationsmessung im Großen Hörsaal. Wie zuvor beschrieben wurde für diese Messung die Sendeantenne für einen festen Abstand von der Empfängerantenne gedreht. In Blau ist die erwartete Intensitätsverlauf von $I(\phi)=I_{\tx{max}}cos(\phi)$ Die mit den Werten gezeichnete Kurve ist in Orange sichtbar nach rechts verschoben. Dies ist liegt möglicherweise daran, dass der Empfänger leicht gegenüber dem Sender verschoben war wodurch sich auch alle Werte leicht verschoben haben. Auch ist auffallend, dass die orange Kurve nach unten schmaler wird als die Erwartete. Der Grund hierfür könnte sein, dass wir die Antenne nicht um ihren Mittelpunkt sondern um einen Punkt leicht dahinter gedreht haben. Dadurch haben wir zusätzlich noch einen Intensitätsverlust durch die zusätzliche steigende Entfernung der beiden Antennen. D.h wir messen einen schnelleren Abfall bezüglich der Intensität als erwartet. Wenn man sich die blauen Messpunkte anschaut fällt zusätzlich noch auf, dass diese auf beiden Seiten nach einem gewissen Winkel sich kaum merklich verändern. Dies kann daran liegen, dass wir durch denn schnelleren Intensitätsabfall unsere Werte am Ende nicht mehr merklich durch die Drehung ändern weil sie schon fast am Minimum angekommen sind und bis sich die Intensität nach 
+
+\subsection{Weitere Grafiken}
+
+Bei allen Frequenzcharakteristiken im Anhang sind bei $ \approx 1{,}25 \, \tx{GHz} $ und $ \approx 2{,}5 \, \tx{GHz} $ entweder starke Peaks oder starke Dips gefolgt von Peaks zu sehen. Diese sind nicht Teil der Charakteristik der Antennen sondern stammen von dem Richtkoppler und der vom Gerät berechneten Kompensation dieser Peaks.\\[10pt]
+\noindent
+Die Abbildungen \ref{Ant1alt} und \ref{Ant2alt} im Anhang zeigen noch einmal die gemessene Frequenzcharakteristiken. Wie man sieht gibt es hier keine starken Dips, sondern nur einen relativ homogenen Verlust über alle Frequenzen hinweg (Bis auf die beschriebenen Peaks des Richtungskopplers).\par
+Die Abbildungen \ref{Ant1} und \ref{Ant2} zeigen die Frequenzcharakteristiken der neuen Antennen. Hier ist bei beiden ein starker Dip bei ungefähr $ 1{,}6 \, \tx{GHz} $ zu sehen. Die anderen beiden Peaks stammen vom Richtungskoppler.\par
+Auf der Abbildung \ref{Ant2-getrimmt} ist noch einmal die Charakteristik der zweiten neuen Antenne nach dem trimmen zu sehen.\\[10pt]
+\noindent
+Aufgrund der schlechten Vergleichbarkeit der Antennencharakteristika von und nach dem Trimmen sind die Peaks um $ 1{,}6 \, \tx{GHz} $ in Abbildung \ref{Vergleich} dargestellt. Abgebildet ist die Charakteristik der ersten Antenne in orange und die der zweiten vor (in blau) und nach dem trimmen (in grün). Die rot eingezeichnete Linie stellt die für die Messungen ausgewählte Frequenz von $ 1{,}616 \, \tx{GHz} $ dar. Wie man gut sehen kann liegen die Kurven bei der Frequenz nach dem trimmen sehr nah beieinander. Leider ist es uns nicht gelungen die Minima beider Dips so weit zu verschieben, dass sie Deckungsgleich wurden. Die Frequenz ist deshalb als ein Kompromiss der beiden Dips gewählt worden.
 
 \section{Fazit}
 
