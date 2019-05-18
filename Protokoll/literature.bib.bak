@@ -13,6 +13,17 @@
   Timestamp                = {2019.03.18}
 }
 
+@Misc{Antennenbauanleitung,
+  Title                    = {{A quick sleeve metal dipole for 23 cm}},
+
+  Author                   = {{LA3WUA}},
+  HowPublished             = {\url{https://www.la1k.no/2017/10/25/a-quick-sleeve-metal-dipole-for-23-cm/}},
+  Note                     = {[17.05.19]},
+
+  Owner                    = {markus},
+  Timestamp                = {2019.05.18}
+}
+
 @Misc{Fehlerschaltungen,
   Title                    = {{Messfehlerschaltungen}},
 
@@ -55,6 +66,15 @@
 
   Owner                    = {markus},
   Timestamp                = {2019.03.12}
+}
+
+@Misc{NahfeldundFernfeld,
+  Title                    = {{Nahfeld und Fernfeld (Antennen)}},
+  HowPublished             = {\url{https://de.wikipedia.org/wiki/Nahfeld_und_Fernfeld_%28Antennen%29}},
+  Note                     = {[2.07.19]},
+
+  Owner                    = {markus},
+  Timestamp                = {2019.05.18}
 }
 
 @Misc{tikz,
