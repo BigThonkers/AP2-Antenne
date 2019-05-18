@@ -385,6 +385,7 @@ Bei der Auswertung unserer Messwerte haben wir uns auf die Abstandsmessungen und
 Zuerst betrachten wir die Abstandsmessungen im Großen Hörsaal.Dazu prüfen wir nun ob unsere Messungen sich im Fernfeld oder im Nahfeld der Sendeantenne bewegt. Hier nutzen wir die Näherung:
 \begin{equation}
 r_{\tx{ff}} \geqslant 2\cdot\lambda
+\label{rff}
 \end{equation}
 Damit ist gemeint ab $r_{\tx{ff}}$ beginnt das Fernfeld. Jedoch ist das nur eine Näherung. Tatsächlich ist der genaue Übergang zwischen Fern- und Nahfeld keine eindeutige Grenze sondern dazwischen liegt der Übergangsbereich, welcher die Abgrenzung zwischen Nahfeld und Fernfeld erschwert. Jedoch soll für unsere Abstandmessung diese Näherung ausreichend sein, da, wie man gleich sehen wird, wir uns bei dem meisten Messwerten mit Sicherheit im Fernfeld bewegen. \par 
 Um nun $r_{\tx{ff}}$ für unsere Sendeantenne zu berechnen, berechnen wir zunächst die Wellenlänge $\lambda$ für unsere Sendefrequenz $f=1{,}616\,$GHz mit einem Ablesefehler von $\Delta f=0{,}0005\,$GHz ($c\approx 3\cdot10^{8}\,\frac{\tx{m}}{\tx{s}}$). Damit erhalten wir für die Wellenlänge und den Fehler (mittels Gauß'scher Fehlerfortpflanzung) folgende Werte:
@@ -417,21 +418,46 @@ I_{+1} = -37{,}85\,\tx{dBm} \approx 1{,}6405\cdot 10^{-7}\,\tx{W} \qquad I_{-1} 
 \Delta I = \frac{(I-I_{-1})+(I_{+1}-I)}{2} \approx 0{,}9 \cdot10^{-7}\,\tx{W}
 \end{equation*}
 Somit ist $I=(1{,}3\pm0{,}3)\cdot10^{-7}\,$W. \par 
+
+\subsection{Abstandsmessung}
+
 Nach dem wir alle Werte berechnet haben, tragen wir die Leistung $I$ in Abhängigkeit des Abstandes $d$ auf. Wie bereits zu erkennen ist, entsprechen die Messwerte ca. einen $\frac{1}{d^{2}}$ Verlauf, welchen wir für die Leistung im Fernfeld erwarten würden.
 \begin{figure}[h]
 \begin{minipage}{0.35\linewidth}
-	Nach dem wir alle Werte berechnet haben, tragen wir die Leistung $I$ in Abhängigkeit des Abstandes $d$ auf. Man sieht die Werte Fallen am Anfang sehr Stark und nähern sich dann der Null an. Da wir im Fernfeld uns bewegen, erwarten wir einen $\frac{1}{d^{2}}$-Verlauf der Leistung $I$. Dies ist gut zu erkennen, jedoch nicht eindeutig zu sagen. Deswegen versuchen wir nun eine $\frac{1}{d^{2}}$-Funktion an unsere Messwerte zu plotten. 
+	Nach dem wir alle Werte berechnet haben, tragen wir die Leistung $I$ in Abhängigkeit des Abstandes $d$ auf. Dabei nutzen wir hier als Beispiel die Messwerte aus dem großen Hörsaal (die restlichen befinden sich im Anhang). Man sieht die Werte Fallen am Anfang sehr Stark und nähern sich dann der Null an. Da wir im Fernfeld uns bewegen, erwarten wir einen $\frac{1}{d^{2}}$-Verlauf der Leistung $I$. Dies ist gut zu erkennen, jedoch nicht eindeutig zu sagen. Deswegen versuchen wir nun eine $\frac{1}{d^{2}}$-Funktion an unsere Messwerte zu plotten. 
 \end{minipage}
 \begin{minipage}{0.6 \linewidth}
 	\includegraphics[scale=0.5]{Bilder/bsp}
+	\centering
+	\caption{Gemessenen Intensität in Abhängigkeit vom Abstand $d$. Auf der $y$-Achse ist die empfangene Intensität in Watt und auf der $x$-Achse der Abstand zur Sendeantenne in cm.}
 \end{minipage}
 \end{figure}
 \FloatBarrier
 \par 
-Als nächstes nutzen wir die Python-Funktion curvfit \cite{curvescipy}	
+Als nächstes nutzen wir die Python-Funktion curvfit \cite{curvescipy} Funktion um eine Funktion mit dem erwarteten $\frac{1}{d^{2}}$ Verlauf zu finden. Dazu nutzen wir:
+\begin{equation}
+f(d) = a + \frac{b}{d^{2}}
+\label{f}
+\end{equation}	
+Hierbei sind $a$ und $b$ freie Parameter, welche curvfit an die Messwerte anpasst und $d$ der Abstand zur Sendeantenne. Zusätzlich wählen wir nun wieder eine logarithmische Skala für die $y$-Achse, um Messwerte, welche gegen Null gehen besser unterscheiden zu können. Dies ergibt (wieder mit den Messwerten aus dem großen Hörsaal) den Graphen Abbildung \ref{Abstand-bsp}.
 
+\begin{figure}[h]
+	
+	\includegraphics[scale=0.5]{Bilder/Abstand-GrH}
+	\centering
+	\caption{Gemessenen Intensität in Abhängigkeit vom Abstand $d$. Auf der logarithmischen $y$-Achse ist die empfangene Intensität in Watt aufgetragen und auf der $x$-Achse der Abstand zur Sendeantenne in cm. Zudem wurden Fehler auf beiden Achsen eingezeichnet, jedoch sind die Fehler auf der $x$-Achse zu klein um sie zu sehen. Außerdem wurde mittels der curffit \cite{curvescipy} Funktion $f(d)$  \eqref{f} an die Messwerte angelegt.}
+	\label{Abstand-bsp}
+\end{figure}
+Bei diesen Messwerten ergeben sich für die Parameter $a$ und $b$ die Werte:
+\begin{equation*}
+\tx{Messung 1:} \quad a = (1{,}9\pm1{,}2)\cdot10^{-7}\,\tx{W} \quad b = (9{,}9\pm0{,}4)\cdot10^{-4}\,\tx{Wcm}
+\end{equation*}
+\begin{equation*}
+\tx{Messung 2:} \quad a = (0{,}3\pm2{,}8)\cdot10^{-8}\,\tx{W} \quad b = (1{,405\pm0{,}013})\cdot10^{-3} \,\tx{Wcm}
+\end{equation*}
+Wir werden jedoch bei den anderen Messwerten und den dazugehörigen Funktionen diese Parameter nicht weiter betrachten, da wir uns auf Grund der begrenzten Auswertungszeit nur auf den $\frac{1}{x^{2}}$ Verlauf beschränken werden. Nun nur ein paar kurze Worte zu ihnen. Der Parameter $a$ sollte idealerweise Null sein und ist auch bei allen Messwerten sehr klein, mit Werten zwischen $10^{-7}\,$W und $10^{-9}\,$W. Zum Parameter $b$ ist nochmals zu erwähnen, dass wir davon ausgehen, dass wir uns während unserer gesamten Messung im Fernfeld bewegen. Deswegen können unsere Funktionen eigentlich nur bis zu einen Abstand von ca. $r_{\tx{ff}}=(37{,}13\pm0{,}02)\,$cm (nur eine Näherung! Siehe \eqref{rff}) richtige Vorhersagen treffen. 
 
-
+\subsection{Polarisationsmessung}
 
 
 
