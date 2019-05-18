@@ -290,10 +290,10 @@ t=\frac{\vert x-y_0\vert}{u_x}
 % Document
 
 \section{Veruschsziel}
-Das Ziel des Versuches ist es, eine Dipol-Antennen zu bauen und diese zu nutzen um ihre Strahlungscharakteristik zu bestimmen. Wenn noch Zeit übrig wäre, sollte das HackRF und eine Drone genutzt werden um Antennen in der Gegend zu vermessen.
+
+Das Ziel des Versuches ist es, eine Dipol-Antennen zu bauen und diese zu nutzen um ihre Strahlungscharakteristik zu bestimmen. Wenn noch Zeit übrig wäre, sollte das HackRF und eine Drohne genutzt werden um Antennen in der Gegend zu vermessen.
 
 \section{Labortagebuch}
-
 
 \subsection{Tag 1}
 
@@ -303,8 +303,8 @@ Ein weiter Aufgabenteil am ersten Tag war das installieren von GNU Radio auf dem
 \begin{figure}[ht]
 	\centering
 	\includegraphics[scale=0.35, trim={0cm 12cm 0cm 0cm}, clip]{Bilder/Ant_innen_1}
-	\label{Antenne1}
 	\caption{Aufbau der ersten gebauten Antenne mit Antennengehäuse und Innenleben. Zu sehen sind die beiden sendenden parallelen Röhrchen, sowie das dazu orthogonale Röhrchen, dass als Balun fungieren sollte. Am unteren Bildrand ist noch der vorbereitete Schrumpfschlauch und das ende des Kabels zu sehen.}
+	\label{Antenne1}
 \end{figure}
 Mit den ersten zwei fertigen Antennen wurden erste Probemessungen gemacht um zu sehen ob in dem erwarteten Frequenzbereich ein Intensitätsmaximum zu finden war. Jedoch konnte man im erwarteten Frequenzband nichts auffallendes erkennen. Auffällig war nur ein unregelmäßig auftauchender Peak bei einer Frequenz von $2.4\,$GHz, den wir stark für das WLAN Signal halten. Außerdem konnte man auch andere Peaks (vermutlich Bluetooth und Mobilnetz) erkennen wenn Handys in der nähe der Antenne waren. Somit hatten wir zumindest Funktionierende Antennen die Signale empfangen konnten. Allerdings konnten wir noch nicht wie gewünscht auf einer bestimmten Frequenz senden und dieses Signal messen.
 
@@ -316,31 +316,35 @@ Da kein Messgerät zur Messung der Antennengüte vorhanden war, wurde versucht d
 
 \subsection{Tag 3}
 
-Am Mittwoch war das Hack-RF vollständig einsetzbar, es wurde nun mit einem anderen RasberryPi betrieben. Das Hack-RF nutzten wir um eine erste Polarisationsmessungen durchzuführen. Auch hier zeigte sich, dass Bewegung von Personen im Raum oder das öffnen eines Fensters die Messwerte stark beeinflusste. Im laufe des Tages erhielten wir einen Richtkoppler, mit welchem die Güte der Antenne gemessen werden konnte. \textcolor{red}{Erik evtl nochmal erläutern}\par
-Hier stellte sich heraus die Antennen insgesamt eine sehr Ineffektive Charakteristik hatten und auf keinem Frequenzband relativ effizient sendeten. Da zusätzlich ein Wackelkontakt bei einer der Antennen auftrat, wurden zwei neue mit einem Optimierten Design erstellt. Hierbei wurde kein drittes Kupferrohr als Balun senkrecht zum Dipol eingesetzt, sondern die beiden Arme der Antenne wurden direkt an eine BNC-Buchse gelötet, wie in Abbildung \ref{Antenne2} zu sehen ist.\par
-Beim Test der neuen Antennen zeigte sich eine deutliche Verbesserung zur ersten Generation. Durch den Spectrum Analyzer mit Richtkoppler konnte recht genau gezeigt werden, dass unsere Antennen im erwarteten Bereich besonders gut senden können.\textcolor{red}{Bild} Da beide trotzdem leichte Unterschiede in der Frequenz auftraten, wurde eine mithilfe eines eingebauten Kondensators auf die andere getrimmt.\textcolor{red}{Bild} 
+Am Mittwoch war das Hack-RF vollständig einsetzbar, es wurde nun mit einem anderen RaspberryPi betrieben. Das Hack-RF nutzten wir um eine erste Polarisationsmessungen durchzuführen. Auch hier zeigte sich, dass Bewegung von Personen im Raum oder das öffnen eines Fensters die Messwerte stark beeinflusste. Im laufe des Tages erhielten wir einen Richtkoppler, mit welchem die Güte der Antenne gemessen werden konnte. \textcolor{red}{Erik evtl. nochmal erläutern}\par
+Hier stellte sich heraus die Antennen insgesamt eine sehr Ineffektive Charakteristik hatten und auf keinem Frequenzband relativ effizient sendeten. Da zusätzlich ein Wackelkontakt bei einer der Antennen auftrat, wurden zwei neue mit einem Optimierten Design erstellt. Hierbei wurde kein drittes Kupferrohr als Balun senkrecht zum Dipol eingesetzt, sondern die beiden Arme der Antenne direkt an eine BNC-Buchse gelötet, wie in Abbildung \ref{Antenne2} zu sehen ist.\par
+Beim Test der neuen Antennen zeigte sich eine deutliche Verbesserung zur ersten Generation. Durch den Spectrum Analyzer mit Richtkoppler konnte recht genau gezeigt werden, dass unsere Antennen im erwarteten Bereich besonders gut senden können.\textcolor{red}{Bild} Da beide trotzdem leichte Unterschiede in der Frequenz auftraten, wurde eine mithilfe eines eingebauten Kondensators auf die schlechtere der Beiden getrimmt, um die Peak Frequenz der besseren Antenne anzunähern.\textcolor{red}{Bild} 
+
 \subsection{Tag 4}
+
 Mit den nun aufeinander genormten Antennen wurde beschlossen, sich auf eine  Polarisationsmessung und Abstandmessung zu beschränken und die Messung der Strahlungscharakteristik wegzulassen. Da jedoch auffällig war wie Problematisch die Umgebung des Labors war, wurden diese Messungen im Labor so wie im Garten der Physik und am Parkplatz vor dem Westbau durchgeführt.
+
 \subsection{Tag 5}
+
 Am letzten Tag wurden noch zusätzliche Messungen zum Abstand und zur Polarisation im Großen Hörsaal durchgeführt. Da die Messungen im Labor bis dahin wegen Bewegung von Personen sehr ungenau war wurde hier nochmal eine Messung durchgeführt, um zu zeigen wie groß die Schwankungen sind und eine bei der sich wirklich nichts verändert. \textcolor{red}{Messung? Unterkapitel mit Bildern und etwas Text da häufig erwähnt}
 Anschließend wurden noch weitere Richtkoppler der Werkstatt getestet, ob diese sich wie der geliehene verhalten.
 \begin{figure}[ht]
 	\centering
 	\includegraphics[scale=0.35, trim={0cm 8cm 3cm 2cm}, clip]{Bilder/Ant_Fktgen}
-	\label{ersteMessung}
 	\caption{Gebaute Antenne auf dem Stativ und an den Spektrum-Analyzer angeschlossen. Bei einer Messung wurde die zweite Antenne an den Input angeschlossen und die Intensität des empfangenen Signals bei verschiedenen Frequenzen gemessen.}
+	\label{ersteMessung}
 \end{figure}
 \begin{figure}[ht]
 	\centering
 	\includegraphics[scale=0.3, trim={0cm 3cm 0cm 1cm}, clip]{Bilder/Ant_12}
-	\label{Antennen1u2}
 	\caption{Beide Antennen Generationen nebeneinander. Hinten die erste Generation vorne die 2.Generation. Die erste Generation Antennen hatten den Nachteil fest an Kabel gebunden zu sein, und einen integrierten Balun zu haben, der nicht wie erwartet funktionierte. Die neuen Antennen haben einen Standardisierten BNC-Anschluss und keinen Balun mehr. Außerdem sind die Gehäuse verbessert und besitzen eine Stativ-Halterung.}
+	\label{Antennen1u2}
 \end{figure}
 \begin{figure}[ht]
 	\centering
 	\includegraphics[scale=0.4, trim={0cm 0cm 0cm 8cm}, clip]{Bilder/Ant_innen_2}
-	\label{Antenne2}
 	\caption{Innerer Aufbau der 2.Antennengeneration. Man sieht die beiden Kupferröhrchen angelötet an zwei Kabel, welchen an die BNC-Stecker Buchse gelötet wurden. Das Gehäuse sorgt nur für Stabilität, und parallele Ausrichtung der Röhrchen.}
+	\label{Antenne2}
 \end{figure}
 
 
@@ -380,6 +384,7 @@ Es wurden zusätzlich zum Richtkoppler, mit welchem wir die Messungen zur Antenn
 \textcolor{red}{Bild Vergleich Richtkoppler}
 
 \section{Versuchsaufbau für die Messungen} 
+
 \subsection{Die Antennen}
 
 Für die ausgewerteten Messungen haben wir nun ausschließlich die neuen Antennen verwendet. Es existieren quantitative Messungen mit den Antennen erster Generation, jedoch fehlte die Zeit auch diese auszuwerten.
@@ -431,13 +436,15 @@ I_{+1} = -37{,}85\,\tx{dBm} \approx 1{,}6405\cdot 10^{-7}\,\tx{W} \qquad I_{-1} 
 \end{equation*}
 Somit ist $I=(1{,}3\pm0{,}3)\cdot10^{-7}\,$W. \par 
 Nach dem wir alle Werte berechnet haben, tragen wir die Leistung $I$ in Abhängigkeit des Abstandes $d$ auf. Wie bereits zu erkennen ist, entsprechen die Messwerte ca. einen $\frac{1}{d^{2}}$ Verlauf, welchen wir für die Leistung im Fernfeld erwarten würden. Nach dem wir alle Werte berechnet haben, tragen wir die Leistung $I$ in Abhängigkeit des Abstandes $d$ auf. Man sieht die Werte Fallen am Anfang sehr Stark und nähern sich dann der Null an. Da wir im Fernfeld uns bewegen, erwarten wir einen $\frac{1}{d^{2}}$-Verlauf der Leistung $I$. Dies ist gut zu erkennen, jedoch nicht eindeutig zu sagen. Deswegen versuchen wir nun eine $\frac{1}{d^{2}}$-Funktion an unsere Messwerte zu plotten.
-\begin{figure}[h]
-	\includegraphics[scale=0.6]{Bilder/bsp}
+\begin{figure}[ht]
 	\centering
+	\includegraphics[scale=0.6]{Bilder/bsp}
+	\caption{\textcolor{red}{add caption!}}
+	\label{GrHlin}
 \end{figure}
 \FloatBarrier
 \par 
-Als nächstes nutzen wir die Python-Funktion curvfit \cite{curvescipy}	
+Als nächstes nutzen wir die Python-Funktion curvfit \cite{curvescipy}
 
 
 
@@ -445,11 +452,15 @@ Als nächstes nutzen wir die Python-Funktion curvfit \cite{curvescipy}
 
 
 \section{Fehlerquellen}
+
 Bei den Messungen gab es eine Reihe an Fehlerquellen. Hierbei hatten wir als erstes als statistische Fehler, Fehler der Abstands und Winkelmessung. Hierbei haben wir einen allgemeinen Fehler für den Abstand auf $2$\,cm geschätzt und den Fehler für die Winkel auf $2^{\degree}$. Auch für die Frequenz und der dort gemessenen Leistung haben wir einen statistischen Fehler. Hierbei wurde die Frequenz auf $0.001\,$GHz und die Leistung auf $1$\,dBm geschätzt. Zusätzlich konnte es passieren das unsere Antennen bei der Abstandsmessung leicht verschoben zueinander lagen. Dies ist bei der Abstandsmessung im Gegensatz zur Polarisationsmessung ein statistischer Fehler, da hier Verschiebung der beiden Antennen sich durch das neu Aufstellen zufällig ändern kann.
-Bei der Winkelmessung ist dies ein Systematischer Fehler da dieser bei jeder Messreihe konstant blieb. Dafür kommt hier noch ein Fehler dazu der durch das Drehen der Antenne zustande kam. Hierbei wurde die Antenne aufgrund der Aufhängung nicht um den Antennenmittelpunkt sondern um einen Punkt etwas weiter hinten gedreht wodurch sich der Abstand so wie die Verschiebung der Antennen zueinander systematisch geändert hat. Ein weitere systematische Fehler ist, dass die Werte stark durch unsere Umgebung beeinflusst wurden. Oft hat hier die Umgebung als Resonator fungiert und unsere Werte abhängig von der Umgebung beeinflusst hat. Der Ort der Messung hat auch unser Hintergrundrauschen beeinflusst da dieses je nach Ort unterschiedlich stark abgeschirmt wurde. An dieser stelle kommt jedoch noch ein statistischer Fehler dazu welcher sich auf Zeitlich nicht konstante Hintergrundsignale bezieht. Als letzten systematischen Fehler ist zu erwähnen, dass unsere Stative unabhängig vom Raum sich wegen ihrer Metallenen Beschaffenheit fälschend auf unsere Messergebnisse auswirkten haben.
+Bei der Winkelmessung ist dies ein Systematischer Fehler da dieser bei jeder Messreihe konstant blieb. Dafür kommt hier noch ein Fehler dazu der durch das Drehen der Antenne zustande kam. Hierbei wurde die Antenne aufgrund der Aufhängung nicht um den Antennenmittelpunkt sondern um einen Punkt etwas weiter hinten gedreht wodurch sich der Abstand so wie die Verschiebung der Antennen zueinander systematisch geändert hat. Ein weitere systematische Fehler ist, dass die Werte stark durch unsere Umgebung beeinflusst wurden. Oft hat hier die Umgebung als Resonator fungiert und unsere Werte abhängig von der Umgebung beeinflusst hat. Der Ort der Messung hat auch unser Hintergrundrauschen beeinflusst da dieses je nach Ort unterschiedlich stark abgeschirmt wurde. An dieser stelle kommt jedoch noch ein statistischer Fehler dazu welcher sich auf Zeitlich nicht konstante Hintergrundsignale bezieht. Als letzten systematischen Fehler ist zu erwähnen, dass unsere Stative unabhängig vom Raum sich wegen ihrer Metallenen Beschaffenheit fälschend auf unsere Messergebnisse auswirkten haben.\\\\\\
+
+
+\cite{Antennenbauanleitung} \textcolor{red}{muss noch erwähnt werden !}
 
 \bibliographystyle{plain}
 \bibliography{literature}
 \addcontentsline{toc}{section}{Literatur}
-%\bibitem[Antennenbauanleitung]{https://www.la1k.no/2017/10/25/a-quick-sleeve-metal-dipole-for-23-cm/}
+
 \end{document}
