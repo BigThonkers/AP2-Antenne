@@ -318,20 +318,20 @@ Da kein Messgerät zur Messung der Antennengüte vorhanden war, wurde versucht d
 
 Am Mittwoch war das Hack-RF vollständig einsetzbar, es wurde nun mit einem anderen RaspberryPi betrieben. Das Hack-RF nutzten wir um eine erste Polarisationsmessungen durchzuführen. Auch hier zeigte sich, dass Bewegung von Personen im Raum oder das öffnen eines Fensters die Messwerte stark beeinflusste. Im laufe des Tages erhielten wir einen Richtkoppler, mit welchem die Güte der Antenne gemessen werden konnte. \textcolor{red}{Erik evtl. nochmal erläutern}\par
 Hier stellte sich heraus die Antennen insgesamt eine sehr Ineffektive Charakteristik hatten und auf keinem Frequenzband relativ effizient sendeten. Da zusätzlich ein Wackelkontakt bei einer der Antennen auftrat, wurden zwei neue mit einem Optimierten Design erstellt. Hierbei wurde kein drittes Kupferrohr als Balun senkrecht zum Dipol eingesetzt, sondern die beiden Arme der Antenne direkt an eine BNC-Buchse gelötet, wie in Abbildung \ref{Antenne2} zu sehen ist.\par
-Beim Test der neuen Antennen zeigte sich eine deutliche Verbesserung zur ersten Generation. Durch den Spectrum Analyzer mit Richtkoppler konnte recht genau gezeigt werden, dass unsere Antennen im erwarteten Bereich besonders gut senden können.\textcolor{red}{Bild} Da beide trotzdem leichte Unterschiede in der Frequenz auftraten, wurde eine mithilfe eines eingebauten Kondensators auf die schlechtere der Beiden getrimmt, um die Peak Frequenz der besseren Antenne anzunähern.\textcolor{red}{Bild} 
+Beim Test der neuen Antennen zeigte sich eine deutliche Verbesserung zur ersten Generation. Durch den Spectrum Analyzer mit Richtkoppler konnte recht genau gezeigt werden, dass unsere Antennen im erwarteten Bereich besonders gut senden können (die Tiefsten Dips auf den Abbildungen \ref{Ant1} und \ref{Ant2}).\textcolor{red}{Bild: sind das die richtigen Bilder} Da beide trotzdem leichte Unterschiede in der Peak-Frequenz hatten, wurde die Frequenz eine mithilfe eines Kondensators an der schlechteren Antenne getrimmt, um sie der Peak Frequenz der besseren Antenne anzunähern. Das Endergebnis ist auf Abbildung \ref{Ant2-getrimmt} dargestellt. Da das Bild leider schlacht zugeschnitten ist, und der Marker nicht auf der Peakfrequenz liegt sind noch einmal die Frequenz-Charakteristiken der beiden Antennen (und bei Antenne 2 nach dem trimmen) in Abbildung \ref{Vergleich} dargestell.\textcolor{red}{Bild: so okey ?} 
 
 \subsection{Tag 4}
 
-Mit den nun aufeinander genormten Antennen wurde beschlossen, sich auf eine  Polarisationsmessung und Abstandmessung zu beschränken und die Messung der Strahlungscharakteristik wegzulassen. Da jedoch auffällig war wie Problematisch die Umgebung des Labors war, wurden diese Messungen im Labor so wie im Garten der Physik und am Parkplatz vor dem Westbau durchgeführt.
+Mit den nun aufeinander abgestimmten Antennen wurde beschlossen, sich auf eine  Polarisationsmessung und Abstandmessung zu beschränken und die Messung der Strahlungscharakteristik wegzulassen. Da jedoch auffällig war wie Problematisch die Umgebung des Labors war, wurden diese Messungen im Labor so wie im Garten der Physik und am Parkplatz vor dem Westbau durchgeführt.
 
 \subsection{Tag 5}
 
-Am letzten Tag wurden noch zusätzliche Messungen zum Abstand und zur Polarisation im Großen Hörsaal durchgeführt. Da die Messungen im Labor bis dahin wegen Bewegung von Personen sehr ungenau war wurde hier nochmal eine Messung durchgeführt, um zu zeigen wie groß die Schwankungen sind und eine bei der sich wirklich nichts verändert. \textcolor{red}{Messung? Unterkapitel mit Bildern und etwas Text da häufig erwähnt}
-Anschließend wurden noch weitere Richtkoppler der Werkstatt getestet, ob diese sich wie der geliehene verhalten.
+Am letzten Tag wurden noch zusätzliche Messungen zum Abstand und zur Polarisation im Großen Hörsaal durchgeführt. Da die Messungen im Labor bis dahin wegen Bewegung von Personen sehr ungenau waren wurde hier nochmal eine Messung durchgeführt, um zu zeigen wie groß die Schwankungen sind und eine Messung bei der sich im Labor wirklich nichts verändert und sich niemand Bewegt. \textcolor{red}{Messung? Unterkapitel mit Bildern und etwas Text da häufig erwähnt !!!}
+Anschließend wurden noch weitere Richtkoppler der Werkstatt getestet, ob diese sich wie der geliehene verhielten.
 \begin{figure}[ht]
 	\centering
 	\includegraphics[scale=0.35, trim={0cm 8cm 3cm 2cm}, clip]{Bilder/Ant_Fktgen}
-	\caption{Gebaute Antenne auf dem Stativ und an den Spektrum-Analyzer angeschlossen. Bei einer Messung wurde die zweite Antenne an den Input angeschlossen und die Intensität des empfangenen Signals bei verschiedenen Frequenzen gemessen.}
+	\caption{Gebaute Antenne auf dem Stativ an den Spektrum-Analyzer angeschlossen. Bei einer Messung wurde die zweite Antenne an den Input angeschlossen und die Intensität des empfangenen Signals bei verschiedenen Frequenzen gemessen.}
 	\label{ersteMessung}
 \end{figure}
 \begin{figure}[ht]
@@ -348,21 +348,23 @@ Anschließend wurden noch weitere Richtkoppler der Werkstatt getestet, ob diese 
 \end{figure}
 
 
+\textcolor{red}{Bilder \ref{ersteMessung}, \ref{Antennen1u2}, \ref{Antenne1} und \ref{Antenne2} refferieren !!!}
+
+
 \section{Details zu den verwendeten Antennen}
 
 \subsection{Antennenbau}
-\subsubsection{Erste Generation}
-Die erste Antennengeneration wurde nach der Anleitung vom Akademisk Radioklubb gebaut. Diese bestand aus drei $55\,$mm langen Kupferrohren mit einer Wandstärke von $1\,$mm. Hiervon wurden zwei der Rohre, wie bei einem Dipol erwartet, nebeneinander an Kern und Abschirmung eines halbierten Koaxialkabels mit BNC Buchse gelötet. Das dritte Rohr wurde etwas unterhalb der beiden Antennenarme am Kabel als Balun zur Wandlung zwischen dem voraussichtlich asymmetrischen gesendeten Signal und dem symmetrischen Dipolfeld angelötet.
 
-\textcolor{red}{Bild}
+\subsubsection{Erste Generation}
+
+Die erste Antennengeneration wurde nach der Anleitung \cite{Antennenbauanleitung} vom Akademisk Radioklubb gebaut. Diese bestand aus drei $55\,$mm langen Kupferrohren mit einer Wandstärke von $1\,$mm. Hiervon wurden zwei der Rohre, wie bei einem Dipol erwartet, nebeneinander an Kern und Abschirmung eines halbierten Koaxialkabels mit BNC Buchse gelötet. Das dritte Rohr wurde etwas unterhalb der beiden Antennenarme am Kabel als Balun zur Wandlung zwischen dem voraussichtlich asymmetrischen gesendeten Signal und dem symmetrischen Dipolfeld angelötet. Diese Antennen sind auf Abbildung \ref{Antenne1} zu sehen.
 
 \subsubsection{Zweite Generation}
 
- Diese haben im Gegensatz zu dem alten Modell keinen Balun (bestehend aus einer Kupferröhre um das Signalkabel) mehr.\par
+ Diese haben im Gegensatz zu dem alten Modell keinen Balun (bestehend aus einer Kupferröhre um Signalkabel) mehr.\par
 Die Antennen bestehen also nur aus zwei $55\,$mm langen Kupferrohren, die jeweils an Leitung und Schirm eines BNC Gehäuseanschlusses gelötet wurden. Diese Konstruktion wird in einem 3D-gedruckten Gehäuse montiert, sodass die Röhrchen parallel zueinander und orthogonal zum Signalkabel sind. Der nun im Gehäuse eingebaute BNC Anschluss kann nun wie sonst üblich mit kompatiblen Geräten (Oszilloskop, Spectrum Analyzer, etc.) verbunden werden. Dieses Design ist also nicht mehr an ein Kabel gebunden, was den Vorteil hat, dass die Länge variabel ist und ein schlechtes Kabel schnell und leicht ausgetauscht werden kann.\par
 Die Plastikgehäuse wurden absichtlich so designet, dass sie ohne Metallteile zusammengebaut werden könnte, da diese die Strahlungscharakteristik beeinträchtigen könnten. Der Kunststoff selbst ist sehr dünn und schien keinen Einfluss auf die Messungen nehmen, dies haben wir rein qualitativ überprüft, indem wir das empfange Signal ohne sowie mit Gehäuse verglichen haben und keinen unterschied feststellen konnten.\par
-Außerdem haben die Gehäuse eine Befestigung mit Stativ-Gewinde, sodass sie an Standartmäßigen Fotokamera-Stativen befestigt werden können.
-\textcolor{red}{Bild Name}
+Außerdem haben die Gehäuse eine Befestigung mit Stativ-Gewinde, sodass sie an Standartmäßigen Fotokamera-Stativen befestigt werden können. Die neuen Antenne sind auf den Abbildungen \ref{Antennen1u2} und \ref{Antenne2} zu sehen.
 
 \subsection{Messung der Antennengüte}
 Um die Frequenzen, bei welchen unsere gebauten Antennen relativ gut senden und empfangen können zu bestimmen, wurde die reflektierte Leistung der Antennen für verschiedene Frequenzen bestimmt. Hierzu wurde mithilfe des Spectrum Analyzers ein Frequenzbereich von einigen MHz bis zu $3\,$GHz auf die Antennen gesendet. Dieses Signal wurde dann über einen Richtkoppler auf die zu testende Antenne geleitet, welche dann einen Teil des Signals abstrahlt oder in die Leitung reflektiert. Dieser reflektierte Teil wird über den Richtkoppler zur Messung ausgekoppelt. Beim vermessen der Antennen muss zusätzlich die Charakteristik von Kabeln und dem verwendeten Richtkoppler berücksichtigt werden, worauf wir aber leider nicht genauer eingehen können. Die in diesem Zusammenhang erhobenen Daten befinden sich in der angefügten Messwertesammlung. Zur Bestimmung charakteristischer Frequenzbänder haben wir nur einen Ausgleich mittels des Spectrum Analyzers vorgenommen, welcher die reflektierte Leistung des Richtkopplers und einer $50\,\Omega$  Dummyload normalisierte. Somit erhielten wir für unsere Zwecke brauchbare Charakteristiken. 
@@ -383,20 +385,28 @@ Wie in den Bildern zur Reflektionscharakteristik der zweiten Generation Antennen
 Es wurden zusätzlich zum Richtkoppler, mit welchem wir die Messungen zur Antennengüte und das Trimmen durchführten, weitere Richtkoppler bereitgestellt. Als diese nach oben beschriebenen Verfahren zur Messung der nicht getrimmten Antenne der zweiten Generation verwendet wurden, wurde eine völlig unterschiedliche Charakteristik angezeigt. Etwa als würde die Antenne nahezu das gesamte Signal reflektieren. Dies kann aber nach den geglückten Fernfeldmessungen nicht der Fall sein.
 \textcolor{red}{Bild Vergleich Richtkoppler}
 
-\section{Versuchsaufbau für die Messungen} 
+\section{Versuchsaufbau und Durchführung der Messungen}
+\label{Versuchsaufbau} 
 
 \subsection{Die Antennen}
 
 Für die ausgewerteten Messungen haben wir nun ausschließlich die neuen Antennen verwendet. Es existieren quantitative Messungen mit den Antennen erster Generation, jedoch fehlte die Zeit auch diese auszuwerten.
 
-\subsection{Der Aufbau zur Vermessung}
+\subsection{Versuchsaufbau Abstandsmessung}
 
 Für die jeweiligen Messung haben wir die beiden Antennen an Stativen befestigt und gegenüber voneinander platziert. Die Gehäuse der Antennen wurden an einer dafür vorgesehenen Öse mit einer Schnur verbunden, um die Parallelität der Antennen bei der Anstandsmessung beziehungsweise einen akkuraten Winkel bei der Polarisationsmessung zu gewährleisten.\par
-Beide Antennen wurden an den Spectrum Analyzer angeschlossen. Der Spectrum Analyzers schickt nun Signale mit nacheinander gesendeten verschiedenen Frequenzen durch das gesamte Frequenzband des Spectrum Analyzers an die Sender-Antenne und zeichnet die Intensität des von der Empfänger-Antenne kommenden Signals auf.\par
-Ein Vorteil an dieser Messung gegenüber dem Senden einer Frequenz über das Hack-RF ist, das wir so auch leicht Störsignale, die von der Antenne empfangen werden feststellen können und damit ausschließen können, dass wie so ein Störsignal mit in die Messung einbeziehen. Hierbei sind Störsignale wie z.B. WLAN oder andere zeitlich nicht konstante Funksignale gemeint. Außerdem können wir dann nicht nur die Peak-Werte auslesen sondern auch 
+Beide Antennen wurden an den Spectrum Analyzer angeschlossen. Der Spectrum Analyzers sendet nun nacheinander Signale mit verschiedenen Frequenzen durch das gesamte Frequenzband des Spectrum-Analyzers an die Sender-Antenne und zeichnet die Intensität des von der Empfänger-Antenne kommenden Signals auf.\par
+Ein Vorteil an dieser Messung gegenüber dem Senden einer Frequenz über das Hack-RF ist, das wir so auch leicht Störsignale, die von der Antenne empfangen werden feststellen können und damit ausschließen können, dass wie so ein Störsignal mit in die Messung einbeziehen. Hierbei sind Störsignale wie z.B. WLAN oder andere zeitlich nicht konstante Funksignale gemeint.
 
-\subsection{Polarisation}
-Zur Messung der Polarisation wurden die Beiden Antennen in einem festen Abstand voneinander auf dem jeweiligen Stativ befestigt. Zum Test ob die Antennen Rechtwinkelig voneinander sind wurde ein Faden genutzt der zwischen beiden Antennen gespannt wurde und dann mit Hilfe eines Geodreiecks ein Rechter Winkel zwischen Antenne und Faden gemessen wurde. Der Sender und Empfänger wurden dann an das Frequenzspektrometur angeschlossen. Zur eigentlichen Messung wurde die Leistungsdifferenz zwischen Sender und Empfänger bei unterschiedlichen Winkeln des Empfängers gemessen.
+\subsection{Versuchsaufbau Polarisationsmessung}
+
+Zur Messung der Polarisation wurden die Beiden Antennen in einem festen Abstand voneinander auf dem jeweiligen Stativ befestigt. Zur Bestimmung des Winkels der Antennen zueinander, wurde ein Faden genutzt der zwischen beiden Antennen gespannt wurde. Danach konnte man mit Hilfe eines Geodreiecks den gewünschten Winkel zwischen Antenne und Faden einstellen. Sender und Empfänger wurden dann an den Spectrum-Analyzer angeschlossen.
+
+\subsubsection{Durchführung}
+
+
+Während den Messungen saßen eine oder zwei Personen am Spectrum-Analyzer, und damit in Nähe der Antennen um die Messwerte abzulesen. Die anderen bei der Messung anwesenden haben entweder den Abstand oder für die Polarisationsmessung den Winkel der empfänger-Antenne verändert und sich dann wieder vom Versuchsaufbau entfernt.\par
+Dieser Abstand beziehungsweise Winkel wurde dann Notiert und die am Spectrum-Analyzer abgelesene Leistung in dBm protokolliert.
 
 \section{Auswertung}
 Bei der Auswertung unserer Messwerte haben wir uns auf die Abstandsmessungen und die Polarisationsmessungen mit den Antennen zweiter Generation beschränkt. Hierzu werden wir beispielhaft sowohl eine Abstandsmessung als auch eine Polarisationsmessung auswerten. Die restlichen Ergebnisse sind im Anhang zu finden und werden dann im Abschnitt  ,,Diskussion der Ergebnisse`` diese genauer betrachten und interpretieren. \par 
@@ -418,7 +428,7 @@ r_{ff} \geqslant 2\cdot\lambda = 0{,}3713\,\tx{m}\, \pm 2\cdot10^{-4}\,\tx{m}
 Somit können wir sagen wir bewegen uns bei unseren Abstandsmessungen im Fernfeld, da bei allen Messungen höchstens ein bis zwei Werte unter $r_{\tx{ff}}$ liegen (siehe Messwerte im Anhang). \par 
 Als nächstes berechnen wir die Leistung der Messwerte in W, da sie noch in dBm angegeben sind. Dazu nutzen wir die Formel:
 \begin{equation}
-\tx{I in Watt}: 10^{\frac{(I[dBm]-30)}{10}}
+\tx{I in Watt}: 10^{\frac{(I[\tx{dBm}]-30)}{10}}
 \label{w}
 \end{equation}
 Die Fehler haben wir auf Grund der Schwankungen des Messpunktes auf $\Delta I=$$\pm 1\,$dBm geschätzt. Damit ist dieser Fehler deutlich größer als die aus den Impedanzen des Spectrum Analyzers (aus den Herstellerinfos), so das wir diese vernachlässigen können. Da diese Fehler auf Grund der logarithmischen Messwerte asymmetrisch sind, und wir aber gleich große Fehler in beider Richtungen haben wollen, rechnen wir:
@@ -436,21 +446,17 @@ I_{+1} = -37{,}85\,\tx{dBm} \approx 1{,}6405\cdot 10^{-7}\,\tx{W} \qquad I_{-1} 
 \begin{equation*}
 \Delta I = \frac{(I-I_{-1})+(I_{+1}-I)}{2} \approx 0{,}9 \cdot10^{-7}\,\tx{W}
 \end{equation*}
-
+Somit ist $ I = (1{,}3 \pm 0{,}3) \cdot 10^{-7} \, \tx{W} $.
 
 \subsection{Abstandsmessung}
 
-Nach dem wir alle Werte berechnet haben, tragen wir die Leistung $I$ in Abhängigkeit des Abstandes $d$ auf. Wie bereits zu erkennen ist, entsprechen die Messwerte ca. einen $\frac{1}{d^{2}}$ Verlauf, welchen wir für die Leistung im Fernfeld erwarten würden.
+Nach dem wir alle Werte berechnet haben, tragen wir die Leistung $I$ in Abhängigkeit des Abstandes $d$ auf. Wie bereits zu erkennen ist, entsprechen die Messwerte ca. einem $\frac{1}{d^{2}}$ Verlauf, welchen wir für die Leistung im Fernfeld erwarten würden. Man sieht die Werte Fallen am Anfang sehr Stark und nähern sich dann der Null an. Um quantitative Aussagen über den Verlauf machen zu können, versuchen wir nun eine $\frac{1}{d^{2}}$-Funktion an unsere Messwerte zu fitten.
+
 \begin{figure}[ht]
-\begin{minipage}{0.35\linewidth}
-	Nach dem wir alle Werte berechnet haben, tragen wir die Leistung $I$ in Abhängigkeit des Abstandes $d$ auf. Wie bereits zu erkennen ist, entsprechen die Messwerte ca. einen $\frac{1}{d^{2}}$ Verlauf, welchen wir für die Leistung im Fernfeld erwarten würden. Nach dem wir alle Werte berechnet haben, tragen wir die Leistung $I$ in Abhängigkeit des Abstandes $d$ auf. Man sieht die Werte Fallen am Anfang sehr Stark und nähern sich dann der Null an. Da wir im Fernfeld uns bewegen, erwarten wir einen $\frac{1}{d^{2}}$-Verlauf der Leistung $I$. Dies ist gut zu erkennen, jedoch nicht eindeutig zu sagen. Deswegen versuchen wir nun eine $\frac{1}{d^{2}}$-Funktion an unsere Messwerte zu plotten.
-\end{minipage}
-\begin{minipage}{0.6 \linewidth}
-	\includegraphics[scale=0.5]{Bilder/bsp}
 	\centering
+	\includegraphics[scale=0.55]{Bilder/bsp}
 	\caption{Gemessenen Intensität in Abhängigkeit vom Abstand $d$. Auf der $y$-Achse ist die empfangene Intensität in Watt und auf der $x$-Achse der Abstand zur Sendeantenne in cm.}
 	\label{Abstand-bsp}
-\end{minipage}
 \end{figure}
 
 
@@ -467,7 +473,7 @@ Hierbei sind $a$ und $b$ freie Parameter, welche \verb|curve_fit| an die Messwer
 \begin{figure}[ht]
 	\includegraphics[scale=0.5]{Bilder/Abstand-GrH.jpg}
 	\centering
-	\caption{Gemessenen Intensität in Abhängigkeit vom Abstand $d$. Auf der logarithmischen $y$-Achse ist die empfangene Intensität in Watt aufgetragen und auf der $x$-Achse der Abstand zur Sendeantenne in cm. Zusätzlich sind auch Fehler in $x$- und $y$-Richtung eingezeichnet, jedoch sind die Fehler in $x$-Richtung zu klein um sie noch zu sehen. Zusätzlich wurde die Funktion $f(d)$ \eqref{f} mittels curvfit (Pythen Programm \cite{curvescipy}) an die Messwerte geplottet.}
+	\caption{Gemessenen Intensität in Abhängigkeit vom Abstand $d$. Auf der logarithmischen $y$-Achse ist die empfangene Intensität in Watt aufgetragen und auf der $x$-Achse der Abstand zur Sendeantenne in cm. Zusätzlich sind auch Fehler in $x$- und $y$-Richtung eingezeichnet, jedoch sind die Fehler in $x$-Richtung zu klein um sie noch zu sehen. Zusätzlich wurde die Funktion $f(d)$ \eqref{f} mittels \texttt{curvefit}. (Python Modul \cite{curvescipy}) an die Messwerte geplottet.}
 	\label{GrH-A}
 \end{figure}
 \FloatBarrier
@@ -486,14 +492,32 @@ Deswegen werden wir auf den Parameter $b$ in dieser Auswertung nicht eingehen.
 Als nächstes betrachten wir die zwei Polarisationsmessungen. Auch hier werden wir beispielhaft die Auswertung der Messung im großen Hörsaal betrachten. \par 
 Als erstes rechnen wir die Werte wieder in Watt mittels Formel \eqref{w} um. Auch wird der Fehler wieder in gleicher Weise wie zuvor mit der Formel \eqref{deltaI} bestimmt. Nach 
 
+\section{Diskussion}
 
-\section{Fehlerquellen}
+\subsection{Fehlerquellen}
 
 Bei den Messungen gab es eine Reihe an Fehlerquellen. Hierbei hatten wir als erstes als statistische Fehler, Fehler der Abstands und Winkelmessung. Hierbei haben wir einen allgemeinen Fehler für den Abstand auf $2$\,cm geschätzt und den Fehler für die Winkel auf $2^{\degree}$. Auch für die Frequenz und der dort gemessenen Leistung haben wir einen statistischen Fehler. Hierbei wurde die Frequenz auf $0.001\,$GHz und die Leistung auf $1$\,dBm geschätzt. Zusätzlich konnte es passieren das unsere Antennen bei der Abstandsmessung leicht verschoben zueinander lagen. Dies ist bei der Abstandsmessung im Gegensatz zur Polarisationsmessung ein statistischer Fehler, da hier Verschiebung der beiden Antennen sich durch das neu Aufstellen zufällig ändern kann.
-Bei der Winkelmessung ist dies ein Systematischer Fehler da dieser bei jeder Messreihe konstant blieb. Dafür kommt hier noch ein Fehler dazu der durch das Drehen der Antenne zustande kam. Hierbei wurde die Antenne aufgrund der Aufhängung nicht um den Antennenmittelpunkt sondern um einen Punkt etwas weiter hinten gedreht wodurch sich der Abstand so wie die Verschiebung der Antennen zueinander systematisch geändert hat. Ein weitere systematische Fehler ist, dass die Werte stark durch unsere Umgebung beeinflusst wurden. Oft hat hier die Umgebung als Resonator fungiert und unsere Werte abhängig von der Umgebung beeinflusst hat. Der Ort der Messung hat auch unser Hintergrundrauschen beeinflusst da dieses je nach Ort unterschiedlich stark abgeschirmt wurde. An dieser stelle kommt jedoch noch ein statistischer Fehler dazu welcher sich auf Zeitlich nicht konstante Hintergrundsignale bezieht. Als letzten systematischen Fehler ist zu erwähnen, dass unsere Stative unabhängig vom Raum sich wegen ihrer Metallenen Beschaffenheit fälschend auf unsere Messergebnisse auswirkten haben.\\\\\\
+Bei der Winkelmessung ist dies ein Systematischer Fehler da dieser bei jeder Messreihe konstant blieb. Dafür kommt hier noch ein Fehler dazu der durch das Drehen der Antenne zustande kam. Hierbei wurde die Antenne aufgrund der Aufhängung nicht um den Antennenmittelpunkt sondern um einen Punkt etwas weiter hinten gedreht wodurch sich der Abstand so wie die Verschiebung der Antennen zueinander systematisch geändert hat. Ein weitere systematische Fehler ist, dass die Werte stark durch unsere Umgebung beeinflusst wurden. Oft hat hier die Umgebung als Resonator fungiert und unsere Werte abhängig von der Umgebung beeinflusst hat. Der Ort der Messung hat auch unser Hintergrundrauschen beeinflusst da dieses je nach Ort unterschiedlich stark abgeschirmt wurde. An dieser stelle kommt jedoch noch ein statistischer Fehler dazu welcher sich auf Zeitlich nicht konstante Hintergrundsignale bezieht. Als letzten systematischen Fehler ist zu erwähnen, dass unsere Stative unabhängig vom Raum sich wegen ihrer Metallenen Beschaffenheit fälschend auf unsere Messergebnisse auswirkten haben.
+
+\subsection{Analyse der Graphen}
+
+\subsubsection{Abstandsmessungen}
+
+Auf Abbildung \ref{Garten-A} ist die Abstandsmessung im Garten der Physik zu sehen. Wie schon im Abschnitt \ref{Versuchsaufbau} beschrieben, haben wir die beiden Antennen auf zwei Stativen gegenüber voneinander Positioniert und bei verschiedenen Abständen $ d $ die bei der empfänger-Antenne ankommende Leistung $ I $ gemessen. Die hier angegebenen Werte für die Leistung wurden bereits aus dBm und Watt umgerechnet.\par
+Die Messpunkte sind in blau und die Fehler darauf in rot dargestellt. Es gibt hier sowohl Fehler auf die Leistung als auch auf den Abstand. Die Fehler auf den Abstand sind lediglich zum Teil so klein, dass sie fast nicht erkennbar sind.\par
+Die blaue Kurve durch die Messdaten entspricht dem in der Auswertung ermittelten Fit der Form $ f(d) = a + \frac{b}{d^2} $, wobei die Parameter $ a $ als $ y $-Achsen Abschnitt und $ b $ als $ y $-Streckfaktor angepasst wurden.\par
+Die $ y $-Achse ist logarithmisch aufgetragen, die $ x $-Achse linear. Aufgrund dieser logarithmischen Skala gibt es solche starken Abweichungen bei den letzten Messpunkten.\par
+Man sieht also, dass die Streuung der Messpunkte vermutlich größer ist, als die von uns berechneten Fehler. Dies könnte daran liegen, dass eine Messung gut 15 Minuten andauert und der Strahlungshintergrund nicht konstant ist. Da diese Messung draußen stattgefunden hat, gab es leider keine gute Abschirmung von Störsignalen. Wir wollten dennoch Messreihen draußen erstellen um den Störfaktor eines Raums als Resonator ausschließen zu können.\par
+Bei dieser Messreihe haben wir über einen Abstand von 50\,cm bis 300\,cm Intensitäten zwischen $ \approx 5 \cdot 10^{-7} \, \tx{W} $ und $ 10^{-8} \, \tx{W} $ gemessen.\\[10pt]
+\noindent
+Die Nächste Messung wurde auf dem Parkplatz und in einer zur ersten Messung um $ 90^\circ $ gedrehten Anordnung durchgeführt. Hierbei ging es uns nur darum die Umgebungsfaktoren möglichst bei jeder Messreihe zu verändern, sodass wir konstanten Störungen bemerken können.\par
+Die Messreihe ist auf Abbildung \ref{Parkplatz-A} dargestellt. Die einzelnen Messpunkte sind wieder in blau, die Fehler in rot dargestellt. Auch hier ist die $ y $-Achse logarithmisch aufgetragen. Die blaue Kurve ist wieder ein $ \frac{1}{d^2} $ Fit mit den Parametern $ a $ und $ b $ wie zuvor. Die Kurve sieht nur aufgrund der logarithmischen Skala so unerwartet aus. Dieser Abfall der Kurve, der hier ab $ 250 \, \tx{cm} $ zu erkennen ist, fällt bei den anderen Messungen nicht auf, da dort der $ y $-Achsen $ a $ positiv ist und die Kurve nicht die $ x $-Achse schneidet. Da der Parameter $ a $ bei dieser Messung als negativ berechnet wurde und in der logarithmischen .\par
+Die Messung wurde genauso durchgeführt wie auch im Garten der Physik. Wie man jedoch sieht haben wir bei dieser Messung bei den gleichen Abständen einen wesentlich größeren Bereich an Intensitäten gemessen. Die Werte gehen von $ \approx 10^{-5} \, \tx{W} $ bis $ \approx 10^{-8} \, \tx{W} $.
 
 
-\cite{Antennenbauanleitung} \textcolor{red}{muss noch erwähnt werden !}
+
+
+
 
 \bibliographystyle{plain}
 \bibliography{literature}
@@ -502,13 +526,7 @@ Bei der Winkelmessung ist dies ein Systematischer Fehler da dieser bei jeder Mes
 \section*{Anhang}
 \addcontentsline{toc}{section}{Anhang}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% warum ist messung Hörsaal im text und nicht im anhang
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
+\FloatBarrier
 
 \begin{figure}[ht]
 	\includegraphics[scale=0.55]{Bilder/Abstand-Garten.jpg}
@@ -518,17 +536,31 @@ Bei der Winkelmessung ist dies ein Systematischer Fehler da dieser bei jeder Mes
 \end{figure}
 
 \begin{figure}[ht]
+	\includegraphics[scale=0.55]{Bilder/Abstand-Parkplatz.jpg}
+	\centering
+	\caption{\textcolor{red}{caption Fehlt!!!}}
+	\label{Parkplatz-A}
+\end{figure}
+
+\begin{figure}[ht]
 	\includegraphics[scale=0.55]{Bilder/Abstand-Labor.jpg}
 	\centering
 	\caption{\textcolor{red}{caption Fehlt!!!}}
 	\label{Labor-A}
 \end{figure}
 
-\begin{figure}[ht]
-	\includegraphics[scale=0.55]{Bilder/Abstand-Parkplatz.jpg}
+\begin{figure}
 	\centering
+	\includegraphics[scale=0.55]{Bilder/Polarisation-GrH}
 	\caption{\textcolor{red}{caption Fehlt!!!}}
-	\label{Parkplatz-A}
+	\label{Labor-P}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[scale=0.55]{Bilder/Polarisation-Labor}
+	\caption{\textcolor{red}{caption Fehlt!!!}}
+	\label{GrH-P}
 \end{figure}
 
 \begin{figure}[ht]
