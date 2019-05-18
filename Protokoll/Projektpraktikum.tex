@@ -298,8 +298,8 @@ Das Ziel des Versuches ist es, eine Dipol-Antennen zu bauen und diese zu nutzen 
 \subsection{Tag 1}
 
 Zu Beginn des ersten Tages wurde ein Plan erstellt, was alles an diesem Tag gemacht werden muss. Hierbei war ganz oben auf der Liste das bauen der Antennen.\par
-Dafür wurde als erstes ein Gehäuse erstellt. Diese dient dazu die Antennen in der Richtigen Form zu halten, der Montage auf den Stativen sowie der Befestigung eines Fadens zur Positionsbestimmung. Die erste Generation des Gehäuses wurde im Vorhinein von uns mit einem 3D-Drucker ausgedruckt um Zeit zu sparen, da nicht klar war wie leicht die Bedienung des Ultimaker 3D Druckers ist. Es mussten also zu erst die Kupferröhrchen und Kabel zu einer Antenne zusammen gelötet werden. Hierfür hatte man zuerst die Kabel getestet, um zu sehen welche besonders wenig Verlust aufweisen, und auch einen relativ konstanten Verlust über das gesamte Frequenzspektrum aufweisen. Hierfür wurden sie ans Spectrum-Analyzer angeschlossen und die Verlustleitung gemessen.\par
-Ein weiter Aufgabenteil am ersten Tag war das installieren von GNU Radio auf dem RasberryPi zur Nutzung des HackRFs \textcolor{red}{Hier Jan und Erik erläutern bitte}. Nebenbei wurde mit der Funktionsweise des Spectrum-Analyzer experimentiert und versucht gute Einstellungsmöglichkeiten für die geplanten Messungen zu finden.
+Dafür wurde als erstes ein Gehäuse erstellt. Diese dient dazu die Antennen in der Richtigen Form zu halten, der Montage auf den Stativen sowie der Befestigung eines Fadens zur Positionsbestimmung. Die erste Generation des Gehäuses wurde im Vorhinein von uns mit einem 3D-Drucker ausgedruckt um Zeit zu sparen, da nicht klar war wie leicht die Bedienung des Ultimaker 3D Druckers ist. Es mussten also zu erst die Kupferröhrchen und Kabel zu einer Antenne zusammen gelötet werden. Hierfür hatte man zuerst die Kabel getestet, um zu sehen welche besonders wenig Verlust aufweisen, und auch einen relativ konstanten Verlust über das gesamte Frequenzspektrum aufweisen. Dazu wurden sie an den Spectrum-Analyzer angeschlossen und die Verlustleitung gemessen. Ein Bild des ersten Prototypen sieht man in Abbildung \ref{Antenne1}\par
+Ein weiter Aufgabenteil am ersten Tag war das installieren von GNU Radio auf dem RasberryPi zur Nutzung des HackRFs \textcolor{red}{Hier Jan und Erik erläutern bitte}. Nebenbei wurde mit der Funktionsweise des Spectrum-Analyzer experimentiert und versucht gute Einstellungsmöglichkeiten für die geplanten Messungen zu finden. In Abbildung \ref{ersteMessung} sieht man den an eine Antenne angeschlossenen Spectrum-Analyzer. 
 \begin{figure}[ht]
 	\centering
 	\includegraphics[scale=0.35, trim={0cm 12cm 0cm 0cm}, clip]{Bilder/Ant_innen_1}
@@ -311,7 +311,7 @@ Mit den ersten zwei fertigen Antennen wurden erste Probemessungen gemacht um zu 
 \subsection{Tag 2}
 
 Am nächsten Tag wurden weiter versucht, das Hack-RF zum laufen zu bringen. Leider startete der RaspberryPi nicht mehr, sodass der gestrige Installationsprozess über Nacht erneut durchgeführt werden musste.\par
-Außerdem wurden die Antennen weiter getestet. Eine mögliche Lösungen für das Problem mit dem Senden war die Entfernung des Gehäuses, was aber zu keinen besseren Ergebnissen geführt hat. Auch andere Positionen im Raum führten zum selben Ergebnis, dass kein besonderes Intensitätsmaximum empfangen wurde. Es machte sich jedoch schnell bemerkbar, dass der Raum einem Resonator entspricht und kleine Änderungen im Aufbau des Raum größere Unterschiede bezüglich der Übertragenen Leistung machte. Deshalb haben wir alle Tische und Stühle zur Seite geschoben und bei zukünftigen Messungen weder Geräte noch unsere Positionen verändert um stets die selben Bedingungen zu haben.\par
+Außerdem wurden die Antennen weiter getestet wie . Eine mögliche Lösungen für das Problem mit dem Senden war die Entfernung des Gehäuses, was aber zu keinen besseren Ergebnissen geführt hat. Auch andere Positionen im Raum führten zum selben Ergebnis, dass kein besonderes Intensitätsmaximum empfangen wurde. Es machte sich jedoch schnell bemerkbar, dass der Raum einem Resonator entspricht und kleine Änderungen im Aufbau des Raum größere Unterschiede bezüglich der Übertragenen Leistung machte. Deshalb haben wir alle Tische und Stühle zur Seite geschoben und bei zukünftigen Messungen weder Geräte noch unsere Positionen verändert um stets die selben Bedingungen zu haben.\par
 Da kein Messgerät zur Messung der Antennengüte vorhanden war, wurde versucht durch auftragen der maximalen empfangenen Leistung in Abhängigkeit der Frequenz ein Peak zu ermitteln. Hierbei wurde für über einen längeren Zeitraum die maximale Intensität zu jeder Frequenz aufgenommen. Da diese Messungen auch nicht aufschlussreich waren, wurde versucht das Stehwellenverhältnis (SWV oder ``standing wave ratio'' SWR im englischen) mittels des Spectrum-Anaylzers zu bestimmen. Leider war dies erfolglos, da wir zu diesem Zeitpunkt keinen Richtkoppler zur Verfügung hatten.
 
 \subsection{Tag 3}
@@ -348,7 +348,8 @@ Anschließend wurden noch weitere Richtkoppler der Werkstatt getestet, ob diese 
 \end{figure}
 
 
-\textcolor{red}{Bilder \ref{ersteMessung}, \ref{Antennen1u2}, \ref{Antenne1} und \ref{Antenne2} refferieren !!!}
+% ABGESCHLOSSEN!!!
+%\textcolor{red}{Bilder \ref{ersteMessung}, \ref{Antennen1u2}, \ref{Antenne1} und \ref{Antenne2} refferieren}
 
 
 \section{Details zu den verwendeten Antennen}
@@ -409,8 +410,7 @@ Ein Vorteil an dieser Messung gegenüber dem Senden einer Frequenz über das Hac
 
 Zur Messung der Polarisation wurden die Beiden Antennen in einem festen Abstand voneinander auf dem jeweiligen Stativ befestigt. Zur Bestimmung des Winkels der Antennen zueinander, wurde ein Faden genutzt der zwischen beiden Antennen gespannt wurde. Danach konnte man mit Hilfe eines Geodreiecks den gewünschten Winkel zwischen Antenne und Faden einstellen. Sender und Empfänger wurden dann an den Spectrum-Analyzer angeschlossen.
 
-\subsubsection{Durchführung}
-
+\subsection{Durchführung}
 
 Während den Messungen saßen eine oder zwei Personen am Spectrum-Analyzer, und damit in Nähe der Antennen um die Messwerte abzulesen. Die anderen bei der Messung anwesenden haben entweder den Abstand oder für die Polarisationsmessung den Winkel der empfänger-Antenne verändert und sich dann wieder vom Versuchsaufbau entfernt.\par
 Dieser Abstand beziehungsweise Winkel wurde dann Notiert und die am Spectrum-Analyzer abgelesene Leistung in dBm protokolliert.
@@ -552,13 +552,19 @@ Zu guter Letzt haben wir die letzte Messung auch noch einmal in Abbildung \ref{A
 
 \subsection{Polarisationsmessung}
 
-Die Abbildung 11 zeigt die Polarisationsmessung im Großen Hörsaal. Wie zuvor beschrieben wurde für diese Messung die Sendeantenne für einen festen Abstand von der Empfängerantenne gedreht. In Blau ist die erwartete Intensitätsverlauf von $I(\phi)=I_{\tx{max}}cos(\phi)$ Die mit den Werten gezeichnete Kurve ist in Orange sichtbar nach rechts verschoben. Dies ist liegt möglicherweise daran, dass der Empfänger leicht gegenüber dem Sender verschoben war wodurch sich auch alle Werte leicht verschoben haben. Auch ist auffallend, dass die orange Kurve nach unten schmaler wird als die Erwartete. Der Grund hierfür könnte sein, dass wir die Antenne nicht um ihren Mittelpunkt sondern um einen Punkt leicht dahinter gedreht haben. Dadurch haben wir zusätzlich noch einen Intensitätsverlust durch die zusätzliche steigende Entfernung der beiden Antennen. D.h wir messen einen schnelleren Abfall bezüglich der Intensität als erwartet. Wenn man sich die blauen Messpunkte anschaut fällt zusätzlich noch auf, dass diese auf beiden Seiten nach einem gewissen Winkel sich kaum merklich verändern. Dies kann daran liegen, dass wir durch denn schnelleren Intensitätsabfall unsere Werte am Ende nicht mehr merklich durch die Drehung ändern weil sie schon fast am Minimum angekommen sind und bis sich die Intensität nach 
+Die Abbildung \ref{Labor-P} zeigt die Polarisationsmessung im \textbf{Großen Hörsaal}. Wie zuvor beschrieben wurde für diese Messung die Sendeantenne für einen festen Abstand von der Empfängerantenne gedreht. In Blau ist die erwartete Intensitätsverlauf von $I(\phi)=I_{\tx{max}}\cos(\phi)$. $ I_{\tx{max}} $ ist hier bei der Wert bei $ \phi = 0 $. \par
+Die an die Messwerten angepasste Kurve ist in Orange sichtbar nach rechts verschoben. Dies ist liegt möglicherweise daran, dass der Empfänger leicht gegenüber dem Sender verschoben war wodurch sich auch alle Werte leicht verschoben haben.  \par
+Im Vergleich der Kurven fällt auch auf, dass die orange Kurve nach unten schmaler wird als die Erwartete. Der Grund hierfür könnte sein, dass wir die Antenne nicht um ihren Mittelpunkt sondern um einen Punkt leicht dahinter gedreht haben. Dadurch haben wir zusätzlich noch einen Intensitätsverlust durch die zusätzliche steigende Entfernung der beiden Antennen von ihrem Mittelpunkt. D.h wir messen einen schnelleren Abfall bezüglich der Intensität als erwartet. Dieser Effekt sollte sich bei einer Verschiebung des Mittelpunktes von $ 20 \, \tx{cm} $ und einem Messabstand von $ d = 150 \, \tx{cm} $ nur auf eine Abweichung der Position relativ zum Sender von ca. $ 7{,}6^{\degree} $ oder $ 0{,}13 \, \tx{rad} $ handeln.\par
+Wenn man sich die blauen Messpunkte anschaut fällt zusätzlich noch auf, dass diese auf beiden Seiten nach einem gewissen Winkel sich kaum merklich verändern etwas was beim Fit nicht auffällt. Dies kann daran liegen, dass wir durch denn schnelleren Intensitätsabfall, die Werte gegen $\pm \frac{\pi}{2}$ nicht mehr merklich durch die Drehung ändern, da diese schon fast am Minimum angekommen sind. Das weitere Drehen hat dadurch kaum sichtbare Auswirkungen auf die Intensität. \par
+Der Grund dafür, dass unsere Messwerte, selbst bei einer Drehung von $90^{\degree}$, nie eine Intensität von Null erreichen liegt an Hintergrundrauschen und möglicher Reflexion in der Umgebung. Reflexion in der Umgebung könnte auch erklären warum wir bei $-\frac{\pi}{2}$ unser Messpunkte ein höher liegendes Intensitätsminimum andeuten als bei $\frac{\pi}{2}$, da dort möglicherweise mehr durch Reflexion angekommen ist. \par
+Bei der Betrachtung von Abbildung \ref{GrH-P}, welche die Messreihe im \textbf{Labor} darstellt, erkennt man, dass hier die selben Effekte auftreten wie in Abbildung \ref{Labor-P}, jedoch hier mit einer Verschiebung der Antennen in die andere Richtung. Da hier die orange Kurve nach links verschoben ist.\par
+Wenn man beide Abbildungen miteinander vergleicht fällt auf, das die Gesamtintensität trotz selbem Abstand im Labor viel höher war als im Großen Hörsaal. Dies liegt sehr wahrscheinlich daran, dass unser Labor als Resonator fungiert hat und unsere übertragene Intensität erhöht hat, während wir diesen Effekt im großen Hörsaal nicht so stark hatten.
 
 \subsection{Weitere Grafiken}
 
 Bei allen Frequenzcharakteristiken im Anhang sind bei $ \approx 1{,}25 \, \tx{GHz} $ und $ \approx 2{,}5 \, \tx{GHz} $ entweder starke Peaks oder starke Dips gefolgt von Peaks zu sehen. Diese sind nicht Teil der Charakteristik der Antennen sondern stammen von dem Richtkoppler und der vom Gerät berechneten Kompensation dieser Peaks.\\[10pt]
 \noindent
-Die Abbildungen \ref{Ant1alt} und \ref{Ant2alt} im Anhang zeigen noch einmal die gemessene Frequenzcharakteristiken. Wie man sieht gibt es hier keine starken Dips, sondern nur einen relativ homogenen Verlust über alle Frequenzen hinweg (Bis auf die beschriebenen Peaks des Richtungskopplers).\par
+Die Abbildungen \ref{Ant1alt} und \ref{Ant2alt} im Anhang zeigen noch einmal die gemessene Frequenzcharakteristiken der alten Antennen. Wie man sieht gibt es hier keine starken Dips, sondern nur einen relativ homogenen Verlust über alle Frequenzen hinweg (Bis auf die beschriebenen Peaks des Richtkopplers).\par
 Die Abbildungen \ref{Ant1} und \ref{Ant2} zeigen die Frequenzcharakteristiken der neuen Antennen. Hier ist bei beiden ein starker Dip bei ungefähr $ 1{,}6 \, \tx{GHz} $ zu sehen. Die anderen beiden Peaks stammen vom Richtungskoppler.\par
 Auf der Abbildung \ref{Ant2-getrimmt} ist noch einmal die Charakteristik der zweiten neuen Antenne nach dem trimmen zu sehen.\\[10pt]
 \noindent
