@@ -290,44 +290,57 @@ t=\frac{\vert x-y_0\vert}{u_x}
 % Document
 
 \section{Veruschsziel}
-Das Ziel des Versuches war eigene Dipol-Antennen zu bauen und diese zu nutzen und ihre Strahlungscharakteristik zu bestimmen. Wenn noch Zeit übrig wäre, sollte das HackRF und eine Drone genutzt werden um Antennen in der Gegend zu vermessen.
+Das Ziel des Versuches ist es, eine Dipol-Antennen zu bauen und diese zu nutzen um ihre Strahlungscharakteristik zu bestimmen. Wenn noch Zeit übrig wäre, sollte das HackRF und eine Drone genutzt werden um Antennen in der Gegend zu vermessen.
 
 \section{Labortagebuch}
 
 
 \subsection{Tag 1}
-Zu Beginn des ersten Tages wurde ein Plan erstellt, was alles an diesem Tag gemacht werden muss. Hierbei war ganz oben auf der Liste das bauen der Antennen. Hierbei wurde als erstes ein Gehäuse erstellt. Diese dient dazu die Antennen in der Richtigen Form zu halten, der Montage auf den Stativen sowie der Befestigung eines Fadens zur Positionsbestimmung. Die Antennen selber wurden während des Druckens zusammen gelötet. Hierfür hatte man zuerst die Kabel getestet, um zu sehen welche besonders wenig Verlust aufweisen. Hierfür wurden sie ans Frequenzspektrometer angeschlossen. 
-Ein weiter Aufgabenteil am ersten Tag war das installieren von GNU Radio auf dem RasberryPi zur Nutzung des HackRFs. Neben bei wurde mit der Funktionsweise des Funktionsgenerator experimentiert und versucht gute Einstellungsmöglichkeiten für die geplanten Messungen zu finden.
-\begin{figure}[h]
-	\includegraphics[scale=0.25]{Bilder/Ant_innen_1}
+
+Zu Beginn des ersten Tages wurde ein Plan erstellt, was alles an diesem Tag gemacht werden muss. Hierbei war ganz oben auf der Liste das bauen der Antennen.\par
+Dafür wurde als erstes ein Gehäuse erstellt. Diese dient dazu die Antennen in der Richtigen Form zu halten, der Montage auf den Stativen sowie der Befestigung eines Fadens zur Positionsbestimmung. Die erste Generation des Gehäuses wurde im Vorhinein von uns mit einem 3D-Drucker ausgedruckt um Zeit zu sparen, da nicht klar war wie leicht die Bedienung des Ultimaker 3D Druckers ist. Es mussten also zu erst die Kupferröhrchen und Kabel zu einer Antenne zusammen gelötet werden. Hierfür hatte man zuerst die Kabel getestet, um zu sehen welche besonders wenig Verlust aufweisen, und auch einen relativ konstanten Verlust über das gesamte Frequenzspektrum aufweisen. Hierfür wurden sie ans Spectrum-Analyzer angeschlossen und die Verlustleitung gemessen.\par
+Ein weiter Aufgabenteil am ersten Tag war das installieren von GNU Radio auf dem RasberryPi zur Nutzung des HackRFs \textcolor{red}{Hier Jan und Erik erläutern bitte}. Nebenbei wurde mit der Funktionsweise des Spectrum-Analyzer experimentiert und versucht gute Einstellungsmöglichkeiten für die geplanten Messungen zu finden.
+\begin{figure}[ht]
 	\centering
-	\caption{Aufbau der ersten gebauten Antenne mit Antennengehäuse und Innenleben.}
+	\includegraphics[scale=0.35, trim={0cm 12cm 0cm 0cm}, clip]{Bilder/Ant_innen_1}
+	\label{Antenne1}
+	\caption{Aufbau der ersten gebauten Antenne mit Antennengehäuse und Innenleben. Zu sehen sind die beiden sendenden parallelen Röhrchen, sowie das dazu orthogonale Röhrchen, dass als Balun fungieren sollte. Am unteren Bildrand ist noch der vorbereitete Schrumpfschlauch und das ende des Kabels zu sehen.}
 \end{figure}
-Mit den ersten zwei fertigen Antennen wurden erste Probemessungen gemacht um zu sehen ob in dem erwarteten Frequenzbereich ein Intensitätsmaximum zu finden war. Jedoch konnte man im Frequenzband nichts auffallendes erkennen. Auffällig war ein unregelmäßig auftauchender Peak bei einer Frequenz von $2.4\,$GHz. 
+Mit den ersten zwei fertigen Antennen wurden erste Probemessungen gemacht um zu sehen ob in dem erwarteten Frequenzbereich ein Intensitätsmaximum zu finden war. Jedoch konnte man im erwarteten Frequenzband nichts auffallendes erkennen. Auffällig war nur ein unregelmäßig auftauchender Peak bei einer Frequenz von $2.4\,$GHz, den wir stark für das WLAN Signal halten. Außerdem konnte man auch andere Peaks (vermutlich Bluetooth und Mobilnetz) erkennen wenn Handys in der nähe der Antenne waren. Somit hatten wir zumindest Funktionierende Antennen die Signale empfangen konnten. Allerdings konnten wir noch nicht wie gewünscht auf einer bestimmten Frequenz senden und dieses Signal messen.
 
 \subsection{Tag 2}
-Am nächsten Tag wurden weiter versucht, das HackRF zum laufen zu bringen. Leider startete der RaspberryPi nicht mehr, sodass der gestrige Installationsprozess über Nacht erneut durchgeführt wurde. Außerdem wurden die Antennen weiter getestet. Eine mögliche Lösungen für das Problem von ihnen war die Entfernung des Gehäuses, welche aber zu keinen besseren Ergebnissen geführt hat. Auch andere Positionen im Raum führten zum selben Ergebnis, dass kein besonderes Intensitätsmaximum empfangen wurde. Es machte sich jedoch schnell bemerkbar, dass der Raum einem Resonator entspricht und kleine Änderungen im Aufbau des Raum größere Unterschiede bezüglich der Übertragenen Leistung machte. Da kein Messgerät zur Messung der Antennengüte vorhanden war wurde versucht die Frequenz durch auftragen der maximalen empfangenen Leistung. Da diese Nicht aufschlussreich waren, wurde versucht das Stehwellenverhältnis (SWV oder SWR) mittels des Spectrum Anaylzers zu bestimmen. Leider war dies erfolglos, da wir keinen Richtkoppler zu diesem Zeitpunkt zur Verfügung hatten.
+
+Am nächsten Tag wurden weiter versucht, das Hack-RF zum laufen zu bringen. Leider startete der RaspberryPi nicht mehr, sodass der gestrige Installationsprozess über Nacht erneut durchgeführt werden musste.\par
+Außerdem wurden die Antennen weiter getestet. Eine mögliche Lösungen für das Problem mit dem Senden war die Entfernung des Gehäuses, was aber zu keinen besseren Ergebnissen geführt hat. Auch andere Positionen im Raum führten zum selben Ergebnis, dass kein besonderes Intensitätsmaximum empfangen wurde. Es machte sich jedoch schnell bemerkbar, dass der Raum einem Resonator entspricht und kleine Änderungen im Aufbau des Raum größere Unterschiede bezüglich der Übertragenen Leistung machte. Deshalb haben wir alle Tische und Stühle zur Seite geschoben und bei zukünftigen Messungen weder Geräte noch unsere Positionen verändert um stets die selben Bedingungen zu haben.\par
+Da kein Messgerät zur Messung der Antennengüte vorhanden war, wurde versucht durch auftragen der maximalen empfangenen Leistung in Abhängigkeit der Frequenz ein Peak zu ermitteln. Hierbei wurde für über einen längeren Zeitraum die maximale Intensität zu jeder Frequenz aufgenommen. Da diese Messungen auch nicht aufschlussreich waren, wurde versucht das Stehwellenverhältnis (SWV oder ``standing wave ratio'' SWR im englischen) mittels des Spectrum-Anaylzers zu bestimmen. Leider war dies erfolglos, da wir zu diesem Zeitpunkt keinen Richtkoppler zur Verfügung hatten.
+
 \subsection{Tag 3}
-Am Mittwoch war das HackRF vollständig einsetzbar, es wurde nun mit einem anderen RasberryPi betrieben. Dies nutzten wir um eine erste Polarisationsmessungen durchzuführen. Auch hier zeigte sich, dass Bewegung von Personen im Raum oder das öffnen eines Fensters die Messwerte stark beeinflusste. Im laufe des Tages erhielten wir einen Richtkoppler, mit welchem die Güte der Antenne gemessen werden konnte. Hier stellte sich heraus die Antennen insgesamt eine sehr Ineffektive Charakteristik hatten und auf keinem Frequenzband relativ effizient sendeten. Da zusätzlich ein Kurzschluss bei einer der Antennen auftrat, wurden zwei neue mit einem Optimierten Design erstellt. Hierbei wurde kein drittes Kupferrohr als Balun senkrecht zum Dipol eingesetzt, sondern die beiden Arme der Antenne wurden direkt mit einer BNC Buchse verbunden.\textcolor{red}{Bild} Beim Test der neuen Antennen zeigt sich eine deutliche Verbesserung zur ersten Generation. Durch des Spectrum Analyzer mit Richtkoppler konnte recht genau gezeugt werden, dass unsere Antennen im erwarteten Bereich besonders gut senden können.\textcolor{red}{Bild} Da beide trotzdem leichte Unterschiede in der Frequenz auftraten, wurde eine mithilfe eines eingebauten Kondensators auf die andere getrimmt.\textcolor{red}{Bild} 
+
+Am Mittwoch war das Hack-RF vollständig einsetzbar, es wurde nun mit einem anderen RasberryPi betrieben. Das Hack-RF nutzten wir um eine erste Polarisationsmessungen durchzuführen. Auch hier zeigte sich, dass Bewegung von Personen im Raum oder das öffnen eines Fensters die Messwerte stark beeinflusste. Im laufe des Tages erhielten wir einen Richtkoppler, mit welchem die Güte der Antenne gemessen werden konnte. \textcolor{red}{Erik evtl nochmal erläutern}\par
+Hier stellte sich heraus die Antennen insgesamt eine sehr Ineffektive Charakteristik hatten und auf keinem Frequenzband relativ effizient sendeten. Da zusätzlich ein Wackelkontakt bei einer der Antennen auftrat, wurden zwei neue mit einem Optimierten Design erstellt. Hierbei wurde kein drittes Kupferrohr als Balun senkrecht zum Dipol eingesetzt, sondern die beiden Arme der Antenne wurden direkt an eine BNC-Buchse gelötet, wie in Abbildung \ref{Antenne2} zu sehen ist.\par
+Beim Test der neuen Antennen zeigte sich eine deutliche Verbesserung zur ersten Generation. Durch den Spectrum Analyzer mit Richtkoppler konnte recht genau gezeigt werden, dass unsere Antennen im erwarteten Bereich besonders gut senden können.\textcolor{red}{Bild} Da beide trotzdem leichte Unterschiede in der Frequenz auftraten, wurde eine mithilfe eines eingebauten Kondensators auf die andere getrimmt.\textcolor{red}{Bild} 
 \subsection{Tag 4}
 Mit den nun aufeinander genormten Antennen wurde beschlossen, sich auf eine  Polarisationsmessung und Abstandmessung zu beschränken und die Messung der Strahlungscharakteristik wegzulassen. Da jedoch auffällig war wie Problematisch die Umgebung des Labors war, wurden diese Messungen im Labor so wie im Garten der Physik und am Parkplatz vor dem Westbau durchgeführt.
 \subsection{Tag 5}
 Am letzten Tag wurden noch zusätzliche Messungen zum Abstand und zur Polarisation im Großen Hörsaal durchgeführt. Da die Messungen im Labor bis dahin wegen Bewegung von Personen sehr ungenau war wurde hier nochmal eine Messung durchgeführt, um zu zeigen wie groß die Schwankungen sind und eine bei der sich wirklich nichts verändert. \textcolor{red}{Messung? Unterkapitel mit Bildern und etwas Text da häufig erwähnt}
 Anschließend wurden noch weitere Richtkoppler der Werkstatt getestet, ob diese sich wie der geliehene verhalten.
-\begin{figure}[h]
-	\includegraphics[scale=0.3]{Bilder/Ant_Fktgen}
+\begin{figure}[ht]
 	\centering
-	\caption{Gebaute Antenne auf dem Stativ und an den Frequenzgenerator angeschlossen.}
+	\includegraphics[scale=0.35, trim={0cm 8cm 3cm 2cm}, clip]{Bilder/Ant_Fktgen}
+	\label{ersteMessung}
+	\caption{Gebaute Antenne auf dem Stativ und an den Spektrum-Analyzer angeschlossen. Bei einer Messung wurde die zweite Antenne an den Input angeschlossen und die Intensität des empfangenen Signals bei verschiedenen Frequenzen gemessen.}
 \end{figure}
-\begin{figure}[h]
-	\includegraphics[scale=0.3]{Bilder/Ant_12}
+\begin{figure}[ht]
 	\centering
-	\caption{Beide Antennen Generationen nebeneinander. Hinten die erste Generation vorne die 2.Generation}
+	\includegraphics[scale=0.3, trim={0cm 3cm 0cm 1cm}, clip]{Bilder/Ant_12}
+	\label{Antennen1u2}
+	\caption{Beide Antennen Generationen nebeneinander. Hinten die erste Generation vorne die 2.Generation. Die erste Generation Antennen hatten den Nachteil fest an Kabel gebunden zu sein, und einen integrierten Balun zu haben, der nicht wie erwartet funktionierte. Die neuen Antennen haben einen Standardisierten BNC-Anschluss und keinen Balun mehr. Außerdem sind die Gehäuse verbessert und besitzen eine Stativ-Halterung.}
 \end{figure}
-\begin{figure}[h]
-	\includegraphics[scale=0.3]{Bilder/Ant_innen_2}
+\begin{figure}[ht]
 	\centering
-	\caption{Innerer Aufbau der 2.Antennengeneration. Im Bild die genormte Antenne mit kleinem Kondensator an der Seite.}
+	\includegraphics[scale=0.4, trim={0cm 0cm 0cm 8cm}, clip]{Bilder/Ant_innen_2}
+	\label{Antenne2}
+	\caption{Innerer Aufbau der 2.Antennengeneration. Man sieht die beiden Kupferröhrchen angelötet an zwei Kabel, welchen an die BNC-Stecker Buchse gelötet wurden. Das Gehäuse sorgt nur für Stabilität, und parallele Ausrichtung der Röhrchen.}
 \end{figure}
 
 
@@ -418,6 +431,7 @@ I_{+1} = -37{,}85\,\tx{dBm} \approx 1{,}6405\cdot 10^{-7}\,\tx{W} \qquad I_{-1} 
 \Delta I = \frac{(I-I_{-1})+(I_{+1}-I)}{2} \approx 0{,}9 \cdot10^{-7}\,\tx{W}
 \end{equation*}
 Somit ist $I=(1{,}3\pm0{,}3)\cdot10^{-7}\,$W. \par 
+<<<<<<< HEAD
 
 \subsection{Abstandsmessung}
 
@@ -431,6 +445,12 @@ Nach dem wir alle Werte berechnet haben, tragen wir die Leistung $I$ in Abhängi
 	\centering
 	\caption{Gemessenen Intensität in Abhängigkeit vom Abstand $d$. Auf der $y$-Achse ist die empfangene Intensität in Watt und auf der $x$-Achse der Abstand zur Sendeantenne in cm.}
 \end{minipage}
+=======
+Nach dem wir alle Werte berechnet haben, tragen wir die Leistung $I$ in Abhängigkeit des Abstandes $d$ auf. Wie bereits zu erkennen ist, entsprechen die Messwerte ca. einen $\frac{1}{d^{2}}$ Verlauf, welchen wir für die Leistung im Fernfeld erwarten würden. Nach dem wir alle Werte berechnet haben, tragen wir die Leistung $I$ in Abhängigkeit des Abstandes $d$ auf. Man sieht die Werte Fallen am Anfang sehr Stark und nähern sich dann der Null an. Da wir im Fernfeld uns bewegen, erwarten wir einen $\frac{1}{d^{2}}$-Verlauf der Leistung $I$. Dies ist gut zu erkennen, jedoch nicht eindeutig zu sagen. Deswegen versuchen wir nun eine $\frac{1}{d^{2}}$-Funktion an unsere Messwerte zu plotten.
+\begin{figure}[h]
+	\includegraphics[scale=0.6]{Bilder/bsp}
+	\centering
+>>>>>>> 75b91438c12d8f51c6c10b4cccdd565e23f34a2c
 \end{figure}
 \FloatBarrier
 \par 
