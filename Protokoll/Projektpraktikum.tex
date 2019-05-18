@@ -427,6 +427,7 @@ I_{+1} := I+1\,\tx{dBm} \quad\tx{,}\,I_{-1} := I-1\,\tx{dBm} \quad \Rightarrow\t
 \end{equation*}
 \begin{equation}
 \Delta I = \frac{(I-I_{-1})+(I_{+1}-I)}{2}
+\label{deltaI}
 \end{equation}
 Wir bilden also den Mittelwert aus den zwei ungleich großen Fehlern. Dies zeigen wir nun für den Wert $I=-38{,}85\,\tx{dBm} \approx$ $1{,}3031\cdot10^{-7}\,$W (GrH Messung 1: $d=120\,$cm):
 \begin{equation*}
@@ -435,14 +436,7 @@ I_{+1} = -37{,}85\,\tx{dBm} \approx 1{,}6405\cdot 10^{-7}\,\tx{W} \qquad I_{-1} 
 \begin{equation*}
 \Delta I = \frac{(I-I_{-1})+(I_{+1}-I)}{2} \approx 0{,}9 \cdot10^{-7}\,\tx{W}
 \end{equation*}
-Somit ist $I=(1{,}3\pm0{,}3)\cdot10^{-7}\,$W. \par 
-Nach dem wir alle Werte berechnet haben, tragen wir die Leistung $I$ in Abhängigkeit des Abstandes $d$ auf. Wie bereits zu erkennen ist, entsprechen die Messwerte ca. einen $\frac{1}{d^{2}}$ Verlauf, welchen wir für die Leistung im Fernfeld erwarten würden. Nach dem wir alle Werte berechnet haben, tragen wir die Leistung $I$ in Abhängigkeit des Abstandes $d$ auf. Man sieht die Werte Fallen am Anfang sehr Stark und nähern sich dann der Null an. Da wir im Fernfeld uns bewegen, erwarten wir einen $\frac{1}{d^{2}}$-Verlauf der Leistung $I$. Dies ist gut zu erkennen, jedoch nicht eindeutig zu sagen. Deswegen versuchen wir nun eine $\frac{1}{d^{2}}$-Funktion an unsere Messwerte zu plotten.
-\begin{figure}[ht]
-	\centering
--	\includegraphics[scale=0.6]{Bilder/bsp}
-	\caption{\textcolor{red}{add caption!}}
-	\label{GrHlin}
-\end{figure}
+
 
 \subsection{Abstandsmessung}
 
@@ -468,14 +462,15 @@ Als nächstes nutzen wir die Python-Funktion \verb|curve_fit| \cite{curvescipy} 
 f(d) = a + \frac{b}{d^{2}}
 \label{f}
 \end{equation}	
-Hierbei sind $a$ und $b$ freie Parameter, welche \verb|curve_fit| an die Messwerte anpasst und $d$ der Abstand zur Sendeantenne. Zusätzlich wählen wir nun wieder eine logarithmische Skala für die $y$-Achse, um Messwerte, welche gegen Null gehen besser unterscheiden zu können. Dies ergibt (wieder mit den Messwerten aus dem großen Hörsaal) den Graphen Abbildung \ref{Abstand-bsp}.
+Hierbei sind $a$ und $b$ freie Parameter, welche \verb|curve_fit| an die Messwerte anpasst und $d$ der Abstand zur Sendeantenne. Zusätzlich wählen wir nun wieder eine logarithmische Skala für die $y$-Achse, um Messwerte, welche gegen Null gehen besser unterscheiden zu können. Dies ergibt (wieder mit den Messwerten aus dem großen Hörsaal) den Graphen Abbildung \ref{GrH-A}.
 
-\begin{figure}
+\begin{figure}[h]
 	\includegraphics[scale=0.5]{Bilder/Abstand-GrH.jpg}
 	\centering
-	\caption{Gemessenen Intensität in Abhängigkeit vom Abstand $d$. Auf der $y$-Achse ist die empfangene Intensität in Watt und auf der $x$-Achse der Abstand zur Sendeantenne in cm.}
+	\caption{Gemessenen Intensität in Abhängigkeit vom Abstand $d$. Auf der logarithmischen $y$-Achse ist die empfangene Intensität in Watt aufgetragen und auf der $x$-Achse der Abstand zur Sendeantenne in cm. Zusätzlich sind auch Fehler in $x$- und $y$-Richtung eingezeichnet, jedoch sind die Fehler in $x$-Richtung zu klein um sie noch zu sehen. Zusätzlich wurde die Funktion $f(d)$ \eqref{f} mittels curvfit (Pythen Programm \cite{curvescipy}) an die Messwerte geplottet.}
+	\label{GrH-A}
 \end{figure}
-
+\FloatBarrier
 Bei diesen Messwerten ergeben sich für die Parameter $a$ und $b$ die Werte:
 \begin{equation*}
 \tx{Messung 1:} \quad a = (1{,}9\pm1{,}2)\cdot10^{-7}\,\tx{W} \quad b = (9{,}9\pm0{,}4)\cdot10^{-4}\,\tx{Wcm}
@@ -483,10 +478,13 @@ Bei diesen Messwerten ergeben sich für die Parameter $a$ und $b$ die Werte:
 \begin{equation*}
 \tx{Messung 2:} \quad a = (0{,}3\pm2{,}8)\cdot10^{-8}\,\tx{W} \quad b = (1{,405\pm0{,}013})\cdot10^{-3} \,\tx{Wcm}
 \end{equation*}
-Wir werden jedoch bei den anderen Messwerten und den dazugehörigen Funktionen diese Parameter nicht weiter betrachten, da wir uns auf Grund der begrenzten Auswertungszeit nur auf den $\frac{1}{x^{2}}$ Verlauf beschränken werden. Nun nur ein paar kurze Worte zu ihnen. Der Parameter $a$ sollte idealerweise Null sein und ist auch bei allen Messwerten sehr klein, mit Werten zwischen $10^{-7}\,$W und $10^{-9}\,$W. Zum Parameter $b$ ist nochmals zu erwähnen, dass wir davon ausgehen, dass wir uns während unserer gesamten Messung im Fernfeld bewegen. Deswegen können unsere Funktionen eigentlich nur bis zu einen Abstand von ca. $r_{\tx{ff}}=(37{,}13\pm0{,}02)\,$cm (nur eine Näherung! Siehe \eqref{rff}) richtige Vorhersagen treffen. 
+Wir werden jedoch bei den anderen Messwerten und den dazugehörigen Funktionen diese Parameter nicht weiter betrachten, da wir uns auf Grund der begrenzten Auswertungszeit nur auf den $\frac{1}{x^{2}}$ Verlauf beschränken werden. Nun nur ein paar kurze Worte zu ihnen. Der Parameter $a$ sollte idealerweise Null sein und ist auch bei allen Messwerten sehr klein, mit Werten zwischen $10^{-7}\,$W und $10^{-9}\,$W. Zum Parameter $b$ ist nochmals zu erwähnen, dass wir davon ausgehen, dass wir uns während unserer gesamten Messung im Fernfeld bewegen. Deswegen können unsere Funktionen eigentlich nur bis zu einen Abstand von ca. $r_{\tx{ff}}=(37{,}13\pm0{,}02)\,$cm (nur eine Näherung! Siehe \eqref{rff}) richtige Vorhersagen treffen.  \par 
+Deswegen werden wir auf den Parameter $b$ in dieser Auswertung nicht eingehen.
 
 \subsection{Polarisationsmessung}
 
+Als nächstes betrachten wir die zwei Polarisationsmessungen. Auch hier werden wir beispielhaft die Auswertung der Messung im großen Hörsaal betrachten. \par 
+Als erstes rechnen wir die Werte wieder in Watt mittels Formel \eqref{w} um. Auch wird der Fehler wieder in gleicher Weise wie zuvor mit der Formel \eqref{deltaI} bestimmt. Nach 
 
 
 \section{Fehlerquellen}
