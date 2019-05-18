@@ -472,7 +472,7 @@ Hierbei sind $a$ und $b$ freie Parameter, welche \verb|curve_fit| an die Messwer
 \begin{figure}[ht]
 	\includegraphics[scale=0.55]{Bilder/Abstand-GrH.jpg}
 	\centering
-	\caption{Gemessenen Intensität in Abhängigkeit vom Abstand $d$. Auf der logarithmischen $y$-Achse ist die empfangene Intensität in Watt aufgetragen und auf der $x$-Achse der Abstand zur Sendeantenne in cm. Zusätzlich sind auch Fehler in $x$- und $y$-Richtung eingezeichnet, jedoch sind die Fehler in $x$-Richtung zu klein um sie noch zu sehen. Zusätzlich wurde die Funktion $f(d)$ \eqref{f} mittels \texttt{curvefit}. (Python Modul \cite{curvescipy}) an die Messwerte geplottet.}
+	\caption{Gemessenen Intensität in Abhängigkeit vom Abstand $d$ im großen Hörsall der Physik. Auf der logarithmischen $y$-Achse ist die empfangene Intensität in Watt aufgetragen und auf der $x$-Achse der Abstand zur Sendeantenne in cm. Zusätzlich sind Fehler in $y$-Richtung nach Formel \eqref{deltaI} eingetragen. Die Fehler in $x$-Richtung $\Delta d = 2\,$cm sind zu klein und deswegen nicht eingezeichnet. Auch wurde die Funktion $f(d)$ \eqref{f} mittels \texttt{curvefit}. (Python Modul \cite{curvescipy}) an die Messwerte geplottet.}
 	\label{GrH-A}
 \end{figure}
 \FloatBarrier
@@ -504,6 +504,7 @@ Wobei wir hier nach Formel \eqref{I} erwarten würden, dass $a=I_{0}$, $b=1$, $c
 Nun wollen wir noch einen zu erwarteten Verlauf nach Formel \eqref{I} einzeichnen. Dazu wählen wir unser $I_{max}=I(0)$ und erhalten dann:
 \begin{equation}
 I_{2}(\phi) = I(0)\cdot \cos^{2}(\phi)
+\label{I2}
 \end{equation}
 
 
@@ -538,6 +539,9 @@ Die letzte Abstandsmessung konnte dann am letzten Tag im Großen Hörsaal durchg
 Die Messdaten sind in Abbildung \ref{GrH-A} dargestellt. Im Großen Hörsaal haben wir zwei Abstandmessungen (wieder in $ 90^\circ $ Ausrichtung zueinander) gemacht, um systematische Störungen durch Reflexionen an den Wänden oder anderen systematischen Fehler
 
 
+\subsection{Polarisationsmessung}
+
+Die Abbildung 11 zeigt die Polarisationsmessung im Großen Hörsaal. Wie zuvor beschrieben wurde für diese Messung die Sendeantenne für einen festen Abstand von der Empfängerantenne gedreht. In Blau ist die erwartete Intensitätsverlauf von $I(\phi)=I_{max}cos(\phi)$ Die mit den Werten gezeichnete Kurve ist in Orange sichtbar nach rechts verschoben. Dies ist liegt möglicherweise daran, dass der Empfänger leicht gegenüber dem Sender verschoben war wodurch sich auch alle Werte leicht verschoben haben. Auch ist auffallend, dass die orange Kurve nach unten schmaler wird als die Erwartete. Der Grund hierfür könnte sein, dass wir die Antenne nicht um ihren Mittelpunkt sondern um einen Punkt leicht dahinter gedreht haben. Dadurch haben wir zusätzlich noch einen Intensitätsverlust durch die zusätzliche steigende Entfernung der beiden Antennen. D.h wir messen einen schnelleren Abfall bezüglich der Intensität als erwartet. Wenn man sich die blauen Messpunkte anschaut fällt zusätzlich noch auf, dass diese auf beiden Seiten nach einem gewissen Winkel sich kaum merklich verändern. Dies kann daran liegen, dass wir durch denn schnelleren Intensitätsabfall unsere Werte am Ende nicht mehr merklich durch die Drehung ändern weil sie schon fast am Minimum angekommen sind und bis sich die Intensität nach 
 
 \section{Fazit}
 
@@ -563,49 +567,63 @@ polarisation auch gut aber mit winkel offset
 \begin{figure}[ht]
 	\includegraphics[scale=0.55]{Bilder/Abstand-Garten.jpg}
 	\centering
-	\caption{\textcolor{red}{caption Fehlt!!!}}
+	\caption{Gemessenen Intensität in Abhängigkeit vom Abstand $d$ im Garten der Physik. Auf der logarithmischen $y$-Achse ist die empfangene Intensität in Watt aufgetragen und auf der $x$-Achse der Abstand zur Sendeantenne in cm. Zusätzlich sind Fehler in $y$-Richtung nach Formel \eqref{deltaI} eingetragen. Die Fehler in $x$-Richtung $\Delta d = 2\,$cm sind zu klein und deswegen nicht zu sehen. Auch wurde die Funktion $f(d)$ \eqref{f} mittels \texttt{curvefit}. (Python Modul \cite{curvescipy}) an die Messwerte geplottet.}
 	\label{Garten-A}
 \end{figure}
 
 \begin{figure}[ht]
 	\includegraphics[scale=0.55]{Bilder/Abstand-Parkplatz.jpg}
 	\centering
-	\caption{\textcolor{red}{caption Fehlt!!!}}
+	\caption{Gemessenen Intensität in Abhängigkeit vom Abstand $d$ auf dem Parkplatz. Auf der logarithmischen $y$-Achse ist die empfangene Intensität in Watt aufgetragen und auf der $x$-Achse der Abstand zur Sendeantenne in cm. Zusätzlich sind Fehler in $y$-Richtung nach Formel \eqref{deltaI} eingetragen. Die Fehler in $x$-Richtung $\Delta d = 2\,$cm sind zu klein und deswegen nicht zu sehen. Auch wurde die Funktion $f(d)$ \eqref{f} mittels \texttt{curvefit}. (Python Modul \cite{curvescipy}) an die Messwerte geplottet.}
 	\label{Parkplatz-A}
 \end{figure}
 
 \begin{figure}[ht]
 	\includegraphics[scale=0.55]{Bilder/Abstand-Labor.jpg}
 	\centering
-	\caption{\textcolor{red}{caption Fehlt!!!}}
+	\caption{Gemessenen Intensität in Abhängigkeit vom Abstand $d$ im Labor. Auf der logarithmischen $y$-Achse ist die empfangene Intensität in Watt aufgetragen und auf der $x$-Achse der Abstand zur Sendeantenne in cm. Zusätzlich sind Fehler in $y$-Richtung nach Formel \eqref{deltaI} eingetragen. Die Fehler in $x$-Richtung $\Delta d = 2\,$cm sind zu klein und deswegen nicht zu sehen. Auch wurde die Funktion $f(d)$ \eqref{f} mittels \texttt{curvefit}. (Python Modul \cite{curvescipy}) an die Messwerte geplottet.}
 	\label{Labor-A}
 \end{figure}
 
 \begin{figure}[ht]
 	\centering
 	\includegraphics[scale=0.55]{Bilder/bsp2}
-	\caption{\textcolor{red}{caption Fehlt!!!}}
+	\caption{Gemessenen Intensität in Abhängigkeit vom Abstand $d$ im Großen Hörsaal der Physik. Auf der $y$-Achse ist die empfangene Intensität in Watt aufgetragen und auf der $x$-Achse der Abstand zur Sendeantenne in cm. Zusätzlich sind Fehler in $y$-Richtung nach Formel \eqref{deltaI} eingetragen. Die Fehler in $x$-Richtung $\Delta d = 2\,$cm sind zu klein und deswegen nicht zu sehen. Auch wurde die Funktion $f(d)$ \eqref{f} mittels \texttt{curvefit}. (Python Modul \cite{curvescipy}) an die Messwerte geplottet.}
 	\label{Abstand-lin}
 \end{figure}
 
 \begin{figure}
 	\centering
 	\includegraphics[scale=0.55]{Bilder/Polarisation-GrH}
-	\caption{\textcolor{red}{caption Fehlt!!!}}
+	\caption{Gemessene Intensität in Abhängigkeit vom Winkel $\phi$ des Empfängers im Großen Hörsaal der Physik. Fehler in $y$-Richtung sind mittels Formel \eqref{deltaI} berechnet und eingetragen. Auch wurde die Funktion $I_{1}(\phi)$ \eqref{I1}  mittels \texttt{curvefit}. (Python Modul \cite{curvescipy}) an die Messwerte geplottet. Auch wurde der theoretische Verlauf nach Formel \eqref{I2} eingetragen.}
 	\label{Labor-P}
 \end{figure}
 
 \begin{figure}
 	\centering
 	\includegraphics[scale=0.55]{Bilder/Polarisation-Labor}
-	\caption{\textcolor{red}{caption Fehlt!!!}}
+	\caption{Gemessene Intensität in Abhängigkeit vom Winkel $\phi$ des Empfängers im Großen Hörsaal der Physik. Fehler in $y$-Richtung sind mittels Formel \eqref{deltaI} berechnet und eingetragen. Auch wurde die Funktion $I_{1}(\phi)$ \eqref{I1}  mittels \texttt{curvefit}. (Python Modul \cite{curvescipy}) an die Messwerte geplottet. Auch wurde der theoretische Verlauf nach Formel \eqref{I2} eingetragen.}
 	\label{GrH-P}
+\end{figure}
+
+\begin{figure}[ht]
+	\includegraphics[scale=0.075]{Bilder/ant32.jpg}
+	\centering
+	\caption{Charakteristik der ersten Antenne, erste Generation. Charakteristische Frequenz $f=848{,}07\,$MHz}
+	\label{Ant1alt}
+\end{figure}
+
+\begin{figure}[ht]
+	\includegraphics[scale=0.075]{Bilder/ant42.jpg}
+	\centering
+	\caption{Charakteristik der zweiten Antenne, erste Generation. Charakteristische Frequenz $f=1{,}23\,$GHz}
+	\label{Ant2alt}
 \end{figure}
 
 \begin{figure}[ht]
 	\includegraphics[scale=0.075]{Bilder/ant12.jpg}
 	\centering
-	\caption{\textcolor{red}{caption Fehlt!!!}}
+	\caption{}
 	\label{Ant1}
 \end{figure}
 
@@ -614,20 +632,6 @@ polarisation auch gut aber mit winkel offset
 	\centering
 	\caption{\textcolor{red}{caption Fehlt!!!}}
 	\label{Ant2}
-\end{figure}
-
-\begin{figure}[ht]
-	\includegraphics[scale=0.075]{Bilder/ant32.jpg}
-	\centering
-	\caption{\textcolor{red}{caption Fehlt!!!}}
-	\label{Ant1alt}
-\end{figure}
-
-\begin{figure}[ht]
-	\includegraphics[scale=0.075]{Bilder/ant42.jpg}
-	\centering
-	\caption{\textcolor{red}{caption Fehlt!!!}}
-	\label{Ant2alt}
 \end{figure}
 
 %\begin{figure}[ht]
