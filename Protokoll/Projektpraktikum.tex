@@ -438,20 +438,17 @@ Somit ist $I=(1{,}3\pm0{,}3)\cdot10^{-7}\,$W. \par
 Nach dem wir alle Werte berechnet haben, tragen wir die Leistung $I$ in Abhängigkeit des Abstandes $d$ auf. Wie bereits zu erkennen ist, entsprechen die Messwerte ca. einen $\frac{1}{d^{2}}$ Verlauf, welchen wir für die Leistung im Fernfeld erwarten würden.
 \begin{figure}[h]
 \begin{minipage}{0.35\linewidth}
-	Nach dem wir alle Werte berechnet haben, tragen wir die Leistung $I$ in Abhängigkeit des Abstandes $d$ auf. Dabei nutzen wir hier als Beispiel die Messwerte aus dem großen Hörsaal (die restlichen befinden sich im Anhang). Man sieht die Werte Fallen am Anfang sehr Stark und nähern sich dann der Null an. Da wir im Fernfeld uns bewegen, erwarten wir einen $\frac{1}{d^{2}}$-Verlauf der Leistung $I$. Dies ist gut zu erkennen, jedoch nicht eindeutig zu sagen. Deswegen versuchen wir nun eine $\frac{1}{d^{2}}$-Funktion an unsere Messwerte zu plotten. 
+	Nach dem wir alle Werte berechnet haben, tragen wir die Leistung $I$ in Abhängigkeit des Abstandes $d$ auf. Wie bereits zu erkennen ist, entsprechen die Messwerte ca. einen $\frac{1}{d^{2}}$ Verlauf, welchen wir für die Leistung im Fernfeld erwarten würden. Nach dem wir alle Werte berechnet haben, tragen wir die Leistung $I$ in Abhängigkeit des Abstandes $d$ auf. Man sieht die Werte Fallen am Anfang sehr Stark und nähern sich dann der Null an. Da wir im Fernfeld uns bewegen, erwarten wir einen $\frac{1}{d^{2}}$-Verlauf der Leistung $I$. Dies ist gut zu erkennen, jedoch nicht eindeutig zu sagen. Deswegen versuchen wir nun eine $\frac{1}{d^{2}}$-Funktion an unsere Messwerte zu plotten.
 \end{minipage}
 \begin{minipage}{0.6 \linewidth}
 	\includegraphics[scale=0.5]{Bilder/bsp}
 	\centering
 	\caption{Gemessenen Intensität in Abhängigkeit vom Abstand $d$. Auf der $y$-Achse ist die empfangene Intensität in Watt und auf der $x$-Achse der Abstand zur Sendeantenne in cm.}
 \end{minipage}
-=======
-Nach dem wir alle Werte berechnet haben, tragen wir die Leistung $I$ in Abhängigkeit des Abstandes $d$ auf. Wie bereits zu erkennen ist, entsprechen die Messwerte ca. einen $\frac{1}{d^{2}}$ Verlauf, welchen wir für die Leistung im Fernfeld erwarten würden. Nach dem wir alle Werte berechnet haben, tragen wir die Leistung $I$ in Abhängigkeit des Abstandes $d$ auf. Man sieht die Werte Fallen am Anfang sehr Stark und nähern sich dann der Null an. Da wir im Fernfeld uns bewegen, erwarten wir einen $\frac{1}{d^{2}}$-Verlauf der Leistung $I$. Dies ist gut zu erkennen, jedoch nicht eindeutig zu sagen. Deswegen versuchen wir nun eine $\frac{1}{d^{2}}$-Funktion an unsere Messwerte zu plotten.
-\begin{figure}[h]
-	\includegraphics[scale=0.6]{Bilder/bsp}
-	\centering
->>>>>>> 75b91438c12d8f51c6c10b4cccdd565e23f34a2c
 \end{figure}
+
+
+
 \FloatBarrier
 \par 
 Als nächstes nutzen wir die Python-Funktion curvfit \cite{curvescipy} Funktion um eine Funktion mit dem erwarteten $\frac{1}{d^{2}}$ Verlauf zu finden. Dazu nutzen wir:
@@ -461,13 +458,13 @@ f(d) = a + \frac{b}{d^{2}}
 \end{equation}	
 Hierbei sind $a$ und $b$ freie Parameter, welche curvfit an die Messwerte anpasst und $d$ der Abstand zur Sendeantenne. Zusätzlich wählen wir nun wieder eine logarithmische Skala für die $y$-Achse, um Messwerte, welche gegen Null gehen besser unterscheiden zu können. Dies ergibt (wieder mit den Messwerten aus dem großen Hörsaal) den Graphen Abbildung \ref{Abstand-bsp}.
 
-\begin{figure}[h]
-	
+\begin{figure}
 	\includegraphics[scale=0.5]{Bilder/Abstand-GrH}
 	\centering
-	\caption{Gemessenen Intensität in Abhängigkeit vom Abstand $d$. Auf der logarithmischen $y$-Achse ist die empfangene Intensität in Watt aufgetragen und auf der $x$-Achse der Abstand zur Sendeantenne in cm. Zudem wurden Fehler auf beiden Achsen eingezeichnet, jedoch sind die Fehler auf der $x$-Achse zu klein um sie zu sehen. Außerdem wurde mittels der curffit \cite{curvescipy} Funktion $f(d)$  \eqref{f} an die Messwerte angelegt.}
-	\label{Abstand-bsp}
+	\caption{Gemessenen Intensität in Abhängigkeit vom Abstand $d$. Auf der $y$-Achse ist die empfangene Intensität in Watt und auf der $x$-Achse der Abstand zur Sendeantenne in cm.}
 \end{figure}
+
+
 Bei diesen Messwerten ergeben sich für die Parameter $a$ und $b$ die Werte:
 \begin{equation*}
 \tx{Messung 1:} \quad a = (1{,}9\pm1{,}2)\cdot10^{-7}\,\tx{W} \quad b = (9{,}9\pm0{,}4)\cdot10^{-4}\,\tx{Wcm}
