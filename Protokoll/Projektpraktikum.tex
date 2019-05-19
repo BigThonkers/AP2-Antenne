@@ -289,6 +289,8 @@ t=\frac{\vert x-y_0\vert}{u_x}
 
 % Document
 
+\pagebreak
+
 \section{Versuchsziel}
 
 Das Ziel des Versuches ist es, eine Dipol-Antennen zu bauen und diese zu nutzen um ihre Strahlungscharakteristik zu bestimmen. Wenn noch Zeit übrig wäre, sollte das HackRF und eine Drohne genutzt werden um Antennen in der Gegend zu vermessen.
@@ -316,7 +318,7 @@ Mit den ersten zwei fertigen Antennen wurden erste Probemessungen gemacht um zu 
 \end{figure}
 
 
-\pagebreak
+%\pagebreak
 
 
 \subsection{Tag 2}
@@ -344,7 +346,7 @@ Mit den nun aufeinander abgestimmten Antennen wurde beschlossen, sich auf eine  
 
 \subsection{Tag 5}
 
-Am letzten Tag wurden noch zusätzliche Messungen zum Abstand und zur Polarisation im Großen Hörsaal durchgeführt. Da die Messungen im Labor bis dahin wegen Bewegung von Personen sehr ungenau waren wurde hier nochmal eine Messung durchgeführt, um zu zeigen wie groß die Schwankungen sind und eine Messung bei der sich im Labor wirklich nichts verändert und sich niemand Bewegt. \textcolor{red}{Messung? Unterkapitel mit Bildern und etwas Text da häufig erwähnt !!!}
+Am letzten Tag wurden noch zusätzliche Messungen zum Abstand und zur Polarisation im Großen Hörsaal durchgeführt. Da die Messungen im Labor bis dahin wegen Bewegung von Personen sehr ungenau waren wurde hier nochmal eine Messung durchgeführt, um zu zeigen wie groß die Schwankungen sind und eine Messung bei der sich im Labor wirklich nichts verändert und sich niemand Bewegt.\par
 Anschließend wurden noch weitere Richtkoppler der Werkstatt getestet, ob diese sich wie der geliehene verhielten.
 \begin{figure}[ht]
 	\centering
@@ -396,8 +398,7 @@ Da wir eine relativ feine Anpassung vornehmen wollten, entschieden wir uns varia
 
 \subsection{Vergleich der Richtkoppler}
 
-Es wurden zusätzlich zum Richtkoppler, mit welchem wir die Messungen zur Antennengüte und das Trimmen durchführten, weitere Richtkoppler bereitgestellt. Als diese nach oben beschriebenen Verfahren zur Messung der nicht getrimmten Antenne der zweiten Generation verwendet wurden, wurde eine völlig unterschiedliche Charakteristik angezeigt. Etwa als würde die Antenne nahezu das gesamte Signal reflektieren. Dies kann aber nach den geglückten Fernfeldmessungen nicht der Fall sein.
-\ref{Koppler_klein}
+Es wurden zusätzlich zum Richtkoppler, mit welchem wir die Messungen zur Antennengüte und das Trimmen durchführten, weitere Richtkoppler bereitgestellt. Als diese nach oben beschriebenen Verfahren zur Messung der nicht getrimmten Antenne der zweiten Generation verwendet wurden, wurde eine völlig unterschiedliche Charakteristik angezeigt (siehe Abbildung \ref{Koppler_klein}). Etwa als würde die Antenne nahezu das gesamte Signal reflektieren. Dies kann aber nach den geglückten Fernfeldmessungen nicht der Fall sein.
 
 \section{Versuchsaufbau und Durchführung der Messungen}
 \label{Versuchsaufbau} 
@@ -478,15 +479,7 @@ Als nächstes nutzen wir die Python-Funktion \verb|curve_fit| \cite{curvescipy} 
 f(d) = a + \frac{b}{d^{2}}
 \label{f}
 \end{equation}	
-Hierbei sind $a$ und $b$ freie Parameter, welche \verb|curve_fit| an die Messwerte anpasst und $d$ der Abstand zur Sendeantenne. Zusätzlich wählen wir nun eine logarithmische Skala für die $y$-Achse, um Messwerte, welche gegen Null gehen besser unterscheiden zu können. Dies ergibt (wieder mit den Messwerten aus dem großen Hörsaal) den Graphen Abbildung \ref{GrH-A}.
-
-\begin{figure}[ht]
-	\includegraphics[scale=0.55]{Bilder/Abstand-GrH.jpg}
-	\centering
-	\caption{Gemessenen Intensität in Abhängigkeit vom Abstand $d$ im großen Hörsaal der Physik. Auf der logarithmischen $y$-Achse ist die empfangene Intensität in Watt aufgetragen und auf der $x$-Achse der Abstand zur Sendeantenne in cm. Zusätzlich sind Fehler in $y$-Richtung nach Formel \eqref{deltaI} eingetragen. Die Fehler in $x$-Richtung $\Delta d = 2\,$cm sind zu klein und deswegen nicht eingezeichnet. Die Ausgleichskurven sind Fits der Form $f(d)$ \eqref{f}, welche mittels \texttt{curvefit} (Python Modul \cite{curvescipy}) an die Messwerte angepasst wurden.}
-	\label{GrH-A}
-\end{figure}
-
+Hierbei sind $a$ und $b$ freie Parameter, welche \verb|curve_fit| an die Messwerte anpasst und $d$ der Abstand zur Sendeantenne. Zusätzlich wählen wir nun eine logarithmische Skala für die $y$-Achse, um Messwerte, welche gegen Null gehen besser unterscheiden zu können. Dies ergibt (wieder mit den Messwerten aus dem großen Hörsaal) den Graphen Abbildung \ref{GrH-A}.\par
 Bei diesen Messwerten ergeben sich für die Parameter $a$ und $b$ die Werte:
 \begin{equation*}
 \tx{Messung 1:} \quad a = (1{,}9\pm1{,}2)\cdot10^{-7}\,\tx{W} \quad b = (9{,}9\pm0{,}4)\cdot10^{-4}\,\tx{Wcm}
@@ -500,16 +493,19 @@ Deswegen werden wir auf den Parameter $b$ in dieser Auswertung nicht eingehen. D
 \begin{table}[ht]
 	\centering
 	\caption{Restliche Parameter der Abstandsmessung für $f(d)$ \eqref{f}}
-	\begin{tabular*}{.9\textwidth}{@{\extracolsep{\fill}}|c|c|c|}
-		\hline 
-		Messung & $a\,$[W] & $b\,$[Wcm] \\
-		\hline 
-		Garten der Physik & $(2{,}0\pm0{,}9)\cdot10^{-8}$ & $(0\pm4)\cdot10^{-5}$ \\
-		\hline
-		Parkplatz & $(4{,}0\pm1{,}4)\cdot10^{-7}$ & $(3{,}38\pm0{,}04)\cdot10^{-2}$\\
-		\hline
-		Labor & $(0{,}6\pm1{,}9)\cdot10^{-9}$ & $(3{,}02\pm0{,}05)\cdot10^{-2}$ \\
-		\hline
+	\begin{tabular*}{.95\textwidth}{@{\extracolsep{\fill}}ccc}
+		\toprule
+		%\hline 
+		Messung & $a\,$[$ 10^{-9} $W] & $b\,$[$ 10^{-3} $Wcm] \\
+		\midrule
+		%\hline
+		Garten der Physik & $20\pm9 \phantom{0}$ & $\phantom{0.00}0\pm0{,}04$ \\
+		%\hline
+		Parkplatz & $400\pm140$ & $33{,}8\pm0{,}4$\\
+		%\hline
+		Labor & $0{,}6\pm1{,}9$ & $30{,}2\pm0{,}5$ \\
+		\bottomrule
+		%\hline
 	\end{tabular*}
 	\label{tab1}
 \end{table}
@@ -530,12 +526,36 @@ Um besser abschätzen zu können, wie gut unsere Messwerte dem entsprechen haben
 I_{1}(\phi) = a \cdot \cos((b \cdot\phi) - c)^{2} + d
 \label{I1}
 \end{equation}
-Wobei wir hier nach Formel \eqref{I} erwarten würden, dass $a=I_{0}$, $b=1$, $c=0$ und $d=0$ ist. Dies ist bei uns jedoch nicht der Fall. Eventuelle Gründe dafür werden im nächsten Abschnitt ,,Diskussion`` besprochen. \par 
+Wobei wir hier nach Formel \eqref{I} erwarten würden, dass $a=I_{0}$, $b=1$, $c=0$ und $d=0$ ist. Dies ist bei uns jedoch nicht der Fall. Eventuelle Gründe dafür werden im nächsten Abschnitt ,,Diskussion`` besprochen. Die durch die Fits berechneten Parameter sind in Tabelle \ref{tab2} aufgelistet.\par
 Nun wollen wir noch einen zu erwarteten Verlauf nach Formel \eqref{I} einzeichnen. Dazu wählen wir unser $I_{\tx{max}}=I(0)$ und erhalten dann:
 \begin{equation}
 I_{2}(\phi) = I(0)\cdot \cos^{2}(\phi)
 \label{I2}
 \end{equation}
+
+%[  7.97997386e-08   1.27711470e+00   1.12197839e-01   7.05253576e-10]
+%[  3.89804787e-09   2.97361134e-02   2.58229609e-02   2.00860895e-09]
+%
+%[  1.69733014e-07   1.21519960e+00  -6.12830747e-02   1.15652281e-09]
+%[  9.61494998e-09   3.94509352e-02   3.04594549e-02   5.15773857e-09]
+
+\begin{table}[ht]
+	\centering
+	\caption{Parameter der Polarisationsmessung für $I_1(\phi)$ \eqref{I1}}
+	\begin{tabular*}{.95\textwidth}{@{\extracolsep{\fill}}ccccc}
+		\toprule
+		%\hline 
+		Messung & $a\,$[$ 10^{-9} $W] & $b$ & $ c\, $[rad] & $ d\,$[$ 10^{-9} $W]\\
+		\midrule
+		%\hline
+		Großer Hörsaal & $ 80 \pm 4 $ & $ 1{,}27 \pm 0{,}03 $ & $ \phantom{-}0{,}11 \pm 0{,}03 $ & $ 0{,}7 \pm 2 \phantom{0,}$\\
+		%\hline
+		Labor & $ 170 \pm 10 $ & $ 1{,}22 \pm 0{,}04 $ & $ -0{,}06 \pm 0{,}03 $ & $ 0{,}01 \pm 0{,}05 $ \\
+		\bottomrule
+		%\hline
+	\end{tabular*}
+	\label{tab2}
+\end{table}
 
 \section{Diskussion}
 
@@ -578,14 +598,16 @@ Zu guter Letzt haben wir die letzte Messung auch noch einmal in Abbildung \ref{A
 \subsubsection{Polarisationsmessung}
 
 Die Abbildung \ref{Labor-P} zeigt die Polarisationsmessung im \textbf{Großen Hörsaal}. Wie zuvor beschrieben wurde für diese Messung die Sendeantenne für einen festen Abstand von der Empfängerantenne gedreht. In Blau ist die erwartete Intensitätsverlauf von $I(\phi)=I_{\tx{max}}\cos(\phi)$. $ I_{\tx{max}} $ ist hier bei der Wert bei $ \phi = 0 $. \par
-Die an die Messwerten angepasste Kurve ist in Orange sichtbar nach rechts verschoben. Dies ist liegt möglicherweise daran, dass der Empfänger leicht gegenüber dem Sender verschoben war wodurch sich auch alle Werte leicht verschoben haben.  \par
-Im Vergleich der Kurven fällt auch auf, dass die orange Kurve nach unten schmaler wird als die Erwartete. Der Grund hierfür könnte sein, dass wir die Antenne nicht um ihren Mittelpunkt sondern um einen Punkt leicht dahinter gedreht haben. Dadurch haben wir zusätzlich noch einen Intensitätsverlust durch die zusätzliche steigende Entfernung der beiden Antennen von ihrem Mittelpunkt. D.h wir messen einen schnelleren Abfall bezüglich der Intensität als erwartet. Dieser Effekt sollte sich bei einer Verschiebung des Mittelpunktes von $ 20 \, \tx{cm} $ und einem Messabstand von $ d = 150 \, \tx{cm} $ nur auf eine Abweichung der Position relativ zum Sender von ca. $ 7{,}6^{\degree} $ oder $ 0{,}13 \, \tx{rad} $ handeln.\par
+Die an die Messwerten angepasste Kurve ist in Orange sichtbar nach rechts verschoben. Dies ist liegt möglicherweise daran, dass der Empfänger leicht gegenüber dem Sender verschoben war wodurch sich auch alle Werte leicht verschoben haben. Bei dieser Messung beträgt sich diese Verschiebung auf $ c = (0{,}11 \pm 0{,}03) \, \tx{rad} = (6{,}3 \pm 1{,}7)^{\degree} $. Diese Verschiebung deutet ebenfalls nur darauf hin, dass vermutlich die Sendeantenne um $ \approx 6{,}3^{\degree} $ verschoben war.\par
+Im Vergleich der Kurven fällt auch auf, dass die orange Kurve nach unten schmaler wird als die Erwartete. Der Grund hierfür könnte sein, dass wir die Antenne nicht um ihren Mittelpunkt sondern um einen Punkt leicht dahinter gedreht haben. Dadurch haben wir zusätzlich noch einen Intensitätsverlust durch die zusätzliche steigende Entfernung der beiden Antennen von ihrem Mittelpunkt. D.h wir messen einen schnelleren Abfall bezüglich der Intensität als erwartet. Dieser Effekt sollte sich bei einer Verschiebung des Mittelpunktes von $ 20 \, \tx{cm} $ und einem Messabstand von $ d = 150 \, \tx{cm} $ nur auf eine Abweichung der Position relativ zum Sender von ca. $ 7{,}6^{\degree} $ oder $ 0{,}13 \, \tx{rad} $ handeln. Der Parameter $ b = 1{,}27 \pm 0{,}03 $, welcher die Streckung in $ x $-Richtung angibt, zeigt, dass der Peak in unsere Messung um $ \frac{1}{b} = 0.78 \pm 0{,}02 \approx 78\% $ schmaler ist als der erwartete Verlauf.\par
+Der vorhin Spekulierte Grund für diese verschmälerung von $ 7{,}6^{\degree} $ entspricht allerdings nur $ \frac{7{,}6^{\degree}}{180^{\degree}} \approx 4\% $. Vermutlich gibt es also noch andere Faktoren, die dazu führen, dass der Verlauf unserer Messung um $ 22\% $ schmaler ausfallen ließen.\par
 Wenn man sich die blauen Messpunkte anschaut fällt zusätzlich noch auf, dass diese auf beiden Seiten nach einem gewissen Winkel sich kaum merklich verändern etwas was beim Fit nicht auffällt. Dies kann daran liegen, dass wir durch denn schnelleren Intensitätsabfall, die Werte gegen $\pm \frac{\pi}{2}$ nicht mehr merklich durch die Drehung ändern, da diese schon fast am Minimum angekommen sind. Das weitere Drehen hat dadurch kaum sichtbare Auswirkungen auf die Intensität. \par
-Der Grund dafür, dass unsere Messwerte, selbst bei einer Drehung von $90^{\degree}$, nie eine Intensität von Null erreichen liegt an Hintergrundrauschen und möglicher Reflexion in der Umgebung. Reflexion in der Umgebung könnte auch erklären warum wir bei $-\frac{\pi}{2}$ unser Messpunkte ein höher liegendes Intensitätsminimum andeuten als bei $\frac{\pi}{2}$, da dort möglicherweise mehr durch Reflexion angekommen ist. \par
-Bei der Betrachtung von Abbildung \ref{GrH-P}, welche die Messreihe im \textbf{Labor} darstellt, erkennt man, dass hier die selben Effekte auftreten wie in Abbildung \ref{Labor-P}, jedoch hier mit einer Verschiebung der Antennen in die andere Richtung. Da hier die orange Kurve nach links verschoben ist.\par
+Der Grund dafür, dass unsere Messwerte, selbst bei einer Drehung von $90^{\degree}$, nie eine Intensität von Null erreichen liegt an Hintergrundrauschen und möglicher Reflexion in der Umgebung. Reflexion in der Umgebung könnte auch erklären warum wir bei $-\frac{\pi}{2}$ unser Messpunkte ein höher liegendes Intensitätsminimum andeuten als bei $\frac{\pi}{2}$, da dort möglicherweise mehr durch Reflexion angekommen ist. Der Verschiebungs-Parameter $ c =  $ \par
+Bei der Betrachtung von Abbildung \ref{GrH-P}, welche die Messreihe im \textbf{Labor} darstellt, erkennt man, dass hier die selben Effekte auftreten wie in Abbildung \ref{Labor-P}, jedoch hier mit einer Verschiebung der Antennen in die andere Richtung. Da hier die orange Kurve nach links verschoben ist. Bei dieser Messung beträgt sich diese Verschiebung auf $ c = -(0{,}06 \pm 0{,}03) \, \tx{rad} = -(3{,}4 \pm 1{,}7)^{\degree} $. Diese Verschiebung ist also nicht wirklich signifikant, und deutet nur darauf hin, dass vermutlich die Sendeantenne um $ \approx -3{,}4^{\degree} $ verschoben war.\par
+Der Parameter $ b = 1{,}22 \pm 0{,}04 $, welcher die Streckung in $ x $-Richtung angibt, zeigt, dass der Peak in unsere Messung um $ \frac{1}{b} = 0.82 \pm 0{,}03 \approx 82\% $ schmaler ist als der erwartete Verlauf. Auch hier muss es andere Gründe gegeben haben, die die Messung um $ 18\% $ schmaler als den erwarteten Verlauf werden ließen.\par
 Wenn man beide Abbildungen miteinander vergleicht fällt auf, das die Gesamtintensität trotz selbem Abstand im Labor viel höher war als im Großen Hörsaal. Dies liegt sehr wahrscheinlich daran, dass unser Labor als Resonator fungiert hat und unsere übertragene Intensität erhöht hat, während wir diesen Effekt im großen Hörsaal nicht so stark hatten.
 
-\subsection{Weitere Grafiken}
+\subsubsection{Weitere Grafiken}
 
 Bei allen Frequenzcharakteristiken im Anhang sind bei $ \approx 1{,}25 \, \tx{GHz} $ und $ \approx 2{,}5 \, \tx{GHz} $ entweder starke Peaks oder starke Dips gefolgt von Peaks zu sehen. Diese sind nicht Teil der Charakteristik der Antennen sondern stammen von dem Richtkoppler und der vom Gerät berechneten Kompensation dieser Peaks.\\[10pt]
 \noindent
@@ -639,6 +661,13 @@ polarisation auch gut aber mit winkel offset
 	\centering
 	\caption{Gemessenen Intensität in Abhängigkeit vom Abstand $d$ im Labor. Auf der logarithmischen $y$-Achse ist die empfangene Intensität in Watt aufgetragen und auf der $x$-Achse der Abstand zur Sendeantenne in cm. Zusätzlich sind Fehler in $y$-Richtung nach Formel \eqref{deltaI} eingetragen. Die Fehler in $x$-Richtung $\Delta d = 2\,$cm sind zu klein und deswegen nicht zu sehen. Die blaue Kurve ist ein Fit der Form $f(d)$ \eqref{f}, welcher mittels \texttt{curvefit} (Python Modul \cite{curvescipy}) an die Messwerte angepasst wurde.}
 	\label{Labor-A}
+\end{figure}
+
+\begin{figure}[ht]
+	\includegraphics[scale=0.55]{Bilder/Abstand-GrH.jpg}
+	\centering
+	\caption{Gemessenen Intensität in Abhängigkeit vom Abstand $d$ im großen Hörsaal der Physik. Auf der logarithmischen $y$-Achse ist die empfangene Intensität in Watt aufgetragen und auf der $x$-Achse der Abstand zur Sendeantenne in cm. Zusätzlich sind Fehler in $y$-Richtung nach Formel \eqref{deltaI} eingetragen. Die Fehler in $x$-Richtung $\Delta d = 2\,$cm sind zu klein und deswegen nicht eingezeichnet. Die Ausgleichskurven sind Fits der Form $f(d)$ \eqref{f}, welche mittels \texttt{curvefit} (Python Modul \cite{curvescipy}) an die Messwerte angepasst wurden.}
+	\label{GrH-A}
 \end{figure}
 
 \begin{figure}[ht]
