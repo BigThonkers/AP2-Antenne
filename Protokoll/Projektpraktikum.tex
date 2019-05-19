@@ -302,13 +302,16 @@ Das Ziel des Versuches ist es, eine Dipol-Antennen zu bauen und diese zu nutzen 
 Zu Beginn des ersten Tages wurde ein Plan erstellt, was alles an diesem Tag gemacht werden muss. Hierbei war ganz oben auf der Liste das bauen der Antennen.\par
 Dafür wurde als erstes ein Gehäuse erstellt. Dieses dient dazu die Antennen in der Richtigen Form zu halten, der Montage auf den Stativen sowie der Befestigung eines Fadens zur Positionsbestimmung. Die erste Generation des Gehäuses wurde im Vorhinein von uns mit einem privaten 3D-Drucker ausgedruckt um Zeit zu sparen, da nicht klar war wie leicht die Bedienung des Ultimaker 3D Druckers ist. Es mussten also zu erst die Kupferröhrchen und Kabel zu einer Antenne zusammen gelötet werden. Hierfür hatte man zuerst die Kabel getestet, um zu sehen welche besonders wenig Verlust aufweisen, und auch einen relativ konstanten Verlust über das gesamte Frequenzspektrum aufweisen. Dazu wurden sie an den Spectrum-Analyzer angeschlossen und die Verlustleitung gemessen. Ein Bild des ersten Prototypen sieht man in Abbildung \ref{Antenne1}\par
 Ein weiter Aufgabenteil am ersten Tag war das installieren von GNU Radio auf dem RasberryPi zur Nutzung des HackRFs. Dies stellte sich als herausfordernder als erwartet heraus, da zunächst kein Internetzugang bereitstand und das Betriebssystem des Pi noch auf die SD Karte von diesem geflasht werden musste. Anschließend wurde GNU Radio installiert, jedoch unterstützt es standardmäßig das HackRF nicht. Nach auffinden und installieren der benötigten Extramodule sollte der Pi weitgehend eingerichtet sein.\par
-Nebenbei wurde mit der Funktionsweise des Spectrum-Analyzer experimentiert und versucht gute Einstellungsmöglichkeiten für die geplanten Messungen zu finden. In Abbildung \ref{ersteMessung} sieht man den an eine Antenne angeschlossenen Spectrum-Analyzer. 
+Nebenbei wurde mit der Funktionsweise des Spectrum-Analyzer experimentiert und versucht gute Einstellungsmöglichkeiten für die geplanten Messungen zu finden. In Abbildung \ref{ersteMessung} sieht man den an eine Antenne angeschlossenen Spectrum-Analyzer.
+
 \begin{figure}[ht]
 	\centering
 	\includegraphics[scale=0.35, trim={0cm 12cm 0cm 0cm}, clip]{Bilder/Ant_innen_1}
 	\caption{Aufbau der ersten gebauten Antenne mit Antennengehäuse und Innenleben. Zu sehen sind die beiden sendenden parallelen Röhrchen, sowie das dazu orthogonale Röhrchen, dass als Balun fungieren sollte. Am unteren Bildrand ist noch der vorbereitete Schrumpfschlauch und das ende des Kabels zu sehen.}
 	\label{Antenne1}
 \end{figure}
+
+\noindent
 Mit den ersten zwei fertigen Antennen wurden erste Probemessungen gemacht um zu sehen ob in dem erwarteten Frequenzbereich ein Intensitätsmaximum zu finden war. Jedoch konnte man im erwarteten Frequenzband nichts auffallendes erkennen. Auffällig war nur ein unregelmäßig auftauchender Peak bei einer Frequenz von $2.4\,$GHz, den wir stark für das WLAN Signal halten. Außerdem konnte man auch andere Peaks (vermutlich Bluetooth und Mobilnetz) erkennen wenn Handys in der nähe der Antenne waren. Somit hatten wir zumindest Funktionierende Antennen die Signale empfangen konnten. Allerdings konnten wir noch nicht wie gewünscht auf einer bestimmten Frequenz senden und dieses Signal messen.
 \begin{figure}[ht]
 	\centering
@@ -316,10 +319,6 @@ Mit den ersten zwei fertigen Antennen wurden erste Probemessungen gemacht um zu 
 	\caption{Gebaute Antenne auf dem Stativ an den Spektrum-Analyzer angeschlossen. Bei einer Messung wurde die zweite Antenne an den Input angeschlossen und die Intensität des empfangenen Signals bei verschiedenen Frequenzen gemessen.}
 	\label{ersteMessung}
 \end{figure}
-
-
-%\pagebreak
-
 
 \subsection{Tag 2}
 
@@ -423,6 +422,7 @@ Während den Messungen saßen eine oder zwei Personen am Spectrum-Analyzer, und 
 Dieser Abstand beziehungsweise Winkel wurde dann Notiert und die am Spectrum-Analyzer abgelesene Leistung in dBm protokolliert.
 
 \section{Auswertung}
+
 Bei der Auswertung unserer Messwerte haben wir uns auf die Abstandsmessungen und die Polarisationsmessungen mit den Antennen zweiter Generation beschränkt. Hierzu werden wir beispielhaft sowohl eine Abstandsmessung als auch eine Polarisationsmessung auswerten. Die restlichen Ergebnisse sind im Anhang zu finden und werden dann im Abschnitt  ,,Diskussion`` genauer betrachten und interpretieren. \par 
 Zuerst betrachten wir die Abstandsmessungen im Großen Hörsaal.Dazu prüfen wir nun ob unsere Messungen sich im Fernfeld oder im Nahfeld \cite{NahfeldundFernfeld} der Sendeantenne bewegt. Hier nutzen wir die Näherung:
 \begin{equation}
@@ -618,31 +618,34 @@ Auf der Abbildung \ref{Ant2-getrimmt} ist noch einmal die Charakteristik der zwe
 Aufgrund der schlechten Vergleichbarkeit der Antennencharakteristika von und nach dem Trimmen sind die Peaks um $ 1{,}6 \, \tx{GHz} $ in Abbildung \ref{Vergleich} dargestellt. Abgebildet ist die Charakteristik der ersten Antenne in orange und die der zweiten vor (in blau) und nach dem trimmen (in grün). Die rot eingezeichnete Linie stellt die für die Messungen ausgewählte Frequenz von $ 1{,}616 \, \tx{GHz} $ dar. Wie man gut sehen kann liegen die Kurven bei der Frequenz nach dem trimmen sehr nah beieinander. Leider ist es uns nicht gelungen die Minima beider Dips so weit zu verschieben, dass sie Deckungsgleich wurden. Die Frequenz ist deshalb als ein Kompromiss der beiden Dips gewählt worden.
 
 \section{Fazit}
+
 \subsection{Reflektion über Antennenbau und des allgemeinen Ablauf}
-Während dem Bau und Trimmung der Antennen stellte es sich heraus, dass der Balun, welcher eigentlich das eingehende Sinussignal des Senders in eine für unsere Antenne besser ausstrahlbare Form wandeln sollte, die internen Resonanzen der derart modifizierte sodass die erwartete Dipol Charakteristik verloren geht. Hinzu kommt noch, dass durch die größere Masse der Kupferrohre das Löten stark erschwert wurde, wodurch man einen Wackelkontakt in der ersten Antennengeneration erhielten. \par
+
+Während dem Bau und trimmen der Antennen stellte es sich heraus, dass der Balun, welcher eigentlich das eingehende Sinussignal des Senders in eine für unsere Antenne besser ausstrahlbare Form wandeln sollte, die internen Resonanzen derart modifizierte, dass die erwartete Dipol Charakteristik verloren ging. Hinzu kommt noch, dass durch die größere Masse der Kupferrohre das Löten stark erschwert wurde, wodurch man einen Wackelkontakt in der ersten Antennengeneration erhielten. \par
 Die meisten offensichtlichen schwächen der vorherigen Generation wurden durch die zweite Antennengeneration beseitigt. Durch verzicht auf den Balun und wechsel der Verbindungsmethode von direkt an Kabel zu löten auf das verbinden mit einer Buchse erhielt man eine viel eindeutigere Charakteristik der Antennen. Leider lagen ihre Sendeoptima relativ weit Auseinander, sodass eine nachträgliche Trimmung einer der beiden nötig wurde.\par
 Beim trimmen ist offensichtlich geworden, dass über die Kapazität des verwendeten Kondensators kaum eine Anpassung gelang, die Sendecharakteristik jedoch sehr stark durch die Position der Verbindungskabel des Kondensators beeinflusst werden konnte. Für weitere Anpassungen würde man vermutlich direkt auf induktive Impedanzen zurückgreifen oder die Kupferrohre selbst modifizieren. \par
 Für weitere Antennenmodelle wäre es interessant, die Auswirkungen von der Wandstärke verwendeter Rohre, dem Unterschied von Rohren im Vergleich zu Zylindern oder anderen Querschnitten, dem Abstand der beiden Antennenarme zueinander und dem verwendeten Material zu untersuchen.
 
 \subsection{Fazit zu den Abstandsmessungen}
-Während allgemein alle Messungen zur Verifikation der $\frac{1}{r^2}$ Abhängigkeit von übertragener Leistung diese Relativ gut bestätigen, fällt jedoch sehr stark die Abhängigkeit der Messungsgüte vom gewählten Ort auf. Während im Labor nur wenige relativ gut einschätzbare Störungen vorlagen, gab es hier das Problem mit Resonanzen im Raum. Das, im Vergleich mit den anderen Messorten, kleine Labor wirkte wie ein Hohlraumresonator: Sensitiv auf kleinste Veränderungen seines inneren Aufbaus. Bei Messungen außerhalb des Labors verschwand diese Sensitivität, jedoch erhielten wir Störende Signale von z.B. vorbeilaufenden Passanten und anderen Signalquellen. Erst die Messungen im großen Hörsaal vermieden die meisten unerwarteten Störsignale und eine Hohlraumresonanz.\par
+
+Während dem alle Messungen zur Verifikation der $\frac{1}{r^2}$ Abhängigkeit von der übertragenen Leistung, diese Relativ gut bestätigen, fällt jedoch sehr stark die Abhängigkeit der Messungsgüte vom gewählten Ort auf. Während im Labor nur wenige relativ gut einschätzbare Störungen vorlagen, gab es hier das Problem mit Resonanzen im Raum. Das, im Vergleich mit den anderen Messorten, kleine Labor wirkte wie ein Hohlraumresonator: Sensitiv auf kleinste Veränderungen seines inneren Aufbaus. Bei Messungen außerhalb des Labors verschwand diese Sensitivität, jedoch erhielten wir Störende Signale von z.B. vorbeilaufenden Passanten und anderen Signalquellen. Erst die Messungen im großen Hörsaal vermieden die meisten unerwarteten Störsignale und eine Hohlraumresonanz und führten so zu den besten Messreihen.\par
 Falls weitere Messreihen zur Abstandsabhängigkeit aufgenommen werden sollten, wäre es sehr empfehlenswert diese entweder in einem ähnlich großen Raum wie dem Hörsaal durchzuführen oder in einer nicht reflektierenden Umgebung. Hierbei würde man die meisten Fehlerquellen vermeiden.
 
 \subsection{Fazit zu den Polarisationsmessungen}
-Auch die Polarisationsmessungen waren stark von der gewählten Umgebung beeinflusst. Jedoch verstärkt hier die Reflektion an der Umgebung die allgemeinen Messwerte und verfälscht die Leistungsminima. Dies konnte selbst im Hörsaal nicht unterdrückt werden, da bei allen möglichen Ausrichtungen Reflektionen an den Wänden möglich waren.  Hinzu kommt eine Fehljustage der Antennen, was zu einer teilweisen Verschiebung aller Messwerte führt. Zusätzlich dazu wurde die Drehachse der Antennen aus praktischen Gründen nicht in ihren Mittelpunkt gelegt, was zu einem Abstands und damit Intensitätsfehler führt. Die Kombination aller dieser Faktoren führte bei den durchgeführten Messungen mehr zu einer schlankeren Form der Intensitätsverteilung im Vergleich zu der erwarteten Form. \par
-Bei Wiederholung dieser Messreihen sollte ein anderes Montagesystem verwendet werden zur Elimination einer allgemeinen Verschiebung und des Abstandsfehlers. Außerdem sollte, analog zu oben, der Ort für Messungen anders gewählt werden um Reflektionen und Störungen zu vermeiden.
+
+Auch die Polarisationsmessungen waren stark von der gewählten Umgebung beeinflusst. Jedoch verstärkt hier die Reflektion an der Umgebung die Messwerte und verfälscht die Leistungsminima. Dies konnte selbst im Hörsaal nicht unterdrückt werden, da bei allen möglichen Ausrichtungen Reflektionen an den Wänden möglich waren.  Hinzu kommt eine Fehljustage der Antennen, was zu einer teilweisen Verschiebung aller Messwerte führt. Zusätzlich dazu wurde die Drehachse der Antennen aus praktischen Gründen nicht in ihren Mittelpunkt gelegt, was zu einem Positions- und damit Intensitätsfehler führt. Die Kombination aller dieser Faktoren führte bei den durchgeführten Messungen mehr zu einer schlankeren Form der Intensitätsverteilung im Vergleich zu der erwarteten Form. \par
+Bei Wiederholung dieser Messreihen sollte zur Elimination einer Winkel-Verschiebung und des Positionsfehlers ein anderes Montagesystem verwendet werden. Außerdem sollte, analog zu oben, der Ort für Messungen anders gewählt werden um Reflektionen und Störungen zu vermeiden.
 
 \subsection{Gesamtfazit}
+
 Zusammenfassend kann man über den Verlauf des Praktikums sagen, dass die Zielsetzung zu hoch gesetzt war. Es konnte letztendlich die $\frac{1}{r^2}$ Abhängigkeit der Leistungsübertragung zwischen den beiden Antennen verifiziert werden sowie die $\cos^2$ Abhängigkeit im Zusammenhang der Polarisation. \par 
 Die Ergebnisse der Abstandsabhängigkeit zeigten nur Varianzen, welche durch den gewählten Messort bestimmt wurden und verhielten sich sonst wie vorhergesagt. Bei der Polarisationsmessung ist auch ein eindeutiger Trend beobachtbar, jedoch beeinträchtigen die Fehler eine genaue Verifikation des erwarteten Zusammenhangs. Für genauere Aussagen wären weitere Messungen nötig.
-
-
 
 \bibliographystyle{plain}
 \bibliography{literature}
 \addcontentsline{toc}{section}{Literatur}
 
-\pagebreak
+%\pagebreak
 
 \section*{Anhang}
 \addcontentsline{toc}{section}{Anhang}
