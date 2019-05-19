@@ -453,7 +453,7 @@ I_{+1} := I+1\,\tx{dBm} \quad\tx{,}\,I_{-1} := I-1\,\tx{dBm} \quad \Rightarrow\t
 \end{equation}
 Wir bilden also den Mittelwert aus den zwei ungleich großen Fehlern. Dies zeigen wir nun für den Wert $I=-38{,}85\,\tx{dBm} \approx$ $1{,}3031\cdot10^{-7}\,$W (GrH Messung 1: $d=120\,$cm):
 \begin{equation*}
-I_{+1} = -37{,}85\,\tx{dBm} \approx 1{,}6405\cdot 10^{-7}\,\tx{W} \qquad I_{-1} = -39{,}85\,\tx{dBm} \approx 1{,}0351\,\tx{W}
+I_{+1} = -37{,}85\,\tx{dBm} \approx 1{,}6405\cdot 10^{-7}\,\tx{W} \qquad I_{-1} = -39{,}85\,\tx{dBm} \approx 1{,}0351\cdot 10^{-7}\,\tx{W}
 \end{equation*}
 \begin{equation*}
 \Delta I = \frac{(I-I_{-1})+(I_{+1}-I)}{2} \approx 0{,}9 \cdot10^{-7}\,\tx{W}
@@ -494,7 +494,24 @@ Bei diesen Messwerten ergeben sich für die Parameter $a$ und $b$ die Werte:
 \tx{Messung 2:} \quad a = (0{,}3\pm2{,}8)\cdot10^{-8}\,\tx{W} \quad b = (1{,405\pm0{,}013})\cdot10^{-3} \,\tx{Wcm}
 \end{equation*}
 Wir werden jedoch bei den anderen Messwerten und den dazugehörigen Funktionen diese Parameter nicht weiter betrachten, da wir uns auf Grund der begrenzten Auswertungszeit nur auf den $\frac{1}{x^{2}}$ Verlauf beschränken werden. Nun nur ein paar kurze Worte zu ihnen. Der Parameter $a$ sollte idealerweise Null sein und ist auch bei allen Messwerten sehr klein, mit Werten zwischen $10^{-7}\,$W und $10^{-9}\,$W. Zum Parameter $b$ ist nochmals zu erwähnen, dass wir davon ausgehen, dass wir uns während unserer gesamten Messung im Fernfeld bewegen. Deswegen können unsere Funktionen eigentlich nur bis zu einen Abstand von ca. $r_{\tx{ff}}=(37{,}13\pm0{,}02)\,$cm (nur eine Näherung! Siehe \eqref{rff}) richtige Vorhersagen treffen.  \par 
-Deswegen werden wir auf den Parameter $b$ in dieser Auswertung nicht eingehen.
+Deswegen werden wir auf den Parameter $b$ in dieser Auswertung nicht eingehen. Die restlichen Parameter befinden sich in Tabelle \ref{tab1}.
+
+\begin{table}[ht]
+	\centering
+	\caption{Restliche Parameter der Abstandsmessung für $f(d)$ \eqref{f}}
+	\begin{tabular*}{.9\textwidth}{@{\extracolsep{\fill}}|c|c|c|}
+		\hline 
+		Messung & $a\,$[W] & $b\,$[Wcm] \\
+		\hline 
+		Garten der Physik & $(2{,}0\pm0{,}9)\cdot10^{-8}$ & $(0\pm4)\cdot10^{-5}$ \\
+		\hline
+		Parkplatz & $(4{,}0\pm1{,}4)\cdot10^{-7}$ & $(3{,}38\pm0{,}04)\cdot10^{-2}$\\
+		\hline
+		Labor & $(0{,}6\pm1{,}9)\cdot10^{-9}$ & $(3{,}02\pm0{,}05)\cdot10^{-2}$ \\
+		\hline
+	\end{tabular*}
+	\label{tab1}
+\end{table}
 
 \FloatBarrier
 
